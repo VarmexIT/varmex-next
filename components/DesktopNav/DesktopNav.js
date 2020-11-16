@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cn from 'clsx'
-import styles from './MainNav.module.scss'
+import styles from './DesktopNav.module.scss'
 
 const LinkItem = ({ children, href }) => {
   const { route } = useRouter()
@@ -21,9 +21,9 @@ const LinkItem = ({ children, href }) => {
   )
 }
 
-const MainNav = () => {
+const DesktopNav = () => {
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.desktopNav}>
       <ul>
         <LinkItem href="/">Företaget</LinkItem>
         <LinkItem href="/nyheter">Nyheter</LinkItem>
@@ -37,4 +37,4 @@ const MainNav = () => {
   )
 }
 
-export default MainNav
+export default DesktopNav

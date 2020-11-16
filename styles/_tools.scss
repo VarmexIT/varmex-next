@@ -7,7 +7,8 @@ $nobel: #b7b7b7;
 
 // Dims
 $header-height: 150px;
-$max-container-width: 1200px;
+$max-page-width: 1440px;
+$max-container-width: 1440px;
 
 // Functions
 @function space($nr: 1) {
@@ -17,6 +18,12 @@ $max-container-width: 1200px;
 // MQs
 @mixin mq-600 {
   @media (min-width: #{600/16 + 0em}) {
+    @content;
+  }
+}
+
+@mixin mq-750 {
+  @media (min-width: #{750/16 + 0em}) {
     @content;
   }
 }

@@ -4,9 +4,7 @@ import styles from './Footer.module.scss'
 const Footer = () => {
   return (
     <header className={styles.footer}>
-      <Container>
-        <p>Footer...</p>
-      </Container>
+      <p>Footer...</p>
     </header>
   )
 }

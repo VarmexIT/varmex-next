@@ -1,7 +1,6 @@
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
-  console.log('item:', item)
   return (
     <div
       className={styles.heroItem}

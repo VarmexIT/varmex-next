@@ -1,6 +1,12 @@
 @import '../../styles/tools';
 
-.nav {
+.desktopNav {
+  display: none;
+
+  @include mq-750 {
+    display: block;
+  }
+
   ul {
     display: flex;
     list-style: none;

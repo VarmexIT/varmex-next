@@ -1,5 +1,13 @@
 @import './tools';
 
+:root {
+  --header-height: 100px;
+
+  @include mq-750 {
+    --header-height: 150px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -20,8 +28,9 @@ html {
 body {
   height: 100%;
   font-size: 1.8rem;
-  background: transparent url('../images/bg_soft.svg') left top repeat fixed;
-  background-size: cover;
+  background-color: #363636;
+  // background: transparent url('../images/bg_soft.svg') left top repeat fixed;
+  // background-size: cover;
 }
 
 a {

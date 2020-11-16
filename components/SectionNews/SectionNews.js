@@ -16,11 +16,11 @@ const SectionNews = () => {
   return (
     <section className={styles.sectionNews}>
       <SectionHeading>{newsSection.sectionHeading}</SectionHeading>
-      <Container className={styles.newsItemsWrapper}>
+      <div className={styles.newsItemsWrapper}>
         {newsSection.newsPosts.map(({ sys: { id }, fields: post }) => (
           <NewsItem key={id} post={post} />
         ))}
-      </Container>
+      </div>
     </section>
   )
 }
