@@ -1,0 +1,48 @@
+@import './tools';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: #333;
+  // @include fontNanumGothicRegular;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-size: 1.8rem;
+  background: transparent url('../images/bg_soft.svg') left top repeat fixed;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+}

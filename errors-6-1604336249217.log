@@ -1,0 +1,125 @@
+InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "type",
+        "value": "Första september tog vi ett historiskt kliv genom att öppna vårt andra kontor.",
+        "type": "RichText",
+        "details": "The type of \"value\" is incorrect, expected type: RichText",
+        "path": [
+          "fields",
+          "preamble",
+          "en-US"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "t6kkrjzy0uka/environments/test//entries/1mg4DcYcsSjpAajzXCy71t",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/1.4.39; feature space-migration; sdk contentful-management.js/5.28.0; platform node.js/v12.18.1; os macOS/19.6.0;",
+      "Authorization": "Bearer ...kdM_Q",
+      "user-agent": "node.js/v12.18.1",
+      "Accept-Encoding": "gzip",
+      "X-Contentful-Version": 5,
+      "X-Contentful-Content-Type": "newsPost",
+      "Content-Length": 1232
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"1mg4DcYcsSjpAajzXCy71t\",\"version\":5,\"publishedVersion\":4,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"newsPost\"}}},\"fields\":{\"title\":{\"sv-SE\":\"Testnyhet 1\"},\"slug\":{\"sv-SE\":\"testnyhet-1\"},\"image\":{\"sv-SE\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Asset\",\"id\":\"39q235KCdLodubvBpCEU3p\"}}},\"body\":{\"sv-SE\":{\"nodeType\":\"document\",\"data\":{},\"content\":[{\"nodeType\":\"paragraph\",\"content\":[{\"nodeType\":\"text\",\"value\":\"Första september tog vi ett historiskt kliv genom att öppna vårt andra kontor. Efter 35 år i Tyresö finns vi nu även i Marievik i Liljeholmen. Satsningen för Värmex närmare våra uppdragsgivare och underlättar vardagen för våra medarbetare genom att skapa en central mötesplats.\",\"marks\":[],\"data\":{}}],\"data\":{}},{\"nodeType\":\"paragraph\",\"content\":[{\"nodeType\":\"text\",\"value\":\"Samtidigt tar vi ett nytt kliv i utvecklingen och lanserar vårt nya utseende med en ny logotype!\",\"marks\":[],\"data\":{}}],\"data\":{}},{\"nodeType\":\"paragraph\",\"content\":[{\"nodeType\":\"text\",\"value\":\"Välkomna att besöka oss i Marievik på Årstaängsvägen 21B!\",\"marks\":[],\"data\":{}}],\"data\":{}}]}},\"preamble\":{\"sv-SE\":\"Första september tog vi ett historiskt kliv genom att öppna vårt andra kontor.\"}}}"
+  },
+  "requestId": "817ba08eeefefaeb4ef4636630da08bc"
+}
+    at errorHandler (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:13088:17)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Task.task (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:139:29)VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "t6kkrjzy0uka/environments/test//entries/1mg4DcYcsSjpAajzXCy71t/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/1.4.39; feature space-migration; sdk contentful-management.js/5.28.0; platform node.js/v12.18.1; os macOS/19.6.0;",
+      "Authorization": "Bearer ...kdM_Q",
+      "user-agent": "node.js/v12.18.1",
+      "Accept-Encoding": "gzip",
+      "X-Contentful-Version": 6,
+      "X-Contentful-Content-Type": "newsPost"
+    },
+    "method": "put"
+  },
+  "requestId": "075ed400b8f628404c30067f7cc118d5"
+}
+    at errorHandler (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:13088:17)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Task.task (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:139:29)InvalidEntry: {
+  "status": 422,
+  "statusText": "Unprocessable Entity",
+  "message": "Validation error",
+  "details": {
+    "errors": [
+      {
+        "name": "type",
+        "value": "Detta är testnyhet 2.",
+        "type": "RichText",
+        "details": "The type of \"value\" is incorrect, expected type: RichText",
+        "path": [
+          "fields",
+          "preamble",
+          "en-US"
+        ]
+      }
+    ]
+  },
+  "request": {
+    "url": "t6kkrjzy0uka/environments/test//entries/5z9qyx36Oc783XEXcKiL63",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/1.4.39; feature space-migration; sdk contentful-management.js/5.28.0; platform node.js/v12.18.1; os macOS/19.6.0;",
+      "Authorization": "Bearer ...kdM_Q",
+      "user-agent": "node.js/v12.18.1",
+      "Accept-Encoding": "gzip",
+      "X-Contentful-Version": 2,
+      "X-Contentful-Content-Type": "newsPost",
+      "Content-Length": 545
+    },
+    "method": "put",
+    "payloadData": "{\"sys\":{\"id\":\"5z9qyx36Oc783XEXcKiL63\",\"version\":2,\"publishedVersion\":1,\"contentType\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"ContentType\",\"id\":\"newsPost\"}}},\"fields\":{\"title\":{\"sv-SE\":\"Testnyhet 2\"},\"slug\":{\"sv-SE\":\"testnyhet-2\"},\"image\":{\"sv-SE\":{\"sys\":{\"type\":\"Link\",\"linkType\":\"Asset\",\"id\":\"2XNbRa6YlBrfXbifaWg37q\"}}},\"body\":{\"sv-SE\":{\"data\":{},\"content\":[{\"data\":{},\"content\":[{\"data\":{},\"marks\":[],\"value\":\"Detta är testnyhet 2\",\"nodeType\":\"text\"}],\"nodeType\":\"paragraph\"}],\"nodeType\":\"document\"}},\"preamble\":{\"sv-SE\":\"Detta är testnyhet 2.\"}}}"
+  },
+  "requestId": "4fdc703efc5bb555273d44fa5161bd38"
+}
+    at errorHandler (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:13088:17)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Task.task (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:139:29)VersionMismatch: {
+  "status": 409,
+  "statusText": "Conflict",
+  "message": "",
+  "details": {},
+  "request": {
+    "url": "t6kkrjzy0uka/environments/test//entries/5z9qyx36Oc783XEXcKiL63/published",
+    "headers": {
+      "Accept": "application/json, text/plain, */*",
+      "Content-Type": "application/vnd.contentful.management.v1+json",
+      "X-Contentful-User-Agent": "app contentful.cli/1.4.39; feature space-migration; sdk contentful-management.js/5.28.0; platform node.js/v12.18.1; os macOS/19.6.0;",
+      "Authorization": "Bearer ...kdM_Q",
+      "user-agent": "node.js/v12.18.1",
+      "Accept-Encoding": "gzip",
+      "X-Contentful-Version": 3,
+      "X-Contentful-Content-Type": "newsPost"
+    },
+    "method": "put"
+  },
+  "requestId": "7005c6feb0fe195a3db0e36021f4567e"
+}
+    at errorHandler (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-management/dist/contentful-management.node.js:13088:17)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async Task.task (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:139:29)

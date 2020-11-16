@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 1800">
+  <defs/>
+  <defs>
+    <style>
+      .cls-11,
+      .cls-15,
+      .cls-16,
+      .cls-18,
+      .cls-3,
+      .cls-4,
+      .cls-6,
+      .cls-7 { mix-blend-mode: multiply; }
+      .cls-3 { fill: #eaeaea; }
+      .cls-11,
+      .cls-15,
+      .cls-16,
+      .cls-18,
+      .cls-3,
+      .cls-4,
+      .cls-6,
+      .cls-7 { opacity: 0.44; }
+      .cls-4 { fill: #dfdfde; }
+      .cls-6 { fill: #f0f0f0; }
+      .cls-7 { fill: #e6e6e6; }
+      .cls-11 { fill: #cfcece; }
+      .cls-15 { fill: #f3f3f3; }
+      .cls-16 { fill: #f4f4f4; }
+      .cls-18 { fill: #ececec; }
+    </style>
+  </defs>
+  <g style="isolation: isolate;">
+    <path style="mix-blend-mode: multiply;" id="Layer_2" fill="#b7b7b7" d="M0 0h2400v1800H0z" data-name="Layer 2"/>
+    <g id="Lager_1" data-name="Lager 1">
+      <path d="M239.92 1L540.3 395.33 214.43 352 239.92 1zM557 722.33L0 713v-91.57L214.43 352 557 722.33z" class="cls-3"/>
+      <path d="M0 83.09L214.43 352 0 621.43V83.09z" class="cls-4"/>
+      <path style="mix-blend-mode: multiply;" fill="#e2e2e1" d="M239.92 1l-25.49 351L0 83.09V0l239.92 1z" opacity=".44"/>
+      <path d="M540.3 395.33l16.7 327L214.43 352l325.87 43.33z" class="cls-6"/>
+      <path d="M540.3 395.33L1001 153 294.33 0l-54.41 1L540.3 395.33zM203 1063l354-340.67L0 713v103l203 247z" class="cls-7"/>
+      <path style="mix-blend-mode: multiply;" fill="#dedede" d="M0 989l203 74L0 816v173z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#d1d0d1" d="M203 1063L0 1338.07V989l203 74z" opacity=".44"/>
+      <path d="M557 722.33l-82.87 605.24L203 1063l354-340.67z" class="cls-4"/>
+      <path style="mix-blend-mode: multiply;" fill="#d7d8d7" d="M203 1063l271.13 264.57L0 1503.06v-164.99L203 1063z" opacity=".44"/>
+      <path d="M474.13 1327.57L231.14 1800h-121.5L0 1698.05v-194.99l474.13-175.49z" class="cls-11"/>
+      <path style="mix-blend-mode: multiply;" fill="#c0c0bf" d="M0 1698.05L109.64 1800H0v-101.95z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#c3c3c3" d="M474.13 1327.57L841.61 1800H231.14l242.99-472.43z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#d8d8d8" d="M474.13 1327.57l548.97 18L557 722.33l-82.87 605.24z" opacity=".44"/>
+      <path d="M1023.1 1345.57l4.5 454.43H841.61l-367.48-472.43 548.97 18z" class="cls-11"/>
+      <path d="M1001 153L1264.59 1 294.33 0 1001 153z" class="cls-15"/>
+      <path d="M1001 153l280.09 444.11L557 722.33l-16.7-327L1001 153z" class="cls-16"/>
+      <path style="mix-blend-mode: multiply;" fill="#f8f7f7" d="M1281.09 597.11L1324.58 0l-59.99 1L1001 153l280.09 444.11z" opacity=".44"/>
+      <path d="M1281.09 597.11l-257.99 748.46L557 722.33l724.09-125.22z" class="cls-18"/>
+      <path style="mix-blend-mode: multiply;" fill="#f5f4f5" d="M1281.09 597.11l577.47-457.48L1486.58 0h-162l-43.49 597.11z" opacity=".44"/>
+      <path d="M1858.56 139.63l541.44-108v206.99l-541.44-98.99z" class="cls-15"/>
+      <path d="M1858.56 139.63l541.44-108V0h-913.42l371.98 139.63z" class="cls-16"/>
+      <path d="M1858.56 139.63l152.99 646.47-730.46-188.99 577.47-457.48z" class="cls-15"/>
+      <path d="M2011.55 786.1L2400 437.67V238.62l-541.44-98.99 152.99 646.47z" class="cls-15"/>
+      <path d="M2011.55 786.1l-112.49 446.97-617.97-635.96 730.46 188.99z" class="cls-6"/>
+      <path d="M1899.06 1233.07l-875.96 112.5 257.99-748.46 617.97 635.96z" class="cls-7"/>
+      <path style="mix-blend-mode: multiply;" fill="#bdbcbc" d="M1023.1 1345.57l728.96 368.98-184.49 85.45H1027.6l-4.5-454.43z" opacity=".44"/>
+      <path d="M1752.06 1714.55l147-481.48-875.96 112.5 728.96 368.98z" class="cls-11"/>
+      <path style="mix-blend-mode: multiply;" fill="#a3a2a2" d="M1752.06 1714.55l-7.5 85.45h-176.99l184.49-85.45z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#c3c2c2" d="M1752.06 1714.55l215.99 85.45h-223.49l7.5-85.45z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#d3d3d3" d="M1752.06 1714.55L2400 1392.07v-102l-500.94-57-147 481.48z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#d7d7d7" d="M1752.06 1714.55L2400 1392.07V1800h-431.95l-215.99-85.45z" opacity=".44"/>
+      <path style="mix-blend-mode: multiply;" fill="#e4e3e3" d="M2011.55 786.1L2400 1161.08v128.99l-500.94-57 112.49-446.97z" opacity=".44"/>
+      <path d="M2011.55 786.1L2400 437.67v723.41L2011.55 786.1z" class="cls-18"/>
+    </g>
+  </g>
+</svg>

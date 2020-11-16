@@ -1,0 +1,14 @@
+@import '../../styles/tools';
+
+.headingWrapper {
+  background: rgba(60, 60, 60, 0.7);
+  padding: space(4) 0;
+
+  .sectionHeading {
+    color: white;
+    text-transform: uppercase;
+    font-size: 3rem;
+
+    @include fontBarlowBold;
+  }
+}

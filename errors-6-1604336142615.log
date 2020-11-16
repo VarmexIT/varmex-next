@@ -1,0 +1,15 @@
+TypeError: Cannot read property 'split' of undefined
+    at EntryTransformAction.transformEntryForLocale (/Users/krille/Dev/Eget/varmex/varmex-next/contentful-migrations/6.js:16:61)
+    at EntryTransformAction.applyTo (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/action/entry-transform.js:43:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async IntentList.applyTo (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/intent-list/index.js:87:21)
+    at async migration (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/migration-parser.js:148:9)
+    at async run (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:87:23)
+
+TypeError: Cannot read property 'split' of undefined
+    at EntryTransformAction.transformEntryForLocale (/Users/krille/Dev/Eget/varmex/varmex-next/contentful-migrations/6.js:16:61)
+    at EntryTransformAction.applyTo (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/action/entry-transform.js:43:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+    at async IntentList.applyTo (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/intent-list/index.js:87:21)
+    at async migration (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/lib/migration-parser.js:148:9)
+    at async run (/usr/local/lib/node_modules/contentful-cli/node_modules/contentful-migration/built/bin/cli.js:87:23)

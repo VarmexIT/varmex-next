@@ -1,0 +1,14 @@
+@import '../../styles/tools';
+
+.sectionNews {
+  border: 2px solid black;
+  background: rgba(255, 255, 255, 0.5);
+
+  .newsItemsWrapper {
+    padding-top: space(8);
+    padding-bottom: space(8);
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(3);
+  }
+}

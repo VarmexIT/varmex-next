@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+
+// Colors
+$cod-gray: #1c1c1c;
+$wild-willow: #acd26c;
+$nobel: #b7b7b7;
+
+// Dims
+$header-height: 150px;
+$max-container-width: 1200px;
+
+// Functions
+@function space($nr: 1) {
+  @return $nr * 8px;
+}
+
+// MQs
+@mixin mq-600 {
+  @media (min-width: #{600/16 + 0em}) {
+    @content;
+  }
+}
+
+@mixin mq-900 {
+  @media (min-width: #{900/16 + 0em}) {
+    @content;
+  }
+}
+
+@mixin mq-1000 {
+  @media (min-width: #{1000/16 + 0em}) {
+    @content;
+  }
+}
+
+// Fonts
+@mixin fontBarlowRegular {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+}
+
+@mixin fontBarlowBold {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+}
