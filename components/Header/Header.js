@@ -9,16 +9,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
+        <Link href="/">
+          <a>
+            <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
+          </a>
+        </Link>
+
         <HeaderContactDetails />
         <HamburgerButton />
-
-        <div>
-          <Link href="/">
-            <a>
-              <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
-            </a>
-          </Link>
-        </div>
 
         <DesktopNav />
         <MobileNav />

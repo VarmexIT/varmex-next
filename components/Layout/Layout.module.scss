@@ -6,5 +6,9 @@
 }
 
 .main {
-  // padding-top: $header-height;
+  padding-top: var(--header-height);
+
+  @include mq-750 {
+    padding-top: 0;
+  }
 }

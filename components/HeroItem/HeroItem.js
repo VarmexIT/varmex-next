@@ -1,6 +1,8 @@
+import Link from 'next/link'
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
+  console.log(item)
   return (
     <div
       className={styles.heroItem}
@@ -10,6 +12,11 @@ const HeroItem = ({ item }) => {
     >
       <div className={styles.metaWrapper}>
         <h2>{item.fields.title}</h2>
+        {item.fields.linkText ? (
+          <Link href="/">
+            <a>{item.fields.linkText}</a>
+          </Link>
+        ) : null}
       </div>
     </div>
   )
