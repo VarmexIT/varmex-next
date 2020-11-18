@@ -1,7 +1,7 @@
 import { QueryCache } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getContentByContentTypeId } from '../services/cms'
-// import SectionNews from '../components/SectionNews/SectionNews'
+import SectionNews from '../components/SectionNews/SectionNews'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
 import TheCompany from '../components/TheCompany/TheCompany'
