@@ -11,6 +11,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm run lint:js
-      - run: npm run lint:css
+          # Equivalent to `npm ci`
+      - run: rm -rf node_modules && yarn install --frozen-lockfile
+      - run: yarn run lint:js
+      - run: yarn run lint:css
