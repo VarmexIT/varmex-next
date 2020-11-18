@@ -29,6 +29,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const posts = await getContentByContentTypeId('newsPost')
+  console.log('posts:', posts)
   const paths = posts.items.map(post => ({
     params: {
       slug: post.fields.slug,
