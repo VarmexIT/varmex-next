@@ -2,7 +2,6 @@ import Link from 'next/link'
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
-  console.log(item)
   return (
     <div
       className={styles.heroItem}

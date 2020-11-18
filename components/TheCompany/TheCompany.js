@@ -1,26 +1,35 @@
-import React from 'react'
+import { useState } from 'react'
+import useCMSContent from '../../utils/hooks/useCMSContent'
+import CompanyItem from '../CompanyItem/CompanyItem'
 import styles from './TheCompany.module.scss'
 
 const TheCompany = () => {
+  const { dontRender, data } = useCMSContent('theCompany')
+  const [activeItem, setActiveItem] = useState(0)
+  const companyItems = data?.fields?.companyItems
+
+  if (dontRender) {
+    return null
+  }
+
+  const toggleActive = index => {
+    const newIndex = activeItem === index ? null : index
+    setActiveItem(newIndex)
+  }
+
   return (
     <div className={styles.theCompany}>
-      <aside>
-        <h2>Vårt Företag</h2>
-        <nav>
-          <ul>
-            <li>
-              <button>Företaget</button>
-              <button>Innovationer</button>
-              <button>Skrivbord och verklighet</button>
-              <button>Framtiden</button>
-              <button>Lösningar som håller</button>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <div>
-        <h3>Värmex</h3>
-      </div>
+      <dl>
+        {companyItems.map((item, i) => (
+          <CompanyItem
+            key={item.sys.id}
+            item={item}
+            i={i}
+            activeItem={activeItem}
+            toggleActive={toggleActive}
+          />
+        ))}
+      </dl>
     </div>
   )
 }

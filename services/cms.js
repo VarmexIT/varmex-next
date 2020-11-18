@@ -13,7 +13,7 @@ export const getContentByContentTypeId = (contentTypeId, locale) => {
       locale,
       include: 5,
     })
-    .then(response => response)
+    .then(response => response.items?.[0])
 }
 
 export const getNewsItemBySlug = (slug, locale) => {

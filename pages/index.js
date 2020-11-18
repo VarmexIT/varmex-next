@@ -18,7 +18,7 @@ const HomePage = () => {
 
 export const getStaticProps = async () => {
   const queryCache = new QueryCache()
-  const queries = ['sectionHero', 'sectionNews']
+  const queries = ['sectionHero', 'theCompany']
 
   const promises = queries.map(query =>
     queryCache.prefetchQuery(query, () => getContentByContentTypeId(query))

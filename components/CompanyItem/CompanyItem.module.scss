@@ -1,0 +1,43 @@
+@import '../../styles/tools';
+
+.title {
+  display: flex;
+
+  button {
+    @include fontBarlowMedium;
+
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 3rem;
+    margin: 0;
+    padding: space(2);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: space(2);
+    }
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid $nobel;
+  }
+}
+
+.body {
+  margin: 0;
+  overflow: hidden;
+
+  .inner {
+    padding: space(2) 5% space(2) space(8);
+
+    p {
+      margin: space(1) 0;
+    }
+  }
+}

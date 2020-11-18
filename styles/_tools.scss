@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&display=swap');
 
 // Colors
 $cod-gray: #1c1c1c;
@@ -44,6 +44,11 @@ $max-container-width: 1440px;
 @mixin fontBarlowRegular {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
+}
+
+@mixin fontBarlowMedium {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
 }
 
 @mixin fontBarlowBold {
