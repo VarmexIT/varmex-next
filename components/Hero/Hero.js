@@ -7,7 +7,7 @@ import styles from './Hero.module.scss'
 const Hero = () => {
   const { dontRender, status, data } = useCMSContent('sectionHero')
   const [currentItem, setCurrentItem] = useState(0)
-  const heroItems = data?.fields?.heroItems
+  const heroItems = data?.items?.[0].fields?.heroItems
 
   useInterval(() => {
     if (status === 'success') {

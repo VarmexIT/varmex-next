@@ -6,7 +6,7 @@ import styles from './TheCompany.module.scss'
 const TheCompany = () => {
   const { dontRender, data } = useCMSContent('theCompany')
   const [activeItem, setActiveItem] = useState(0)
-  const companyItems = data?.fields?.companyItems
+  const companyItems = data?.items?.[0].fields?.companyItems
 
   if (dontRender) {
     return null
