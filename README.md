@@ -1,5 +1,5 @@
 # Värmex site
-## This page is build using [Next JS](https://nextjs.org/).
+## This page is built using [Next JS](https://nextjs.org/).
 
 ## Available yarn scripts:
 
