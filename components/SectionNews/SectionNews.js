@@ -1,6 +1,5 @@
 import { useQuery } from 'react-query'
 import { getContentByContentTypeId } from '../../services/cms'
-import Container from '../Container/Container'
 import NewsItem from '../NewsItem/NewsItem'
 import SectionHeading from '../SectionHeading/SectionHeading'
 import styles from './SectionNews.module.scss'
