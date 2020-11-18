@@ -3,18 +3,23 @@
 
 ## Available yarn scripts:
 
-## Dev:
+### Install dependencies:
+```
+yarn install
+```
+
+### Dev:
 ```
 yarn dev
 ```
 
-## Linting:
-### JavaScript:
+### Linting:
+#### JavaScript:
 ```
 yarn lint:js
 ```
 
-### CSS (SCSS):
+#### CSS (SCSS):
 ```
 yarn lint:css
 ```
