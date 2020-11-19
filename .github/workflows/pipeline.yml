@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: act10ns/slack@v1
         with:
-            status: starting
-            channel: '#_bots'
+          status: starting
+          channel: '#_bots'
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
@@ -20,6 +20,11 @@ jobs:
       - run: rm -rf node_modules && yarn install --frozen-lockfile
       - run: yarn run lint:js
       - run: yarn run lint:css
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: '#_bots'
+        if: always()
   deploy:
     needs: lint
     runs-on: ubuntu-latest
