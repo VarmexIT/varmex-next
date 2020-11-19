@@ -7,7 +7,6 @@ import Layout from '../../components/Layout/Layout'
 
 const NewsPage = () => {
   const { data } = useCMSContent('newsPost')
-  const a = 'test'
 
   return (
     <Layout>
