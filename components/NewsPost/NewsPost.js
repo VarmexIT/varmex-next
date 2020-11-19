@@ -3,7 +3,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import React from 'react'
 import styles from './NewsPost.module.scss'
 
-const NewsPost = ({ post }) => {
+const NewsPost = ({ fullPost = false, post }) => {
   return (
     <article className={styles.newsPost}>
       <img
@@ -15,11 +15,13 @@ const NewsPost = ({ post }) => {
         <h2>
           <Link href={`/nyheter/${post.slug}`}>{post.title}</Link>
         </h2>
-        {documentToReactComponents(post.preamble)}
+        {documentToReactComponents(fullPost ? post.body : post.preamble)}
 
-        <Link href={`/nyheter/${post.slug}`}>
-          <a className={styles.readMore}>Läs hela nyheten.</a>
-        </Link>
+        {!fullPost ? (
+          <Link href={`/nyheter/${post.slug}`}>
+            <a className={styles.readMore}>Läs hela nyheten.</a>
+          </Link>
+        ) : null}
       </div>
     </article>
   )
