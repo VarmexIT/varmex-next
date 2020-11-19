@@ -6,21 +6,26 @@ on:
       - main
 
 jobs:
-  get-name:
+  get-vercel-args:
     runs-on: ubuntu-latest
     steps:
-      - name: Get branch name (merge)
-        if: github.event_name != 'pull_request'
+      - name: Get branch name
         shell: bash
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
 
-      - name: Get branch name (pull request)
-        if: github.event_name == 'pull_request'
+      - name: Get vercel staging args (develop)
+        if: ${{ env.BRANCH_NAME }} == 'develop'
         shell: bash
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_HEAD_REF} | tr / -)" >> $GITHUB_ENV
+        run: echo "VERCEL_ARGS=$(echo --build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}" >> $GITHUB_ENV
+
+      - name: Get vercel production args (main)
+        if: ${{ env.BRANCH_NAME }} == 'develop'
+        shell: bash
+        run: echo "VERCEL_ARGS=$(echo --prod --build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}" >> $GITHUB_ENV
+        # run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / -)" >> $GITHUB_ENV
 
       - name: Debug
-        run: echo ${{ env.BRANCH_NAME }}
+        run: echo ${{ env.VERCEL_ARGS }}
   deploy:
     runs-on: ubuntu-latest
     env:
@@ -28,22 +33,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v19
-        if: ${{ github.base_ref == 'main' }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           scope: varmex
           # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
           vercel-args: "--prod --build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}"
-          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
-          working-directory: ./
-      - uses: amondnet/vercel-action@v19
-        if: ${{ github.base_ref == 'develop' }}
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-          scope: varmex
-          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
-          vercel-args: "--build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}"
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
           working-directory: ./
