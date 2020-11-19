@@ -1,9 +1,9 @@
 name: deploy
 on:
-  workflow_run:
-    workflows: ["verify"]
-    types: 
-      - completed
+  push:
+    branches:
+      - develop
+      - main
 
 jobs:
   deploy:
@@ -13,11 +13,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v19
+        if: ${{ github.base_ref == 'main' }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           scope: varmex
           # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
           vercel-args: "--prod --build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}"
+          vercel-org-id: ${{ secrets.ORG_ID}}  #Required
+          vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
+          working-directory: ./
+      - uses: amondnet/vercel-action@v19
+        if: ${{ github.base_ref == 'develop' }}
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          scope: varmex
+          # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
+          vercel-args: "--build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}"
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
           working-directory: ./
