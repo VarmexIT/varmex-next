@@ -4,7 +4,7 @@ import { getContentByContentTypeId } from '../../services/cms'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import NewsPost from '../../components/NewsPost/NewsPost'
 import Layout from '../../components/Layout/Layout'
-// test
+
 const NewsPage = () => {
   const { data } = useCMSContent('newsPost')
 
