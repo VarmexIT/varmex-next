@@ -24,11 +24,16 @@ jobs:
         with:
           status: ${{ job.status }}
           channel: '#_bots'
-        if: always()
+        if: failure()
   deploy:
     needs: lint
     runs-on: ubuntu-latest
     steps:
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: '#_bots'
+        if: always()
       - uses: actions/checkout@v2
       - uses: amondnet/vercel-action@v19
         with:
@@ -38,3 +43,8 @@ jobs:
           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
           working-directory: ./
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: '#_bots'
+        if: always()
