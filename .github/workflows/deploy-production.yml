@@ -1,0 +1,50 @@
+name: deploy-staging
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - uses: act10ns/slack@v1
+        with:
+          status: starting
+          channel: '#_bots'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          # Equivalent to `npm ci`
+      - run: rm -rf node_modules && yarn install --frozen-lockfile
+      - run: yarn run lint:js
+      - run: yarn run lint:css
+      - uses: act10ns/slack@v1
+        if: failure()
+        with:
+          status: ${{ job.status }}
+          channel: '#_bots'
+
+  deploy-staging:
+    needs: lint
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v19
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          scope: varmex
+          vercel-args: "--prod --build-env NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT=test --build-env NEXT_PUBLIC_CONTENTFUL_SPACE_ID=${{ secrets.NEXT_PUBLIC_CONTENTFUL_SPACE_ID }} --build-env NEXT_PUBLIC_CONTENTFUL_CDA_KEY=${{ secrets.NEXT_PUBLIC_CONTENTFUL_TEST_CDA_KEY }}"
+          vercel-org-id: ${{ secrets.ORG_ID}}
+          vercel-project-id: ${{ secrets.PROJECT_ID}}
+          working-directory: ./
+      - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          channel: '#_bots'
+        if: always()
