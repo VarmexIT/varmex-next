@@ -10,7 +10,6 @@ const HomePage = () => {
     <Layout>
       <Hero />
       <TheCompany />
-      {/* <SectionNews /> */}
     </Layout>
   )
 }

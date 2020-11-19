@@ -18,8 +18,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  color: #333;
-  // @include fontNanumGothicRegular;
+  color: $cod-gray;
 }
 
 html {
@@ -31,7 +30,8 @@ body {
   height: 100%;
   font-size: 1.8rem;
   background-color: #363636;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+
+  @include fontGeorgiaRegular;
   // TODO: Set the dark triangle pattern as BG
   // background: transparent url('../images/bg_soft.svg') left top repeat fixed;
   // background-size: cover;

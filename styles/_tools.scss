@@ -55,3 +55,8 @@ $max-container-width: 1440px;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
 }
+
+@mixin fontGeorgiaRegular {
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-weight: 400;
+}
