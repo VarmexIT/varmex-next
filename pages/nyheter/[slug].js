@@ -1,18 +1,11 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getContentByContentTypeId, getNewsItemBySlug } from '../../services/cms'
+import NewsPost from '../../components/NewsPost/NewsPost'
 import Layout from '../../components/Layout/Layout'
 
 const NewsItemPage = ({ post }) => {
   return (
     <Layout>
-      <div
-        style={{
-          paddingTop: '120px',
-        }}
-      >
-        <h1>{post.title}</h1>
-        {documentToReactComponents(post.body)}
-      </div>
+      <NewsPost fullPost post={post} />
     </Layout>
   )
 }
