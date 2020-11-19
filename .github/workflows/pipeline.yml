@@ -1,8 +1,19 @@
-name: deploy test
+name: pipeline
 on:
   push
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          # Equivalent to `npm ci`
+      - run: rm -rf node_modules && yarn install --frozen-lockfile
+      - run: yarn run lint:js
+      - run: yarn run lint:css
   deploy:
     needs: lint
     runs-on: ubuntu-latest
