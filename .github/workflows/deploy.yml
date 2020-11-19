@@ -9,7 +9,7 @@ jobs:
       SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     steps:
       - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v19
+      - uses: ngduc/vercel-deploy-action@v19.0.12
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
           # github-token: ${{ secrets.GITHUB_TOKEN }} #Optional 
