@@ -1,4 +1,4 @@
-name: integrate
+name: verify and deploy
 on:
   push
 
