@@ -1,4 +1,4 @@
-name: deploy-staging
+name: deploy-production
 on:
   push:
     branches:
@@ -29,7 +29,7 @@ jobs:
           steps: ${{ toJson(steps) }}
           channel: '#_bots'
 
-  deploy-staging:
+  deploy-production:
     needs: lint
     runs-on: ubuntu-latest
     env:
