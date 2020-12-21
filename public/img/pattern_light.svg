@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1" viewBox="0 0 2400 1800">
+  <defs/>
+  <style>
+    .st1 { fill: #dfdfde; }
+    .st3 { fill: #f0f0f0; }
+    .st4 { fill: #e6e6e6; }
+    .st8 { fill: #cfcece; }
+    .st12 { fill: #f3f3f3; }
+    .st13 { fill: #f4f4f4; }
+    .st15 { fill: #ececec; }
+  </style>
+  <path fill="#eaeaea" d="M240 1l300 394-326-43zm317 721L0 713v-92l214-269z"/>
+  <path d="M0 83l214 269L0 621z" class="st1"/>
+  <path fill="#e2e2e1" d="M240 1l-26 351L0 83V0z"/>
+  <path d="M540 395l17 327-343-370z" class="st3"/>
+  <path d="M540 395l461-242L294 0l-54 1zm-337 668l354-341-557-9v103z" class="st4"/>
+  <path fill="#dedede" d="M0 989l203 74L0 816z"/>
+  <path fill="#d1d0d1" d="M203 1063L0 1338V989z"/>
+  <path d="M557 722l-83 606-271-265z" class="st1"/>
+  <path fill="#d7d8d7" d="M203 1063l271 265L0 1503v-165z"/>
+  <path d="M474 1328l-243 472H110L0 1698v-195z" class="st8"/>
+  <path fill="#c0c0bf" d="M0 1698l110 102H0z"/>
+  <path fill="#c3c3c3" d="M474 1328l368 472H231z"/>
+  <path fill="#d8d8d8" d="M474 1328l549 18-466-624z"/>
+  <path d="M1023 1346l5 454H842l-368-472z" class="st8"/>
+  <path d="M1001 153L1265 1 294 0z" class="st12"/>
+  <path d="M1001 153l280 444-724 125-17-327z" class="st13"/>
+  <path fill="#f8f7f7" d="M1281 597l44-597-60 1-264 152z"/>
+  <path d="M1281 597l-258 749-466-624z" class="st15"/>
+  <path fill="#f5f4f5" d="M1281 597l578-457L1487 0h-162z"/>
+  <path d="M1859 140l541-108v207z" class="st12"/>
+  <path d="M1859 140l541-108V0h-913z" class="st13"/>
+  <path d="M1859 140l153 646-731-189z" class="st12"/>
+  <path d="M2012 786l388-348V239l-541-99z" class="st12"/>
+  <path d="M2012 786l-113 447-618-636z" class="st3"/>
+  <path d="M1899 1233l-876 113 258-749z" class="st4"/>
+  <path fill="#bdbcbc" d="M1023 1346l729 369-184 85h-540z"/>
+  <path d="M1752 1715l147-482-876 113z" class="st8"/>
+  <path fill="#a3a2a2" d="M1752 1715l-7 85h-177z"/>
+  <path fill="#c3c2c2" d="M1752 1715l216 85h-223z"/>
+  <path fill="#d3d3d3" d="M1752 1715l648-323v-102l-501-57z"/>
+  <path fill="#d7d7d7" d="M1752 1715l648-323v408h-432z"/>
+  <path fill="#e4e3e3" d="M2012 786l388 375v129l-501-57z"/>
+  <path d="M2012 786l388-348v723z" class="st15"/>
+</svg>

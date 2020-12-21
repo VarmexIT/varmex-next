@@ -2,7 +2,18 @@
 
 .container {
   max-width: $max-container-width;
+  height: 100%;
   margin: 0 auto;
   padding-right: 2.5%;
   padding-left: 2.5%;
+
+  &.noGutter {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include mq-max-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

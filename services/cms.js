@@ -1,9 +1,9 @@
 import { createClient } from 'contentful'
 
 export const contentfulClient = createClient({
-  environment: process.env.CONTENTFUL_ENVIRONMENT,
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_CDA_KEY,
+  environment: process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT,
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_CDA_KEY,
 })
 
 export const getContentByContentTypeId = (contentTypeId, locale) => {

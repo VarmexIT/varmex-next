@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Container from '../Container/Container'
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
@@ -10,12 +11,18 @@ const HeroItem = ({ item }) => {
       }}
     >
       <div className={styles.metaWrapper}>
-        <h2>{item.fields.title}</h2>
-        {item.fields.linkText ? (
-          <Link href="/">
-            <a>{item.fields.linkText}</a>
-          </Link>
-        ) : null}
+        <Container className={styles.container}>
+          <h2>{item.fields.heading}</h2>
+          {item.fields.linkText ? (
+            <Link href="/">
+              <a>{item.fields.linkText}</a>
+            </Link>
+          ) : (
+            <Link href="/">
+              <a>Läs mer om grejen här</a>
+            </Link>
+          )}
+        </Container>
       </div>
     </div>
   )

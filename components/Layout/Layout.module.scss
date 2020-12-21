@@ -1,13 +1,9 @@
 @import '../../styles/tools';
 
-.page {
-  max-width: $max-page-width;
-  margin: 0 auto;
-}
-
 .main {
   padding-top: var(--header-height);
-  background: white;
+  background: white url(/img/pattern_light.svg) left top repeat;
+  background-size: cover;
 
   @include mq-750 {
     padding-top: 0;

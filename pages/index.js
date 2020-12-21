@@ -4,19 +4,22 @@ import { getContentByContentTypeId } from '../services/cms'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
 import TheCompany from '../components/TheCompany/TheCompany'
+import Container from '../components/Container/Container'
 
 const HomePage = () => {
   return (
     <Layout>
       <Hero />
-      <TheCompany />
+      <Container noGutter>
+        <TheCompany />
+      </Container>
     </Layout>
   )
 }
 
 export const getStaticProps = async () => {
   const queryCache = new QueryCache()
-  const queries = ['sectionHero', 'theCompany']
+  const queries = ['heroItem', 'theCompany']
 
   const promises = queries.map(query =>
     queryCache.prefetchQuery(query, () => getContentByContentTypeId(query))

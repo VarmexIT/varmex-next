@@ -1,5 +1,13 @@
+@import '../../styles/tools';
+
 .theCompany {
-  dl {
-    margin: 0;
+  background: white;
+
+  .inner {
+    padding: space(4);
+
+    dl {
+      margin: 0;
+    }
   }
 }

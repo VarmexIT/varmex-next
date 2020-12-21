@@ -5,9 +5,9 @@ import useInterval from '../../utils/hooks/useInterval'
 import styles from './Hero.module.scss'
 
 const Hero = () => {
-  const { dontRender, status, data } = useCMSContent('sectionHero')
+  const { dontRender, status, data } = useCMSContent('heroItem')
   const [currentItem, setCurrentItem] = useState(0)
-  const heroItems = data?.items?.[0].fields?.heroItems
+  const heroItems = data?.items
 
   useInterval(() => {
     if (status === 'success') {

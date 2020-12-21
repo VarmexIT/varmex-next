@@ -3,12 +3,12 @@
 // Colors
 $cod-gray: #1c1c1c;
 $wild-willow: #acd26c;
+$pine-glade: #b9cf82;
 $nobel: #b7b7b7;
 
 // Dims
 $header-height: 150px;
-$max-page-width: 1440px;
-$max-container-width: 1440px;
+$max-container-width: 1200px;
 
 // Functions
 @function space($nr: 1) {
@@ -36,6 +36,12 @@ $max-container-width: 1440px;
 
 @mixin mq-1000 {
   @media (min-width: #{1000/16 + 0em}) {
+    @content;
+  }
+}
+
+@mixin mq-max-container {
+  @media (min-width: #{(1200 + 50)/16 + 0em}) {
     @content;
   }
 }

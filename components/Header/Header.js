@@ -3,24 +3,27 @@ import HamburgerButton from '../HamburgerButton/HamburgerButton'
 import HeaderContactDetails from '../HeaderContactDetails/HeaderContactDetails'
 import MobileNav from '../MobileNav/MobileNav'
 import DesktopNav from '../DesktopNav/DesktopNav'
+import Container from '../Container/Container'
 import styles from './Header.module.scss'
 
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.inner}>
-        <Link href="/">
-          <a>
-            <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
-          </a>
-        </Link>
+      <Container>
+        <div className={styles.inner}>
+          <Link href="/">
+            <a>
+              <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
+            </a>
+          </Link>
 
-        <HeaderContactDetails />
-        <HamburgerButton />
+          <HeaderContactDetails />
+          <HamburgerButton />
 
-        <DesktopNav />
-        <MobileNav />
-      </div>
+          <DesktopNav />
+          <MobileNav />
+        </div>
+      </Container>
     </header>
   )
 }
