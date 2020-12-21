@@ -1,6 +1,6 @@
-import { getContentByContentTypeId, getNewsItemBySlug } from '../../services/cms'
-import NewsPost from '../../components/NewsPost/NewsPost'
-import Layout from '../../components/Layout/Layout'
+import { getContentByContentTypeId, getNewsItemBySlug } from '../services/cms'
+import NewsPost from '../components/NewsPost/NewsPost'
+import Layout from '../components/Layout/Layout'
 
 const NewsItemPage = ({ post }) => {
   return (
