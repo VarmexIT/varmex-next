@@ -1,0 +1,36 @@
+@import '../../styles/tools';
+
+.newsItemFeatured {
+  border: 1px solid $nobel;
+  border-width: 0 0 1px 0;
+
+  @include mq-750 {
+    border-width: 0 1px 0 0;
+    flex: 1;
+  }
+
+  img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 1px solid $nobel;
+  }
+
+  .content {
+    padding: space(2);
+
+    h3 {
+      font-size: 2.8rem;
+
+      @include fontBarlowMedium;
+
+      a {
+        color: $cod-gray;
+      }
+    }
+
+    .preamble {
+      margin-top: space(1);
+    }
+  }
+}

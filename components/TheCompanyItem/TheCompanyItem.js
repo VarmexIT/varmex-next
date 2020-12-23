@@ -1,11 +1,11 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { motion } from 'framer-motion'
 import { IoIosArrowDropdown } from 'react-icons/io'
-import styles from './CompanyItem.module.scss'
+import styles from './TheCompanyItem.module.scss'
 
 const EASE = [0.6, -0.05, 0.01, 0.99]
 
-const CompanyItem = ({ item, i, activeItem, toggleActive }) => {
+const TheCompanyItem = ({ item, i, activeItem, toggleActive }) => {
   const isActive = i === activeItem
 
   return (
@@ -27,6 +27,10 @@ const CompanyItem = ({ item, i, activeItem, toggleActive }) => {
       </dt>
       <motion.dd
         className={styles.body}
+        initial={{
+          height: 0,
+          opacity: 0,
+        }}
         animate={{
           height: isActive ? 'auto' : 0,
           opacity: isActive ? 1 : 0,
@@ -48,4 +52,4 @@ const CompanyItem = ({ item, i, activeItem, toggleActive }) => {
   )
 }
 
-export default CompanyItem
+export default TheCompanyItem

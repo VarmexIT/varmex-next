@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import useCMSContent from '../../utils/hooks/useCMSContent'
-import CompanyItem from '../CompanyItem/CompanyItem'
+import TheCompanyItem from '../TheCompanyItem/TheCompanyItem'
 import SectionHeading from '../SectionHeading/SectionHeading'
-import styles from './TheCompany.module.scss'
+import styles from './TheCompanySection.module.scss'
 
-const TheCompany = () => {
+const TheCompanySection = () => {
   const { dontRender, data } = useCMSContent('theCompany')
   const [activeItem, setActiveItem] = useState(0)
 
@@ -25,7 +25,7 @@ const TheCompany = () => {
       <div className={styles.inner}>
         <dl>
           {theCompanyItems.map((item, i) => (
-            <CompanyItem
+            <TheCompanyItem
               key={item.sys.id}
               item={item}
               i={i}
@@ -39,4 +39,4 @@ const TheCompany = () => {
   )
 }
 
-export default TheCompany
+export default TheCompanySection

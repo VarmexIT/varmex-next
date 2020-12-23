@@ -1,0 +1,60 @@
+@import '../../styles/tools';
+
+.newsItems {
+  display: flex;
+  overflow-x: scroll;
+
+  @include mq-750 {
+    display: block;
+    flex: 1;
+    max-height: 500px;
+  }
+
+  article {
+    padding: space(2);
+    display: flex;
+    height: 150px;
+    width: 400px;
+    max-width: 93%;
+    flex: 0 0 auto;
+
+    + article {
+      border: 1px solid $nobel;
+      border-width: 0 0 0 1px;
+    }
+
+    @include mq-750 {
+      width: auto;
+      height: auto;
+      max-width: none;
+
+      + article {
+        border-width: 1px 0 0 0;
+      }
+    }
+
+    img {
+      width: 30%;
+      object-fit: cover;
+      margin-right: space(1);
+    }
+
+    .content {
+      h3 {
+        @include fontBarlowMedium;
+
+        margin-bottom: space(1);
+        font-size: 1.8rem;
+
+        a {
+          color: $cod-gray;
+        }
+      }
+
+      .excerpts {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}

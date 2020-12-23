@@ -3,15 +3,17 @@ import { dehydrate } from 'react-query/hydration'
 import { getContentByContentTypeId } from '../services/cms'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
-import TheCompany from '../components/TheCompany/TheCompany'
 import Container from '../components/Container/Container'
+import TheCompanySection from '../components/TheCompanySection/TheCompanySection'
+import NewsSection from '../components/NewsSection/NewsSection'
 
 const HomePage = () => {
   return (
     <Layout>
       <Hero />
       <Container noGutter>
-        <TheCompany />
+        <TheCompanySection />
+        <NewsSection />
       </Container>
     </Layout>
   )
@@ -19,7 +21,7 @@ const HomePage = () => {
 
 export const getStaticProps = async () => {
   const queryCache = new QueryCache()
-  const queries = ['heroItem', 'theCompany']
+  const queries = ['heroItem', 'theCompany', 'news', 'newsItem']
 
   const promises = queries.map(query =>
     queryCache.prefetchQuery(query, () => getContentByContentTypeId(query))

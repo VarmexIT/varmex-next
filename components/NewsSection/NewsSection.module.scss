@@ -1,0 +1,14 @@
+@import '../../styles/tools';
+
+.newsSection {
+  background: white;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    @include mq-750 {
+      flex-direction: row;
+    }
+  }
+}

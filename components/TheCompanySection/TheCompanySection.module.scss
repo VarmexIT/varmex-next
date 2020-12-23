@@ -4,7 +4,9 @@
   background: white;
 
   .inner {
-    padding: space(4);
+    @include mq-750 {
+      padding: space(4);
+    }
 
     dl {
       margin: 0;
