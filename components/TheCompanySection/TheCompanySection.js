@@ -6,7 +6,7 @@ import styles from './TheCompanySection.module.scss'
 
 const TheCompanySection = () => {
   const { dontRender, data } = useCMSContent('theCompany')
-  const [activeItem, setActiveItem] = useState(0)
+  const [activeItem, setActiveItem] = useState(null)
 
   if (dontRender) {
     return null

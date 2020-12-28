@@ -6,6 +6,7 @@ import Layout from '../components/Layout/Layout'
 import Container from '../components/Container/Container'
 import TheCompanySection from '../components/TheCompanySection/TheCompanySection'
 import NewsSection from '../components/NewsSection/NewsSection'
+import ReferencesSection from '../components/ReferencesSection/ReferencesSection'
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
       <Container noGutter>
         <TheCompanySection />
         <NewsSection />
+        <ReferencesSection />
       </Container>
     </Layout>
   )
@@ -21,7 +23,7 @@ const HomePage = () => {
 
 export const getStaticProps = async () => {
   const queryCache = new QueryCache()
-  const queries = ['heroItem', 'theCompany', 'news', 'newsItem']
+  const queries = ['heroItem', 'theCompany', 'news', 'newsItem', 'references']
 
   const promises = queries.map(query =>
     queryCache.prefetchQuery(query, () => getContentByContentTypeId(query))

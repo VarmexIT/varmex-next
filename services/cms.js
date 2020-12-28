@@ -19,7 +19,18 @@ export const getContentByContentTypeId = (contentTypeId, locale) => {
 export const getNewsItemBySlug = (slug, locale) => {
   return contentfulClient
     .getEntries({
-      content_type: 'newsPost',
+      content_type: 'newsItem',
+      locale,
+      'fields.slug[in]': slug,
+      include: 5,
+    })
+    .then(response => response.items[0])
+}
+
+export const getReferenceItemBySlug = (slug, locale) => {
+  return contentfulClient
+    .getEntries({
+      content_type: 'referenceItem',
       locale,
       'fields.slug[in]': slug,
       include: 5,

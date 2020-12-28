@@ -14,7 +14,7 @@ const NewsItems = ({ newsItems }) => {
             <img src={newsItem.image.fields.file.url} alt={newsItem.image.fields.title} />
             <div className={styles.content}>
               <h3>
-                <Link href={`/nyheter/${newsItem.slug}`}>{newsItem.title}</Link>
+                <Link href={`/nyhet/${newsItem.slug}`}>{newsItem.title}</Link>
               </h3>
               <p className={styles.excerpts}>{excerpts(bodyPlainText, { characters: 80 })}</p>
             </div>
