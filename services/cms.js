@@ -1,3 +1,4 @@
+import safeJsonStringify from 'safe-json-stringify'
 import { createClient } from 'contentful'
 
 export const contentfulClient = createClient({
@@ -13,7 +14,7 @@ export const getContentByContentTypeId = (contentTypeId, locale) => {
       locale,
       include: 5,
     })
-    .then(response => response)
+    .then(response => JSON.parse(safeJsonStringify(response)))
 }
 
 export const getNewsItemBySlug = (slug, locale) => {

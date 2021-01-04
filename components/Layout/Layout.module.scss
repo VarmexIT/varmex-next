@@ -4,6 +4,7 @@
   padding-top: var(--header-height);
   background: white url(/img/pattern_light.svg) left top repeat;
   background-size: cover;
+  background-attachment: fixed;
 
   @include mq-750 {
     padding-top: 0;

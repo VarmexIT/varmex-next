@@ -1,0 +1,27 @@
+@import '../../styles/tools';
+
+.solutionCategory {
+  flex: 1;
+
+  & + .solutionCategory {
+    margin-top: space(8);
+
+    @include mq-900 {
+      margin-top: 0;
+      margin-left: space(2);
+    }
+  }
+
+  h3 {
+    @include fontBarlowMedium;
+
+    text-transform: uppercase;
+    text-align: right;
+    font-size: 2.4rem;
+    padding: space(2);
+
+    @include mq-900 {
+      text-align: center;
+    }
+  }
+}
