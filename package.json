@@ -12,6 +12,7 @@
   "dependencies": {
     "@contentful/rich-text-plain-text-renderer": "^14.1.2",
     "@contentful/rich-text-react-renderer": "^14.1.1",
+    "@contentful/rich-text-types": "^14.1.2",
     "axios": "^0.21.0",
     "clsx": "^1.1.1",
     "contentful": "^7.14.8",

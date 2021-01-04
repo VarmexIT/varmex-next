@@ -1,7 +1,7 @@
 import useCMSContent from '../../utils/hooks/useCMSContent'
+import Section from '../Section/Section'
 import NewsItemFeatured from '../NewsItemFeatured/NewsItemFeatured'
 import NewsItems from '../NewsItems/NewsItems'
-import SectionHeading from '../SectionHeading/SectionHeading'
 import styles from './NewsSection.module.scss'
 
 const NewsSection = () => {
@@ -15,13 +15,10 @@ const NewsSection = () => {
   }
 
   return (
-    <section className={styles.newsSection}>
-      <SectionHeading>{heading}</SectionHeading>
-      <div className={styles.inner}>
-        <NewsItemFeatured newsItem={firstItem} />
-        <NewsItems newsItems={newsItems} />
-      </div>
-    </section>
+    <Section outerClassName={styles.newsSection} innerClassName={styles.inner} heading={heading}>
+      <NewsItemFeatured newsItem={firstItem} />
+      <NewsItems newsItems={newsItems} />
+    </Section>
   )
 }
 

@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import SectionHeading from '../SectionHeading/SectionHeading'
 import useCMSContent from '../../utils/hooks/useCMSContent'
+import Section from '../Section/Section'
 import SolutionCategory from '../SolutionCategory/SolutionCategory'
-import styles from './Solutions.module.scss'
+import styles from './SolutionsSection.module.scss'
 
-const Solutions = () => {
+const SolutionsSection = () => {
   const { dontRender, data } = useCMSContent('solutions')
   const [activeItem, setActiveItem] = useState([null, null])
   const heading = data?.items?.[0].fields?.heading
@@ -23,21 +23,22 @@ const Solutions = () => {
   }
 
   return (
-    <section className={styles.solutions}>
-      <SectionHeading>{heading}</SectionHeading>
-      <div className={styles.inner}>
-        {solutionCategories.map(({ sys: { id }, fields: category }, i) => (
-          <SolutionCategory
-            activeItem={activeItem}
-            handleSetActiveItem={handleSetActiveItem}
-            categoryIndex={i}
-            key={id}
-            category={category}
-          />
-        ))}
-      </div>
-    </section>
+    <Section
+      outerClassName={styles.solutionsSection}
+      innerClassName={styles.inner}
+      heading={heading}
+    >
+      {solutionCategories.map(({ sys: { id }, fields: category }, i) => (
+        <SolutionCategory
+          activeItem={activeItem}
+          handleSetActiveItem={handleSetActiveItem}
+          categoryIndex={i}
+          key={id}
+          category={category}
+        />
+      ))}
+    </Section>
   )
 }
 
-export default Solutions
+export default SolutionsSection

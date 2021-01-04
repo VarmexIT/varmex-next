@@ -1,0 +1,61 @@
+@import '../../styles/tools';
+
+.materialSection {
+  background: white;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      max-height: 340px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include mq-750 {
+      flex-direction: row;
+
+      img,
+      .body {
+        width: 50%;
+      }
+
+      img {
+        max-height: none;
+      }
+    }
+
+    .body {
+      padding: space(4);
+
+      h3 {
+        @include fontBarlowMedium;
+
+        font-size: 3rem;
+        margin: 0 0 space(2) 0;
+      }
+
+      .manualLinkWrapper {
+        display: block;
+        text-align: right;
+        margin-top: space(2);
+
+        a {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          color: $cod-gray;
+          font-size: 2.4rem;
+          text-transform: uppercase;
+
+          @include fontBarlowMedium;
+
+          svg {
+            margin-left: space(1);
+          }
+        }
+      }
+    }
+  }
+}
