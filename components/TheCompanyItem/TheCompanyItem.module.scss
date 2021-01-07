@@ -1,48 +1,35 @@
 @import '../../styles/tools';
 
-.title {
+.theCompanyItem {
   display: flex;
+  flex-direction: column;
 
-  button {
-    @include fontBarlowMedium;
+  @include mq-900 {
+    flex-direction: row-reverse;
+  }
 
-    text-align: left;
-    flex: 1;
-    border: none;
-    background: none;
-    font-size: 2.6rem;
-    margin: 0;
-    padding: space(2);
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .image {
+    max-height: 340px;
+    object-fit: cover;
 
-    span {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-right: space(2);
+    @include mq-900 {
+      max-height: none;
+      width: 50%;
     }
   }
 
-  &:not(:first-child) {
-    border-top: 1px solid $nobel;
-  }
-}
+  .body {
+    padding: space(4);
 
-.body {
-  margin: 0;
-  overflow: hidden;
+    h3 {
+      @include fontBarlowMedium;
 
-  .inner {
-    padding: 0 5% space(2) space(8);
+      font-size: 3rem;
+      margin-bottom: space(2);
+    }
 
-    p {
-      margin: space(1) 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
+    @include mq-900 {
+      width: 50%;
     }
   }
 }

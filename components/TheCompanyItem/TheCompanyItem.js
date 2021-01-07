@@ -1,54 +1,59 @@
+// import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+// import { motion } from 'framer-motion'
+// import { IoIosArrowDropdown } from 'react-icons/io'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { motion } from 'framer-motion'
-import { IoIosArrowDropdown } from 'react-icons/io'
+import { AnimatePresence, motion } from 'framer-motion'
 import styles from './TheCompanyItem.module.scss'
 
-const EASE = [0.6, -0.05, 0.01, 0.99]
+// const EASE = [0.6, -0.05, 0.01, 0.99]
 
-const TheCompanyItem = ({ item, i, activeItem, toggleActive }) => {
-  const isActive = i === activeItem
+const TheCompanyItem = ({
+  direction, // eslint-disable-line
+  item: {
+    sys: { id },
+    fields: item,
+  },
+}) => {
+  // console.log('direction:', direction)
 
   return (
-    <>
-      <dt className={styles.title}>
-        <button type="button" onClick={() => toggleActive(i)}>
-          <motion.span
-            animate={{
-              rotate: isActive ? 180 : 0,
-            }}
-            transition={{
-              ease: EASE,
-            }}
-          >
-            <IoIosArrowDropdown />
-          </motion.span>{' '}
-          {item.fields.title}
-        </button>
-      </dt>
-      <motion.dd
-        className={styles.body}
+    <AnimatePresence initial={false} exitBeforeEnter>
+      <motion.div
+        className={styles.theCompanyItem}
+        key={id}
         initial={{
-          height: 0,
           opacity: 0,
+          // x: direction === 1 ? 400 : -400,
+          // skewX: direction === 1 ? '-7deg' : '7deg',
         }}
         animate={{
-          height: isActive ? 'auto' : 0,
-          opacity: isActive ? 1 : 0,
+          opacity: 1,
+          x: 0,
+          // skewX: '0deg',
+        }}
+        exit={{
+          opacity: 0,
+          // x: direction === 1 ? -400 : 400,
+          // skewX: direction === 1 ? '-7deg' : '-7deg',
+        }}
+        layout
+        transition={{
+          // x: { duration: 0.4 },
+          opacity: { duration: 0.3 },
+          // skewX: { duration: 0.3 },
         }}
       >
-        <motion.div
-          animate={{
-            x: isActive ? 0 : -32,
-          }}
-          transition={{
-            ease: EASE,
-          }}
-          className={styles.inner}
-        >
-          {documentToReactComponents(item.fields.body)}
-        </motion.div>
-      </motion.dd>
-    </>
+        <img
+          className={styles.image}
+          src={item.image.fields.file.url}
+          alt={item.image.fields.title}
+        />
+        <div className={styles.body}>
+          <h3>{item.title}</h3>
+          {documentToReactComponents(item.body)}
+        </div>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 

@@ -3,13 +3,44 @@
 .theCompany {
   background: white;
 
-  .inner {
-    @include mq-750 {
-      padding: space(4);
-    }
+  nav {
+    background: #313131;
+    // display: flex;
+    // flex-wrap: nowrap;
+    // padding: space(2) space(3);
+    // padding: space(2);
 
-    dl {
+    ul {
       margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      overflow-x: scroll;
+
+      li {
+        // margin-right: space(2);
+        padding: space(2);
+      }
+
+      button {
+        color: white;
+        background: none;
+        margin: 0;
+        border: none;
+        text-transform: uppercase;
+        padding: space(1) 0 space(0.5) 0;
+        width: min-content;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+
+        &.active {
+          border-bottom-color: white;
+        }
+
+        & + button {
+          margin-left: space(2);
+        }
+      }
     }
   }
 }

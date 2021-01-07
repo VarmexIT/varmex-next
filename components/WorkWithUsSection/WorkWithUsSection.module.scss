@@ -1,0 +1,50 @@
+@import '../../styles/tools';
+
+.workWithUsSection {
+  background: white;
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      max-height: 340px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @include mq-750 {
+      flex-direction: row;
+
+      img,
+      .body {
+        width: 50%;
+      }
+
+      img {
+        max-height: none;
+      }
+    }
+
+    .body {
+      padding: space(4);
+
+      h3 {
+        @include fontBarlowMedium;
+
+        font-size: 3rem;
+        margin: 0 0 space(2) 0;
+      }
+
+      img {
+        width: 125px;
+        float: right;
+        margin-top: space(2);
+
+        @include mq-750 {
+          margin-top: space(8);
+        }
+      }
+    }
+  }
+}

@@ -28,13 +28,10 @@ html {
 
 body {
   height: 100%;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   background-color: #363636;
 
   @include fontGeorgiaRegular;
-  // TODO: Set the dark triangle pattern as BG
-  // background: transparent url('../images/bg_soft.svg') left top repeat fixed;
-  // background-size: cover;
 }
 
 a {
@@ -54,6 +51,10 @@ h3 {
 p {
   margin: 0;
   line-height: 1.5;
+
+  & + p {
+    margin-top: space(3);
+  }
 }
 
 button {

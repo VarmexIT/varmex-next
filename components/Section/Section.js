@@ -1,22 +1,32 @@
 import cn from 'clsx'
 import SectionHeading from '../SectionHeading/SectionHeading'
-// import styles from './Section.module.scss'
 
-const Section = ({ as: As = 'section', outerClassName, innerClassName, heading, children }) => {
+const Section = ({
+  as: As = 'section',
+  innerAs: InnerAs = 'div',
+  innerProps = {},
+  outerClassName,
+  innerClassName,
+  heading,
+  children,
+  ...restProps
+}) => {
   return (
     <As
       className={cn({
         [outerClassName]: !!outerClassName,
       })}
+      {...restProps}
     >
       <SectionHeading>{heading}</SectionHeading>
-      <div
+      <InnerAs
         className={cn({
-          [innerClassName]: innerClassName,
+          [innerClassName]: !!innerClassName,
         })}
+        {...innerProps}
       >
         {children}
-      </div>
+      </InnerAs>
     </As>
   )
 }

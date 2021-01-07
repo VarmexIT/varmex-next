@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@400;500;600;700&display=swap');
 
 // Colors
 $cod-gray: #1c1c1c;
 $wild-willow: #acd26c;
-$pine-glade: #b9cf82;
+$pine-glade: #b3d078;
 $nobel: #b7b7b7;
 
 // Dims
@@ -55,6 +55,12 @@ $max-container-width: 1200px;
 @mixin fontBarlowMedium {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
+}
+
+@mixin fontBarlowMediumItalic {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-style: italic;
 }
 
 @mixin fontBarlowBold {

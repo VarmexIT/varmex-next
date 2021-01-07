@@ -9,6 +9,7 @@ import NewsSection from '../components/NewsSection/NewsSection'
 import ReferencesSection from '../components/ReferencesSection/ReferencesSection'
 import SolutionsSection from '../components/SolutionsSection/SolutionsSection'
 import MaterialSection from '../components/MaterialSection/MaterialSection'
+import WorkWithUsSection from '../components/WorkWithUsSection/WorkWithUsSection'
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
         <ReferencesSection />
         <SolutionsSection />
         <MaterialSection />
+        <WorkWithUsSection />
       </Container>
     </Layout>
   )
@@ -35,6 +37,7 @@ export const getStaticProps = async () => {
     'references',
     'solutions',
     'material',
+    'workWithUs',
   ]
 
   const promises = queries.map(query =>
