@@ -23,7 +23,7 @@ const ContactSection = () => {
   const { heading, contactUsText, ...formLabels } = dataContact?.items?.[0].fields
 
   return (
-    <Section outerClassName={styles.contactSection} heading={heading}>
+    <Section outerClassName={styles.contactSection} innerClassName={styles.inner} heading={heading}>
       <div className={styles.contactInfo}>
         <div className={styles.section}>
           <h3>{siteSettings.companyName}</h3>

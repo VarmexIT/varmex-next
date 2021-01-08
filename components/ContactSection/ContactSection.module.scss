@@ -3,28 +3,41 @@
 .contactSection {
   background: white;
 
-  .contactInfo {
-    @include fontBarlowMedium;
+  .inner {
+    display: flex;
+    flex-direction: column;
 
-    font-size: 2.5rem;
-    background: $cod-gray;
-    color: white;
-    padding: space(9) space(3);
+    @include mq-750 {
+      flex-direction: row-reverse;
+    }
 
-    .section {
-      margin-bottom: space(6);
-      text-align: center;
+    .contactInfo {
+      @include fontBarlowMedium;
 
-      h3,
-      h4 {
-        @include fontBarlowMedium;
+      font-size: 2.5rem;
+      background: $cod-gray;
+      color: white;
+      padding: space(9) space(3);
 
-        font-size: 3rem;
-        margin: 0;
+      .section {
+        margin-bottom: space(6);
+        text-align: center;
+
+        h3,
+        h4 {
+          @include fontBarlowMedium;
+
+          font-size: 3rem;
+          margin: 0;
+        }
+
+        p {
+          white-space: pre-wrap;
+        }
       }
 
-      p {
-        white-space: pre-wrap;
+      @include mq-750 {
+        flex-basis: 33.333%;
       }
     }
   }
@@ -39,45 +52,49 @@
 
       font-size: 2rem;
     }
-  }
 
-  .notification {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
-    color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    h4 {
-      @include fontBarlowMedium;
-
-      text-transform: uppercase;
-      font-size: 3rem;
-      margin: 0 0 space(2) 0;
+    @include mq-750 {
+      flex-basis: 66.666%;
     }
 
-    /* stylelint-disable-next-line no-descending-specificity */
-    p {
-      @include fontBarlowRegular;
+    .notification {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 
-      font-size: 2rem;
-    }
+      /* stylelint-disable-next-line no-descending-specificity */
+      h4 {
+        @include fontBarlowMedium;
 
-    &.success {
-      background: $wild-willow;
-    }
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin: 0 0 space(2) 0;
+      }
 
-    &.error {
-      background: $error-red;
+      /* stylelint-disable-next-line no-descending-specificity */
+      p {
+        @include fontBarlowRegular;
+
+        font-size: 2rem;
+      }
+
+      &.success {
+        background: $wild-willow;
+      }
+
+      &.error {
+        background: $error-red;
+      }
     }
   }
 }
