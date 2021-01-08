@@ -1,5 +1,4 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { BLOCKS } from '@contentful/rich-text-types'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
 import styles from './WorkWithUsSection.module.scss'
@@ -11,7 +10,7 @@ const WorkWithUsSection = () => {
     return null
   }
 
-  const { heading, image, body } = data?.items?.[0].fields
+  const { heading, image, body, linkedInUrl, positionsHeading, positions } = data?.items?.[0].fields
 
   return (
     <Section
@@ -19,17 +18,25 @@ const WorkWithUsSection = () => {
       innerClassName={styles.inner}
       heading={heading}
     >
-      <img src={image.fields.file.url} alt={image.fields.title} />
-      <div className={styles.body}>
-        {documentToReactComponents(body, {
-          renderNode: {
-            [BLOCKS.EMBEDDED_ASSET]: ({
-              data: {
-                target: { fields },
-              },
-            }) => <img src={fields.file.url} alt={fields.title} />,
-          },
-        })}
+      <div className={styles.content}>
+        <img src={image.fields.file.url} alt={image.fields.title} />
+        <div className={styles.body}>
+          {documentToReactComponents(body)}
+          {linkedInUrl && (
+            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
+              <img src="/img/linked_in.png" alt="LinkedIn" />
+            </a>
+          )}
+        </div>
+      </div>
+
+      <div className={styles.jobs}>
+        <h3>{positionsHeading}</h3>
+        <ul>
+          {positions.map(pos => (
+            <li key={pos.sys.id}>{pos.fields.position}</li>
+          ))}
+        </ul>
       </div>
     </Section>
   )

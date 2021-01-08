@@ -1,7 +1,6 @@
 import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-// import { IoIosArrowDropdown, IoMdArrowDropdownCircle } from 'react-icons/io'
 import { BiDownArrowCircle } from 'react-icons/bi'
 import styles from './SolutionItem.module.scss'
 

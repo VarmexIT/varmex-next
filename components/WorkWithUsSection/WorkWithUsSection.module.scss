@@ -4,45 +4,79 @@
   background: white;
 
   .inner {
-    display: flex;
-    flex-direction: column;
+    h3 {
+      @include fontBarlowMedium;
 
-    img {
-      max-height: 340px;
-      width: 100%;
-      object-fit: cover;
+      font-size: 3rem;
+      margin: 0 0 space(2) 0;
     }
 
-    @include mq-750 {
-      flex-direction: row;
-
-      img,
-      .body {
-        width: 50%;
-      }
+    .content {
+      display: flex;
+      flex-direction: column;
 
       img {
-        max-height: none;
+        max-height: 340px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      @include mq-750 {
+        flex-direction: row-reverse;
+
+        img,
+        .body {
+          width: 50%;
+        }
+
+        img {
+          max-height: none;
+        }
+      }
+
+      .body {
+        padding: space(4);
+
+        img {
+          width: 125px;
+          float: right;
+          margin-top: space(2);
+
+          @include mq-750 {
+            margin-top: space(8);
+          }
+        }
       }
     }
 
-    .body {
-      padding: space(4);
+    .jobs {
+      margin: 0;
+      border-top: 1px solid $nobel;
+      padding-top: space(4);
+      background: #fcfcfc;
 
       h3 {
-        @include fontBarlowMedium;
-
-        font-size: 3rem;
-        margin: 0 0 space(2) 0;
-      }
-
-      img {
-        width: 125px;
-        float: right;
-        margin-top: space(2);
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: space(3);
 
         @include mq-750 {
-          margin-top: space(8);
+          margin-right: space(9);
+        }
+      }
+
+      ul {
+        @include fontBarlowRegular;
+
+        margin: 0;
+        list-style: none;
+        font-size: 1.8rem;
+        text-align: right;
+        padding: space(2) space(3);
+
+        @include mq-750 {
+          padding: space(2) space(9);
         }
       }
     }

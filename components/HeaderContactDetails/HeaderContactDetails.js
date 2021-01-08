@@ -19,7 +19,7 @@ const HeaderContactDetails = () => {
         className="HeaderContactInfo_linkedIn__1ik7q"
         href="https://www.linkedin.com/company/värmex-ab"
       >
-        <img className={styles.icon} src="/img/linked_in.png" alt="LinkedIn" />
+        <img className={styles.icon} src="/img/linked_in_icon.png" alt="LinkedIn" />
       </a>
     </div>
   )

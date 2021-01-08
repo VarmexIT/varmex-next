@@ -51,7 +51,6 @@ const navVariants = {
       staggerChildren: 0.03,
       staggerDirection: -1,
       delay: 0.2,
-      // when: 'afterChildren',
     },
   },
 }

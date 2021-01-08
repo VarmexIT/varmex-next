@@ -10,6 +10,7 @@ import ReferencesSection from '../components/ReferencesSection/ReferencesSection
 import SolutionsSection from '../components/SolutionsSection/SolutionsSection'
 import MaterialSection from '../components/MaterialSection/MaterialSection'
 import WorkWithUsSection from '../components/WorkWithUsSection/WorkWithUsSection'
+import ContactSection from '../components/ContactSection/ContactSection'
 
 const HomePage = () => {
   return (
@@ -22,6 +23,7 @@ const HomePage = () => {
         <SolutionsSection />
         <MaterialSection />
         <WorkWithUsSection />
+        <ContactSection />
       </Container>
     </Layout>
   )
@@ -30,6 +32,7 @@ const HomePage = () => {
 export const getStaticProps = async () => {
   const queryCache = new QueryCache()
   const queries = [
+    'siteSettings',
     'heroItem',
     'theCompany',
     'news',
@@ -38,6 +41,7 @@ export const getStaticProps = async () => {
     'solutions',
     'material',
     'workWithUs',
+    'contact',
   ]
 
   const promises = queries.map(query =>
