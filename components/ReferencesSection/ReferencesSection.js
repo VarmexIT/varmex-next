@@ -18,6 +18,7 @@ const ReferencesSection = () => {
       outerClassName={styles.referencesSection}
       innerClassName={styles.inner}
       heading={heading}
+      slug="/referenser"
     >
       {references.map(({ sys: { id }, fields: reference }) => (
         <ReferenceItem key={id} reference={reference} />

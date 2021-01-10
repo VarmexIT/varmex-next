@@ -27,6 +27,7 @@ const SolutionsSection = () => {
       outerClassName={styles.solutionsSection}
       innerClassName={styles.inner}
       heading={heading}
+      slug="/vara-losningar"
     >
       {solutionCategories.map(({ sys: { id }, fields: category }, i) => (
         <SolutionCategory

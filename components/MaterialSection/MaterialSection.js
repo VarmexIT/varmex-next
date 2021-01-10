@@ -19,6 +19,7 @@ const MaterialSection = () => {
       outerClassName={styles.materialSection}
       innerClassName={styles.inner}
       heading={heading}
+      slug="/material"
     >
       <img src={image.fields.file.url} alt={image.fields.title} />
       <div className={styles.body}>

@@ -1,4 +1,5 @@
 import cn from 'clsx'
+import { useSection } from '../../contexts/SectionContext'
 import SectionHeading from '../SectionHeading/SectionHeading'
 
 const Section = ({
@@ -8,11 +9,15 @@ const Section = ({
   outerClassName,
   innerClassName,
   heading,
+  slug,
   children,
   ...restProps
 }) => {
+  const { registerSection } = useSection()
+
   return (
     <As
+      ref={ref => registerSection(slug, ref)}
       className={cn({
         [outerClassName]: !!outerClassName,
       })}

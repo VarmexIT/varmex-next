@@ -16,15 +16,18 @@ const liVariants = {
   },
 }
 
-const LinkItem = ({ children, href }) => {
-  const { route } = useRouter()
+const LinkItem = ({ children, slug }) => {
+  const { asPath } = useRouter()
+  const { close } = useMobileNav()
 
   return (
     <motion.li variants={liVariants}>
-      <Link href={href}>
+      <Link href="/" as={slug} scroll={false}>
+        {/* eslint-disable-next-line */}
         <a
+          onClick={close}
           className={cn({
-            [styles.active]: route === href,
+            [styles.active]: asPath === slug,
           })}
         >
           {children}
@@ -68,13 +71,13 @@ const MobileNav = () => {
           className={styles.mobileNav}
         >
           <ul>
-            <LinkItem href="/">Företaget</LinkItem>
-            <LinkItem href="/nyheter">Nyheter</LinkItem>
-            <LinkItem href="/referenser">Referenser</LinkItem>
-            <LinkItem href="/vara-losningar">Våra lösningar</LinkItem>
-            <LinkItem href="/material">Material</LinkItem>
-            <LinkItem href="/jobba-med-oss">Jobba med oss</LinkItem>
-            <LinkItem href="/kontakt">Kontakt</LinkItem>
+            <LinkItem slug="/foretaget">Företaget</LinkItem>
+            <LinkItem slug="/nyheter">Nyheter</LinkItem>
+            <LinkItem slug="/referenser">Referenser</LinkItem>
+            <LinkItem slug="/vara-losningar">Våra lösningar</LinkItem>
+            <LinkItem slug="/material">Material</LinkItem>
+            <LinkItem slug="/jobba-med-oss">Jobba med oss</LinkItem>
+            <LinkItem slug="/kontakt">Kontakt</LinkItem>
           </ul>
         </motion.nav>
       ) : null}

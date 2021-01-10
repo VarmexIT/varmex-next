@@ -15,7 +15,12 @@ const NewsSection = () => {
   }
 
   return (
-    <Section outerClassName={styles.newsSection} innerClassName={styles.inner} heading={heading}>
+    <Section
+      outerClassName={styles.newsSection}
+      innerClassName={styles.inner}
+      heading={heading}
+      slug="/nyheter"
+    >
       <NewsItemFeatured newsItem={firstItem} />
       <NewsItems newsItems={newsItems} />
     </Section>

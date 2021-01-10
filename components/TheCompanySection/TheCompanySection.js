@@ -25,7 +25,7 @@ const TheCompanySection = () => {
   }
 
   return (
-    <Section outerClassName={styles.theCompany} heading={heading}>
+    <Section outerClassName={styles.theCompany} heading={heading} slug="/foretaget">
       <nav>
         <ul>
           {theCompanyItems.map((item, i) => (

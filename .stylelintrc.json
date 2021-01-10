@@ -1,6 +1,7 @@
 {
   "plugins": ["stylelint-scss"],
   "extends": ["stylelint-config-recommended", "stylelint-config-standard", "stylelint-config-recommended-scss"],
+  "ignoreFiles": ["**/*.js"],
   "rules": {
     "string-quotes": "single",
     "value-list-comma-newline-after": "never-multi-line",

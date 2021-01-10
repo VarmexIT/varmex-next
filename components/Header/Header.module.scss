@@ -10,10 +10,6 @@
   top: 0;
   z-index: 2;
 
-  @include mq-750 {
-    position: static;
-  }
-
   .inner {
     position: relative;
     width: 100%;
@@ -33,7 +29,7 @@
     }
 
     .logo {
-      width: clamp(150px, 17vw, 200px);
+      width: clamp(120px, 17vw, 200px);
     }
   }
 }
