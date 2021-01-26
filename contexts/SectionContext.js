@@ -1,4 +1,5 @@
-import { useRef, createContext, useContext } from 'react'
+import { useState, useEffect, useRef, createContext, useContext } from 'react'
+import scrollPageTo from '../utils/scrollPageTo'
 
 const sectionContext = createContext()
 
@@ -8,6 +9,12 @@ export const useSection = () => {
 
 const SectionContext = ({ children }) => {
   const ref = useRef(new Map()).current
+  const [currentSection, setCurrentSection] = useState('/')
+
+  useEffect(() => {
+    const scrollTo = currentSection === '/' ? 0 : ref.get(currentSection)
+    scrollPageTo(scrollTo)
+  }, [currentSection, ref])
 
   const registerSection = (slug, nodeRef) => {
     if (slug && nodeRef) {
@@ -15,10 +22,10 @@ const SectionContext = ({ children }) => {
     }
   }
 
-  const getSection = slug => ref.get(slug)
+  const setSection = slug => setCurrentSection(slug)
 
   return (
-    <sectionContext.Provider value={{ registerSection, getSection }}>
+    <sectionContext.Provider value={{ registerSection, setSection }}>
       {children}
     </sectionContext.Provider>
   )

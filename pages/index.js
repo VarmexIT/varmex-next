@@ -1,9 +1,6 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { QueryCache } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import { getContentByContentTypeId } from '../services/cms'
-import { useSection } from '../contexts/SectionContext'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
 import Container from '../components/Container/Container'
@@ -14,17 +11,8 @@ import SolutionsSection from '../components/SolutionsSection/SolutionsSection'
 import MaterialSection from '../components/MaterialSection/MaterialSection'
 import WorkWithUsSection from '../components/WorkWithUsSection/WorkWithUsSection'
 import ContactSection from '../components/ContactSection/ContactSection'
-import scrollPageTo from '../utils/scrollPageTo'
 
 const HomePage = () => {
-  const { asPath } = useRouter()
-  const { getSection } = useSection()
-
-  useEffect(() => {
-    const offsetTop = asPath === '/' ? 0 : getSection(asPath)
-    scrollPageTo(offsetTop)
-  }, [getSection, asPath])
-
   return (
     <Layout>
       <Hero />

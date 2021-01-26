@@ -1,7 +1,10 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
+
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cn from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useSection } from '../../contexts/SectionContext'
 import { useMobileNav } from '../../contexts/MobileNavContext'
 import styles from './MobileNav.module.scss'
 
@@ -19,13 +22,18 @@ const liVariants = {
 const LinkItem = ({ children, slug }) => {
   const { asPath } = useRouter()
   const { close } = useMobileNav()
+  const { setSection } = useSection()
+
+  const navTo = s => {
+    setSection(s)
+    close()
+  }
 
   return (
     <motion.li variants={liVariants}>
       <Link href="/" as={slug} scroll={false}>
-        {/* eslint-disable-next-line */}
         <a
-          onClick={close}
+          onClick={() => navTo(slug)}
           className={cn({
             [styles.active]: asPath === slug,
           })}
