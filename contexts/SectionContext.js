@@ -25,7 +25,7 @@ const SectionContext = ({ children }) => {
   const setSection = slug => setCurrentSection(slug)
 
   return (
-    <sectionContext.Provider value={{ registerSection, setSection }}>
+    <sectionContext.Provider value={{ registerSection, sections: ref, setSection }}>
       {children}
     </sectionContext.Provider>
   )

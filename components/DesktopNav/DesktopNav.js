@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import { useRouter } from 'next/router'
+import Scrollspy from 'react-scrollspy'
 import Link from 'next/link'
 import cn from 'clsx'
-import styles from './DesktopNav.module.scss'
 import { useSection } from '../../contexts/SectionContext'
+import styles from './DesktopNav.module.scss'
 
-const LinkItem = ({ children, slug }) => {
-  const { asPath } = useRouter()
+const LinkItem = ({ children, slug, className }) => {
   const { setSection } = useSection()
 
   return (
@@ -15,7 +15,7 @@ const LinkItem = ({ children, slug }) => {
         <a
           onClick={() => setSection(slug)}
           className={cn({
-            [styles.active]: asPath === slug,
+            [className]: !!className,
           })}
         >
           {children}
@@ -26,9 +26,18 @@ const LinkItem = ({ children, slug }) => {
 }
 
 const DesktopNav = () => {
+  const { sections } = useSection()
+  const items = [...sections.keys()]
   return (
     <nav className={styles.desktopNav}>
-      <ul>
+      <Scrollspy
+        items={items}
+        currentClassName={styles.active}
+        onUpdate={(...args) => {
+          console.log('args', args)
+        }}
+        offset={-70}
+      >
         <LinkItem slug="/foretaget">Företaget</LinkItem>
         <LinkItem slug="/nyheter">Nyheter</LinkItem>
         <LinkItem slug="/referenser">Referenser</LinkItem>
@@ -36,7 +45,7 @@ const DesktopNav = () => {
         <LinkItem slug="/material">Material</LinkItem>
         <LinkItem slug="/jobba-med-oss">Jobba med oss</LinkItem>
         <LinkItem slug="/kontakt">Kontakt</LinkItem>
-      </ul>
+      </Scrollspy>
     </nav>
   )
 }

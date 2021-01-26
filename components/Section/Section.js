@@ -18,6 +18,7 @@ const Section = ({
   return (
     <As
       ref={ref => registerSection(slug, ref)}
+      id={slug}
       className={cn({
         [outerClassName]: !!outerClassName,
       })}

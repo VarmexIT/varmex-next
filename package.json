@@ -30,6 +30,7 @@
     "react-dom": "16.14.0",
     "react-icons": "^3.11.0",
     "react-query": "^2.25.2",
+    "react-scrollspy": "^3.4.3",
     "react-use-measure": "^2.0.3",
     "safe-json-stringify": "^1.2.0",
     "sass": "^1.28.0"
