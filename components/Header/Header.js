@@ -16,7 +16,7 @@ import styles from './Header.module.scss'
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false)
-  const { setSection } = useSection()
+  const { scrollToSection } = useSection()
   const { scrollY } = useViewportScroll()
   const [ref, { height: headerHeight }] = useMeasure()
   const is750 = useMediaQueryWidth(750)
@@ -42,7 +42,7 @@ const Header = () => {
       <Container>
         <div className={styles.inner}>
           <Link href="/" scroll={false}>
-            <a onClick={() => setSection('/')}>
+            <a onClick={() => scrollToSection('/')}>
               <motion.img
                 className={cn(styles.logo, { [styles.isSticky]: isSticky })}
                 src="/img/varmex_logo_white.png"

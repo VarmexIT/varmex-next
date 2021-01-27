@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, createContext, useContext } from 'react'
+import { useState, useEffect, useCallback, useRef, createContext, useContext } from 'react'
+import { useRouter } from 'next/router'
 import scrollPageTo from '../utils/scrollPageTo'
 
 const sectionContext = createContext()
@@ -9,12 +10,14 @@ export const useSection = () => {
 
 const SectionContext = ({ children }) => {
   const ref = useRef(new Map()).current
-  const [currentSection, setCurrentSection] = useState('/')
+  const [sectionUrl, setSectionUrl] = useState('/')
+  const { push } = useRouter()
 
   useEffect(() => {
-    const scrollTo = currentSection === '/' ? 0 : ref.get(currentSection)
-    scrollPageTo(scrollTo)
-  }, [currentSection, ref])
+    push('/', sectionUrl, {
+      shallow: true,
+    })
+  }, [sectionUrl]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const registerSection = (slug, nodeRef) => {
     if (slug && nodeRef) {
@@ -22,10 +25,19 @@ const SectionContext = ({ children }) => {
     }
   }
 
-  const setSection = slug => setCurrentSection(slug)
+  const scrollToSection = slug => {
+    const scrollTo = slug === '/' ? 0 : ref.get(slug)
+    scrollPageTo(scrollTo)
+
+    if (slug === '/') {
+      setSectionUrl('/')
+    }
+  }
 
   return (
-    <sectionContext.Provider value={{ registerSection, sections: ref, setSection }}>
+    <sectionContext.Provider
+      value={{ registerSection, sections: ref, scrollToSection, setSectionUrl }}
+    >
       {children}
     </sectionContext.Provider>
   )

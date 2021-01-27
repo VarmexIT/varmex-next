@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import Scrollspy from 'react-scrollspy'
 import Link from 'next/link'
 import cn from 'clsx'
@@ -7,13 +7,13 @@ import { useSection } from '../../contexts/SectionContext'
 import styles from './DesktopNav.module.scss'
 
 const LinkItem = ({ children, slug, className }) => {
-  const { setSection } = useSection()
+  const { scrollToSection } = useSection()
 
   return (
     <li>
       <Link href="/" as={slug} scroll={false}>
         <a
-          onClick={() => setSection(slug)}
+          onClick={() => scrollToSection(slug)}
           className={cn({
             [className]: !!className,
           })}
@@ -26,16 +26,14 @@ const LinkItem = ({ children, slug, className }) => {
 }
 
 const DesktopNav = () => {
-  const { sections } = useSection()
+  const { sections, setSectionUrl } = useSection()
   const items = [...sections.keys()]
   return (
     <nav className={styles.desktopNav}>
       <Scrollspy
         items={items}
         currentClassName={styles.active}
-        onUpdate={(...args) => {
-          console.log('args', args)
-        }}
+        onUpdate={node => setSectionUrl(node.id)}
         offset={-70}
       >
         <LinkItem slug="/foretaget">Företaget</LinkItem>
