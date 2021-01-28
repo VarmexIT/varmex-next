@@ -13,6 +13,10 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
 
+    &.noDimmed {
+      background: transparent;
+    }
+
     .container {
       color: white;
       display: flex;
@@ -28,7 +32,8 @@
         max-width: 650px;
       }
 
-      a {
+      a,
+      h3 {
         @include fontBarlowRegular;
 
         margin-top: space(2);
@@ -36,10 +41,10 @@
         color: $wild-willow;
         border-bottom: 2px solid transparent;
         transition: border-color 0.3s;
+      }
 
-        &:hover {
-          border-color: $wild-willow;
-        }
+      a:hover {
+        border-color: $wild-willow;
       }
     }
   }

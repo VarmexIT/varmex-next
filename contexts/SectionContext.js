@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, createContext, useContext } from 'react'
+import { useState, useEffect, useRef, createContext, useContext } from 'react'
 import { useRouter } from 'next/router'
 import scrollPageTo from '../utils/scrollPageTo'
 

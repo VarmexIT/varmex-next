@@ -1,13 +1,14 @@
 import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import HeroItem from '../HeroItem/HeroItem'
 import useInterval from '../../utils/hooks/useInterval'
 import styles from './Hero.module.scss'
 
 const Hero = () => {
-  const { dontRender, status, data } = useCMSContent('heroItem')
+  const { dontRender, status, data } = useCMSContent('hero')
   const [currentItem, setCurrentItem] = useState(0)
-  const heroItems = data?.items
+  const heroItems = data?.items?.[0]?.fields?.heroItems
 
   useInterval(() => {
     if (status === 'success') {
@@ -22,7 +23,9 @@ const Hero = () => {
 
   return (
     <section className={styles.sectionHero}>
-      <HeroItem key={heroItems[currentItem].sys.id} item={heroItems[currentItem]} />
+      <AnimatePresence initial={false}>
+        <HeroItem key={heroItems[currentItem].sys.id} item={heroItems[currentItem]} />
+      </AnimatePresence>
     </section>
   )
 }

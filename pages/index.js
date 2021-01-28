@@ -33,7 +33,7 @@ export const getStaticProps = async () => {
   const queryCache = new QueryCache()
   const queries = [
     'siteSettings',
-    'heroItem',
+    'hero',
     'theCompany',
     'news',
     'newsItem',

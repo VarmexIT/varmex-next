@@ -16,15 +16,20 @@ import styles from './Header.module.scss'
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false)
-  const { scrollToSection } = useSection()
+  const { scrollToSection, setSectionUrl } = useSection()
   const { scrollY } = useViewportScroll()
   const [ref, { height: headerHeight }] = useMeasure()
   const is750 = useMediaQueryWidth(750)
   const is1000 = useMediaQueryWidth(1000)
 
   useEffect(() => {
-    return scrollY.onChange(y => setIsSticky(y > headerHeight))
-  }, [scrollY, headerHeight])
+    return scrollY.onChange(y => {
+      setIsSticky(y > headerHeight)
+      if (y === 0) {
+        setSectionUrl('/')
+      }
+    })
+  }, [scrollY, headerHeight, setSectionUrl])
 
   return (
     <motion.header
