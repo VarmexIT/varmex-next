@@ -16,7 +16,7 @@ const NewsItems = ({ newsItems }) => {
               <h3>
                 <Link href={`/nyhet/${newsItem.slug}`}>{newsItem.title}</Link>
               </h3>
-              <p className={styles.excerpts}>{excerpts(bodyPlainText, { characters: 120 })}</p>
+              <p className={styles.excerpts}>{excerpts(bodyPlainText, { characters: 70 })}</p>
             </div>
           </article>
         )

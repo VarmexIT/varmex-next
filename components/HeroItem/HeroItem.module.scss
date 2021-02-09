@@ -23,12 +23,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      padding-left: 50px;
+      padding-right: 50px;
 
       h2 {
         @include fontBarlowRegular;
 
         line-height: 1;
-        font-size: 5rem;
+        font-size: 4rem;
         max-width: 650px;
       }
 
@@ -37,7 +39,7 @@
         @include fontBarlowRegular;
 
         margin-top: space(2);
-        font-size: 3rem;
+        font-size: 2.8rem;
         color: $wild-willow;
         border-bottom: 2px solid transparent;
         transition: border-color 0.3s;

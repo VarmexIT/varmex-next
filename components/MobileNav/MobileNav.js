@@ -22,18 +22,16 @@ const liVariants = {
 const LinkItem = ({ children, slug }) => {
   const { asPath } = useRouter()
   const { close } = useMobileNav()
-  const { setSection } = useSection()
-
-  const navTo = s => {
-    setSection(s)
-    close()
-  }
+  const { scrollToSection } = useSection()
 
   return (
     <motion.li variants={liVariants}>
       <Link href="/" as={slug} scroll={false}>
         <a
-          onClick={() => navTo(slug)}
+          onClick={() => {
+            scrollToSection(slug)
+            close()
+          }}
           className={cn({
             [styles.active]: asPath === slug,
           })}
