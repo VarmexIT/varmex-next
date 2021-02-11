@@ -29,6 +29,7 @@
         width: 14px;
         height: 14px;
         padding: 0;
+        transition: background 0.6s;
 
         &.current {
           background: white;

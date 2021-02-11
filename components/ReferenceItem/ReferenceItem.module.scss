@@ -13,6 +13,8 @@
   @include fontBarlowBold;
 
   @include mq-900 {
+    flex-basis: calc(100% / 3);
+
     &:hover {
       span {
         opacity: 1;

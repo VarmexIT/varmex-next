@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import { IoIosArrowDropright } from 'react-icons/io'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
 import NewsItemFeatured from '../NewsItemFeatured/NewsItemFeatured'
@@ -22,7 +24,16 @@ const NewsSection = () => {
       slug="/nyheter"
     >
       <NewsItemFeatured newsItem={firstItem} />
-      <NewsItems newsItems={newsItems} />
+
+      <div className={styles.newsItemsWrapper}>
+        <NewsItems newsItems={newsItems} />
+        {/* TODO: Where does this link go? */}
+        <Link href="/nyhetsarkiv">
+          <a className={styles.readMoreNews}>
+            Läs mer nyheter här <IoIosArrowDropright />
+          </a>
+        </Link>
+      </div>
     </Section>
   )
 }

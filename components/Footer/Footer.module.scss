@@ -1,3 +1,135 @@
+@import '../../styles/tools';
+
 .footer {
-  background: #777;
+  background: $cod-gray;
+  padding: space(8) 5%;
+  color: white;
+
+  .navAndOffices {
+    display: flex;
+    flex-direction: column;
+
+    @include mq-750 {
+      flex-direction: row;
+      justify-content: space-between;
+      border-bottom: 1px solid $silver;
+      padding-bottom: space(6);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $silver;
+      padding-bottom: space(5);
+
+      @include mq-750 {
+        padding-bottom: 0;
+        border-bottom: none;
+        flex: 1;
+        justify-content: space-evenly;
+      }
+
+      ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        list-style: none;
+
+        li {
+          @include fontBarlowMedium;
+
+          text-transform: uppercase;
+          font-size: 2rem;
+
+          +li {
+            margin-top: space(4);
+          }
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .offices {
+      text-align: center;
+      margin-top: space(4);
+      display: flex;
+      flex-direction: column;
+
+      @include mq-750 {
+        margin-top: 0;
+        flex-direction: row;
+        text-align: left;
+        flex: 1;
+        justify-content: space-evenly;
+      }
+
+      div {
+        + div {
+          margin-top: space(4);
+
+          @include mq-750 {
+            margin-top: 0;
+          }
+        }
+
+        h4,
+        p {
+          @include fontBarlowRegular;
+
+          font-size: 2rem;
+          margin: 0;
+        }
+
+        p {
+          white-space: pre-wrap;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .companyInfo {
+    @include fontBarlowMedium;
+
+    margin-top: space(6);
+    text-align: center;
+
+    h2 {
+      font-size: 4rem;
+      margin-bottom: space(4);
+    }
+
+    .phoneAndEmail {
+      display: flex;
+      justify-content: center;
+      font-size: 2.7rem;
+      margin-bottom: space(4);
+
+      a {
+        $space: space(2);
+
+        color: white;
+
+        &:first-child {
+          margin-right: $space;
+        }
+
+        &:last-of-type {
+          margin-left: $space;
+        }
+      }
+    }
+
+    .linkedIn {
+      margin-top: space(4);
+
+      img {
+        width: 150px;
+      }
+    }
+  }
 }

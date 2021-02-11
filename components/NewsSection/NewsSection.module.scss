@@ -10,5 +10,30 @@
     @include mq-750 {
       flex-direction: row;
     }
+
+    .newsItemsWrapper {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .readMoreNews {
+        background: $cod-gray;
+        text-transform: uppercase;
+        color: white;
+        font-size: 2.5rem;
+        padding: space(2);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include fontBarlowMedium;
+
+        svg {
+          margin-left: space(1);
+          font-size: 2.8rem;
+        }
+      }
+    }
   }
 }

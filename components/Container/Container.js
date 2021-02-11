@@ -2,11 +2,9 @@ import React from 'react'
 import cn from 'clsx'
 import styles from './Container.module.scss'
 
-const Container = ({ className, as = 'div', noGutter, children, ...restProps }) => {
-  const C = as
-
+const Container = ({ className, as: As = 'div', noGutter, children, ...restProps }) => {
   return (
-    <C
+    <As
       className={cn(styles.container, {
         [className]: !!className,
         [styles.noGutter]: !!noGutter,
@@ -14,7 +12,7 @@ const Container = ({ className, as = 'div', noGutter, children, ...restProps }) 
       {...restProps}
     >
       {children}
-    </C>
+    </As>
   )
 }
 
