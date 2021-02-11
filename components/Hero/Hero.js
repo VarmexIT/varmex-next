@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { wrap } from '@popmotion/popcorn'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import HeroItem from '../HeroItem/HeroItem'
 import HeroDotNav from '../HeroDotNav/HeroDotNav'
+import HeroArrowNav from '../HeroArrowNav/HeroArrowNav'
 import useInterval from '../../utils/hooks/useInterval'
 import styles from './Hero.module.scss'
 
@@ -22,6 +24,16 @@ const Hero = () => {
     return null
   }
 
+  const prev = () => {
+    const newIndex = currentItem === 0 ? heroItems.length - 1 : currentItem - 1
+    setCurrentItem(newIndex)
+  }
+
+  const next = () => {
+    const newIndex = currentItem === heroItems.length - 1 ? 0 : currentItem + 1
+    setCurrentItem(newIndex)
+  }
+
   return (
     <section className={styles.sectionHero}>
       <AnimatePresence initial={false}>
@@ -32,6 +44,7 @@ const Hero = () => {
         currentItem={currentItem}
         setCurrentItem={setCurrentItem}
       />
+      <HeroArrowNav prev={prev} next={next} />
     </section>
   )
 }

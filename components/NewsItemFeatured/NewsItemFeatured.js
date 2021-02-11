@@ -13,7 +13,7 @@ const NewsItemFeatured = ({ newsItem }) => {
         <h3>
           <Link href={`/nyhet/${newsItem.fields.slug}`}>{newsItem.fields.title}</Link>
         </h3>
-        <div className={styles.preamble}>{excerpts(bodyPlainText, { words: 20 })}</div>
+        <div className={styles.preamble}>{excerpts(bodyPlainText, { words: 50 })}</div>
       </div>
     </article>
   )

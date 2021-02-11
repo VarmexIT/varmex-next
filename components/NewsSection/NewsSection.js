@@ -8,7 +8,7 @@ const NewsSection = () => {
   const { dontRender: sectionDontRender, data: sectionData } = useCMSContent('news')
   const { dontRender: newsDontRender, data: newsData } = useCMSContent('newsItem')
   const heading = sectionData?.items?.[0].fields?.heading
-  const [firstItem, ...newsItems] = newsData?.items
+  const [firstItem, ...newsItems] = newsData?.items.slice(0, 4)
 
   if (sectionDontRender || newsDontRender) {
     return null

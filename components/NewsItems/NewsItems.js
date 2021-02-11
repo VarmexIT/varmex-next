@@ -5,22 +5,28 @@ import styles from './NewsItems.module.scss'
 
 const NewsItems = ({ newsItems }) => {
   return (
-    <div className={styles.newsItems}>
-      {newsItems.map(({ sys: { id }, fields: newsItem }) => {
-        const bodyPlainText = documentToPlainTextString(newsItem.body)
+    <div className={styles.newsItemsWrapper}>
+      <div className={styles.newsItems}>
+        {newsItems.map(({ sys: { id }, fields: newsItem }) => {
+          const bodyPlainText = documentToPlainTextString(newsItem.body)
 
-        return (
-          <article key={id}>
-            <img src={newsItem.image.fields.file.url} alt={newsItem.image.fields.title} />
-            <div className={styles.content}>
-              <h3>
-                <Link href={`/nyhet/${newsItem.slug}`}>{newsItem.title}</Link>
-              </h3>
-              <p className={styles.excerpts}>{excerpts(bodyPlainText, { characters: 70 })}</p>
-            </div>
-          </article>
-        )
-      })}
+          return (
+            <article key={id}>
+              <img src={newsItem.image.fields.file.url} alt={newsItem.image.fields.title} />
+              <div className={styles.content}>
+                <h3>
+                  <Link href={`/nyhet/${newsItem.slug}`}>{newsItem.title}</Link>
+                </h3>
+                <p className={styles.excerpts}>{excerpts(bodyPlainText, { characters: 70 })}</p>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+
+      <Link href="/prutt">
+        <a className={styles.readMoreNews}>Läs mer nyheter här</a>
+      </Link>
     </div>
   )
 }

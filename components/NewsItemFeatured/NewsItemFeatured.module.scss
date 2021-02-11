@@ -10,17 +10,17 @@
   }
 
   img {
-    max-height: 350px;
+    max-height: 250px;
     width: 100%;
     object-fit: cover;
     border-bottom: 1px solid $nobel;
   }
 
   .content {
-    padding: space(2);
+    padding: space(3);
 
     h3 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
 
       @include fontBarlowMedium;
 
@@ -31,6 +31,7 @@
 
     .preamble {
       margin-top: space(1);
+      line-height: 1.5;
     }
   }
 }

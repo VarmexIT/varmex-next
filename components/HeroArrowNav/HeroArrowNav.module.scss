@@ -1,0 +1,30 @@
+@import '../../styles/tools';
+
+.arrow {
+  --arrowOffSet: 0;
+
+  @include mq-max-container {
+    --arrowOffSet: 40px;
+  }
+
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0;
+
+  &.prev {
+    left: var(--arrowOffSet);
+  }
+
+  &.next {
+    right: var(--arrowOffSet);
+  }
+}
