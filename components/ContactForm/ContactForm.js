@@ -1,5 +1,6 @@
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import cn from 'clsx'
+import * as Yup from 'yup'
 import { postEmail } from '../../services/email'
 import Spinner from '../Spinner/Spinner'
 import styles from './ContactForm.module.scss'
@@ -20,6 +21,17 @@ const ContactForm = ({ labels, setSendStatus }) => {
     setTimeout(() => setSendStatus(null), delay)
   }
 
+  const validationSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, `Fältet behöver innehålla minst 2 bokstäver`)
+      .max(50, `Fältet kan innehålla max 50 bokstäver`)
+      .required('Fältet får inte vara tomt'),
+    phone: Yup.string().required('Fältet får inte vara tomt'),
+    email: Yup.string().email(`Fältet är inte giltigt`).required('Fältet får inte vara tomt'),
+    subject: Yup.string().required('Fältet får inte vara tomt'),
+    message: Yup.string().required('Fältet får inte vara tomt'),
+  })
+
   return (
     <Formik
       initialValues={{
@@ -30,40 +42,66 @@ const ContactForm = ({ labels, setSendStatus }) => {
         message: '',
       }}
       onSubmit={handleSubmit}
+      validationSchema={validationSchema}
     >
-      {({ isSubmitting }) => (
+      {({ errors, touched, isSubmitting, isValid }) => (
         <Form className={styles.contactForm}>
           <label htmlFor="name">
-            <span>{labels.contactFormLabelName}</span>
-            <Field type="text" name="name" id="name" />
+            <InnerLabel label={labels.contactFormLabelName} name="name" />
+            <FormField touched={touched} errors={errors} type="text" name="name" id="name" />
           </label>
           <label htmlFor="phone">
-            <span>{labels.contactFormLabelPhone}</span>
-            <Field type="text" name="phone" id="phone" />
+            <InnerLabel label={labels.contactFormLabelPhone} name="phone" />
+            <FormField touched={touched} errors={errors} type="text" name="phone" id="phone" />
           </label>
           <label htmlFor="email">
-            <span>{labels.contactFormLabelEmail}</span>
-            <Field type="text" name="email" id="email" />
+            <InnerLabel label={labels.contactFormLabelEmail} name="email" />
+            <FormField touched={touched} errors={errors} type="text" name="email" id="email" />
           </label>
           <label htmlFor="subject">
-            <span>{labels.contactFormLabelSubject}</span>
-            <Field type="text" name="subject" id="subject" />
+            <InnerLabel label={labels.contactFormLabelSubject} name="subject" />
+            <FormField touched={touched} errors={errors} type="text" name="subject" id="subject" />
           </label>
           <label htmlFor="message" className={styles.messageLabel}>
-            <span>{labels.contactFormLabelMessage}</span>
-            <Field as="textarea" name="message" id="message" />
+            <InnerLabel label={labels.contactFormLabelMessage} name="message" />
+            <FormField
+              touched={touched}
+              errors={errors}
+              as="textarea"
+              name="message"
+              id="message"
+            />
           </label>
           <button
             type="submit"
             disabled={isSubmitting}
             className={cn({ [styles.loading]: isSubmitting })}
           >
-            <Spinner className={styles.spinner} show={isSubmitting} />
+            {isValid && <Spinner className={styles.spinner} show={isSubmitting} />}
             {labels.contactFormLabelSend}
           </button>
         </Form>
       )}
     </Formik>
+  )
+}
+
+const InnerLabel = ({ label, name }) => (
+  <span className={styles.innerLabel}>
+    <span>{label}</span>
+    <ErrorMessage name={name}>{err => <span className={styles.error}>({err})</span>}</ErrorMessage>
+  </span>
+)
+
+const FormField = ({ errors, touched, name, ...restProps }) => {
+  return (
+    <Field
+      className={cn({
+        [styles.error]: touched?.[name] && errors?.[name],
+      })}
+      name={name}
+      {...restProps}
+    />
   )
 }
 

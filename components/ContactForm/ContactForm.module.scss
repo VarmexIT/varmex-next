@@ -12,17 +12,26 @@
   label {
     @include fontBarlowRegular;
 
-    flex-basis: 49%;
     display: flex;
     flex-direction: column;
+    flex-basis: 100%;
 
-    &:nth-child(1),
-    &:nth-child(3) {
-      margin-right: 2%;
+    @include mq-750 {
+      flex-basis: 49%;
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        margin-right: 2%;
+      }
     }
 
-    span {
+    .innerLabel {
       margin-bottom: space(1);
+
+      .error {
+        margin-left: space(1);
+        color: $error-red-text;
+      }
     }
 
     input,
@@ -31,6 +40,10 @@
       padding: space(1) space(2);
       border: 1px solid $nobel;
       font-size: 1.8rem;
+
+      &.error {
+        border-color: $error-red-text;
+      }
     }
 
     textarea {
