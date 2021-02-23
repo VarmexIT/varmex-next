@@ -11,12 +11,14 @@ export const useSection = () => {
 const SectionContext = ({ children }) => {
   const ref = useRef(new Map()).current
   const [sectionUrl, setSectionUrl] = useState('/')
-  const { push } = useRouter()
+  const { push, pathname } = useRouter()
 
   useEffect(() => {
-    push('/', sectionUrl, {
-      shallow: true,
-    })
+    if (pathname === '/') {
+      push('/', sectionUrl, {
+        shallow: true,
+      })
+    }
   }, [sectionUrl]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const registerSection = (slug, nodeRef) => {
