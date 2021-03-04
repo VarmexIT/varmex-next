@@ -1,15 +1,11 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getContentByContentTypeId, getNewsItemBySlug } from '../../services/cms'
 import Layout from '../../components/Layout/Layout'
+import SingelNewsPost from '../../components/SingelNewsPost/SingelNewsPost'
 
 const NewsItemPage = ({ post }) => {
   return (
     <Layout>
-      <div style={{ background: 'white', padding: '16px' }}>
-        <img src={post.image.fields.file.url} alt={post.image.fields.title} />
-        <h1>{post.title}</h1>
-        {documentToReactComponents(post.body)}
-      </div>
+      <SingelNewsPost post={post} />
     </Layout>
   )
 }

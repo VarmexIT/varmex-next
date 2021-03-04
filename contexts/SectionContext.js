@@ -11,11 +11,11 @@ export const useSection = () => {
 const SectionContext = ({ children }) => {
   const ref = useRef(new Map()).current
   const [sectionUrl, setSectionUrl] = useState('/')
-  const { push, pathname } = useRouter()
+  const { replace, pathname } = useRouter()
 
   useEffect(() => {
     if (pathname === '/') {
-      push('/', sectionUrl, {
+      replace('/', sectionUrl, {
         shallow: true,
       })
     }

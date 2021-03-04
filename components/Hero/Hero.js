@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { useSection } from '../../contexts/SectionContext'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import HeroItem from '../HeroItem/HeroItem'
 import HeroDotNav from '../HeroDotNav/HeroDotNav'
@@ -8,6 +9,7 @@ import useInterval from '../../utils/hooks/useInterval'
 import styles from './Hero.module.scss'
 
 const Hero = () => {
+  const { registerSection } = useSection()
   const { dontRender, status, data } = useCMSContent('hero')
   const [currentItem, setCurrentItem] = useState(1)
   const heroItems = data?.items?.[0]?.fields?.heroItems
@@ -34,7 +36,7 @@ const Hero = () => {
   }
 
   return (
-    <section className={styles.sectionHero}>
+    <section className={styles.sectionHero} ref={ref => registerSection('/', ref)} id="/">
       <AnimatePresence initial={false}>
         <HeroItem key={heroItems[currentItem].sys.id} item={heroItems[currentItem]} />
       </AnimatePresence>
