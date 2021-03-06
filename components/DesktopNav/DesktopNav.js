@@ -9,7 +9,7 @@ import styles from './DesktopNav.module.scss'
 
 const LinkItem = ({ children, slug, className }) => {
   const { scrollToSection } = useSection()
-  const { pathname } = useRouter()
+  const { pathname, asPath } = useRouter()
 
   return (
     <li>
@@ -22,6 +22,7 @@ const LinkItem = ({ children, slug, className }) => {
           }}
           className={cn({
             [className]: !!className,
+            [styles.active]: asPath === slug,
           })}
         >
           {children}
@@ -35,17 +36,19 @@ const DesktopNav = () => {
   const { pathname } = useRouter()
   const { sections, setSectionUrl } = useSection()
   const items = [...sections.keys()]
+
+  console.log('sections:', sections)
+
   return (
     <nav className={styles.desktopNav}>
       <Scrollspy
         items={items}
-        currentClassName={styles.active}
         onUpdate={node => {
           if (pathname === '/') {
             setSectionUrl(node?.id)
           }
         }}
-        offset={-70}
+        offset={-100}
       >
         {MENU_ITEMS.map(({ slug, linkText }) => (
           <LinkItem key={slug} slug={slug}>
