@@ -1,11 +1,16 @@
 import Link from 'next/link'
 import excerpts from 'excerpts'
+import cn from 'clsx'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import styles from './NewsItems.module.scss'
 
-const NewsItems = ({ newsItems }) => {
+const NewsItems = ({ className, newsItems }) => {
   return (
-    <div className={styles.newsItems}>
+    <div
+      className={cn(styles.newsItems, {
+        [className]: !!className,
+      })}
+    >
       {newsItems.map(({ sys: { id }, fields: newsItem }) => {
         const bodyPlainText = documentToPlainTextString(newsItem.body)
 
