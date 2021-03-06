@@ -4,8 +4,6 @@ import excerpts from 'excerpts'
 import styles from './NewsList.module.scss'
 
 const NewsList = ({ newsItems }) => {
-  // console.log('newsItems:', newsItems)
-
   return (
     <ul className={styles.newsList}>
       {newsItems.map(({ sys: { id }, fields: newsItem }) => {
