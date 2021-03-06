@@ -5,6 +5,10 @@ import NewsList from '../NewsList/NewsList'
 import styles from './SingelNewsPost.module.scss'
 
 const SingelNewsPost = ({ post, newsItems }) => {
+  if (!post) {
+    return null
+  }
+
   return (
     <Container noGutter>
       <article className={styles.singelNewsPost}>
