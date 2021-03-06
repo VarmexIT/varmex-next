@@ -27,8 +27,7 @@ const NewsSection = () => {
 
       <div className={styles.newsItemsWrapper}>
         <NewsItems newsItems={newsItems} />
-        {/* TODO: Where does this link go? */}
-        <Link href="/nyheter">
+        <Link href="/nyhetsarkiv">
           <a className={styles.readMoreNews}>
             Läs mer nyheter här <IoIosArrowDropright />
           </a>
