@@ -1,7 +1,9 @@
 @import '../../styles/tools';
 
 .footer {
-  background: $cod-gray;
+  background: $cod-gray url('/img/pattern_dark.svg') left top repeat;
+  background-size: cover;
+  background-attachment: fixed;
   padding: space(8) 5%;
   color: white;
 

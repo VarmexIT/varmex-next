@@ -17,7 +17,9 @@
       flex: 1;
 
       .readMoreNews {
-        background: $cod-gray;
+        background: $cod-gray url('/img/pattern_dark.svg') left top repeat;
+        background-size: cover;
+        // background-attachment: fixed;
         text-transform: uppercase;
         color: white;
         font-size: 2.5rem;

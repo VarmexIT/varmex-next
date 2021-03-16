@@ -4,7 +4,7 @@
   padding-top: var(--header-height);
   // TODO: Fix the white BG behind the header
   // background: $cod-gray;
-  background: white url(/img/pattern_light.svg) left top repeat;
+  background: white url('/img/pattern_light.svg') left top repeat;
   background-size: cover;
   background-attachment: fixed;
 }

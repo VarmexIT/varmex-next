@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
@@ -37,7 +38,11 @@ const WorkWithUsSection = () => {
         <h3>{positionsHeading}</h3>
         <ul>
           {positions.map(pos => (
-            <li key={pos.sys.id}>{pos.fields.position}</li>
+            <li key={pos.sys.id}>
+              <Link href={`/jobb/${pos.fields.slug}`}>
+                <a>{pos.fields.position}</a>
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

@@ -38,3 +38,14 @@ export const getReferenceItemBySlug = (slug, locale) => {
     })
     .then(response => response.items[0])
 }
+
+export const getJobItemBySlug = (slug, locale) => {
+  return contentfulClient
+    .getEntries({
+      content_type: 'job',
+      locale,
+      'fields.slug[in]': slug,
+      include: 5,
+    })
+    .then(response => response.items[0])
+}

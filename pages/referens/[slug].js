@@ -1,15 +1,11 @@
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { getContentByContentTypeId, getReferenceItemBySlug } from '../../services/cms'
 import Layout from '../../components/Layout/Layout'
+import SingelReferencePost from '../../components/SingelReferencePost/SingelReferencePost'
 
 const ReferenceItemPage = ({ post }) => {
   return (
     <Layout>
-      <div style={{ background: 'white', padding: '16px' }}>
-        <img src={post.image.fields.file.url} alt={post.image.fields.heading} />
-        <h1>{post.heading}</h1>
-        {documentToReactComponents(post.body)}
-      </div>
+      <SingelReferencePost post={post} />
     </Layout>
   )
 }

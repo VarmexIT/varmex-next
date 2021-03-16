@@ -37,8 +37,6 @@ const DesktopNav = () => {
   const { sections, setSectionUrl } = useSection()
   const items = [...sections.keys()]
 
-  console.log('sections:', sections)
-
   return (
     <nav className={styles.desktopNav}>
       <Scrollspy

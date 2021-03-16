@@ -15,9 +15,12 @@
       @include fontBarlowMedium;
 
       font-size: 2.5rem;
-      background: $cod-gray;
+      background: $cod-gray url('/img/pattern_dark.svg') left top repeat;
+      background-size: cover;
+      background-attachment: fixed;
       color: white;
       padding: space(9) space(3);
+      box-shadow: 0 0 0 black;
 
       .section {
         margin-bottom: space(6);
