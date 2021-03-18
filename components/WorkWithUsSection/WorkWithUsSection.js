@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+import { IoIosArrowDroprightCircle } from 'react-icons/io'
+import excerpts from 'excerpts'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
 import styles from './WorkWithUsSection.module.scss'
@@ -14,6 +17,7 @@ const WorkWithUsSection = () => {
     return null
   }
 
+  console.log('workWithUsData:', workWithUsData)
   const { linkedInUrl } = dataSiteSettings?.items?.[0].fields
   const { heading, image, body, positionsHeading, positions } = workWithUsData?.items?.[0].fields
 
@@ -36,15 +40,24 @@ const WorkWithUsSection = () => {
 
       <div className={styles.jobs}>
         <h3>{positionsHeading}</h3>
-        <ul>
-          {positions.map(pos => (
-            <li key={pos.sys.id}>
-              <Link href={`/jobb/${pos.fields.slug}`}>
-                <a>{pos.fields.position}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.gridWrapper}>
+          <ul>
+            {positions.map(pos => {
+              const bodyPlainText = documentToPlainTextString(pos.fields.body)
+              return (
+                <li key={pos.sys.id}>
+                  <h4>{pos.fields.position}</h4>
+                  <p>{excerpts(bodyPlainText, { words: 30 })}</p>
+                  <Link href={`/jobb/${pos.fields.slug}`}>
+                    <a className={styles.readMoreLink}>
+                      <span>Läs mer</span> <IoIosArrowDroprightCircle />
+                    </a>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     </Section>
   )

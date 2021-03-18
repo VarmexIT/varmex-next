@@ -58,8 +58,8 @@
       h3 {
         font-size: 2.5rem;
         text-transform: uppercase;
-        text-align: right;
-        margin-right: space(3);
+        text-align: left;
+        margin-left: space(3);
 
         @include mq-750 {
           margin-right: space(9);
@@ -69,14 +69,64 @@
       ul {
         @include fontBarlowRegular;
 
+        display: grid;
+        gap: 1px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        background: white url('/img/pattern_light.svg') left top repeat;
+        background-size: cover;
+        background-attachment: fixed;
         margin: 0;
         list-style: none;
         font-size: 1.8rem;
-        text-align: right;
-        padding: space(2) space(3);
+        padding: 0;
+        // background: black;
+        // padding: space(2) space(3);
 
-        @include mq-750 {
-          padding: space(2) space(9);
+        // @include mq-750 {
+        //   padding: space(2) space(9);
+        // }
+
+        li {
+          padding: space(4);
+          box-shadow: 0 0 1px $nobel;
+          background: rgba(255, 255, 255, 0.4);
+
+          h4 {
+            @include fontBarlowMedium;
+
+            margin: 0 0 space(2) 0;
+            font-size: 2.4rem;
+          }
+
+          p {
+            @include fontGeorgiaRegular;
+
+            font-size: 1.6rem;
+          }
+
+          .readMoreLink {
+            float: right;
+            text-transform: uppercase;
+            color: $cod-gray;
+            display: flex;
+            align-items: center;
+            margin-top: space(3);
+
+            span {
+              border-bottom: 2px solid transparent;
+              transition: border-color 0.3s;
+            }
+
+            &:hover {
+              span {
+                border-color: $cod-gray;
+              }
+            }
+
+            svg {
+              margin-left: space(1);
+            }
+          }
         }
       }
     }
