@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
@@ -17,7 +18,6 @@ const WorkWithUsSection = () => {
     return null
   }
 
-  console.log('workWithUsData:', workWithUsData)
   const { linkedInUrl } = dataSiteSettings?.items?.[0].fields
   const { heading, image, body, positionsHeading, positions } = workWithUsData?.items?.[0].fields
 
@@ -63,4 +63,4 @@ const WorkWithUsSection = () => {
   )
 }
 
-export default WorkWithUsSection
+export default memo(WorkWithUsSection)

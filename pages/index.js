@@ -1,6 +1,8 @@
-import { QueryCache } from 'react-query'
+import Link from 'next/link'
+import { QueryClient } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import smoothscroll from 'smoothscroll-polyfill'
+import { motion } from 'framer-motion'
 import { getContentByContentTypeId } from '../services/cms'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
@@ -19,23 +21,25 @@ if (typeof window !== 'undefined') {
 
 const HomePage = () => {
   return (
-    <Layout>
-      <Hero />
-      <Container noGutter className="mainContainer">
-        <TheCompanySection />
-        <NewsSection />
-        <ReferencesSection />
-        <SolutionsSection />
-        <MaterialSection />
-        <WorkWithUsSection />
-        <ContactSection />
-      </Container>
-    </Layout>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <Layout>
+        <Hero />
+        <Container noGutter className="mainContainer">
+          <TheCompanySection />
+          <NewsSection />
+          <ReferencesSection />
+          <SolutionsSection />
+          <MaterialSection />
+          <WorkWithUsSection />
+          <ContactSection />
+        </Container>
+      </Layout>
+    </motion.div>
   )
 }
 
 export const getStaticProps = async () => {
-  const queryCache = new QueryCache()
+  const queryClient = new QueryClient()
   const queries = [
     'siteSettings',
     'hero',
@@ -50,13 +54,13 @@ export const getStaticProps = async () => {
   ]
 
   const promises = queries.map(query =>
-    queryCache.prefetchQuery(query, () => getContentByContentTypeId(query))
+    queryClient.prefetchQuery(query, () => getContentByContentTypeId(query))
   )
   await Promise.all(promises)
 
   return {
     props: {
-      dehydratedState: dehydrate(queryCache),
+      dehydratedState: dehydrate(queryClient),
     },
   }
 }
