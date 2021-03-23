@@ -2,13 +2,18 @@
 
 .solutionCategory {
   flex: 1;
+  background: white;
+  padding: 0 space(2);
+
+  @include mq-900 {
+    box-shadow: 0 0 0 1px $nobel;
+  }
 
   & + .solutionCategory {
-    margin-top: space(8);
+    margin-top: space(2);
 
     @include mq-900 {
       margin-top: 0;
-      margin-left: space(2);
     }
   }
 

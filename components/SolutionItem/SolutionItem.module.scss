@@ -2,11 +2,11 @@
 
 .title {
   display: flex;
-  border-bottom: 1px solid $nobel;
+  border-bottom: 1px solid $silver;
   transition: border-bottom-color 0.2s;
 
   &:first-of-type {
-    border-top: 1px solid $nobel;
+    border-top: 1px solid $silver;
   }
 
   &.active {
@@ -16,7 +16,7 @@
   button {
     @include fontGeorgiaRegular;
 
-    text-align: right;
+    text-align: left;
     flex: 1;
     border: none;
     background: none;
@@ -31,7 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
     }
   }
 }
@@ -41,7 +41,7 @@
   overflow: hidden;
 
   .inner {
-    padding: 0 5% space(2) space(8);
+    padding: 0 5% space(2) space(6);
 
     p {
       margin: space(1) 0;

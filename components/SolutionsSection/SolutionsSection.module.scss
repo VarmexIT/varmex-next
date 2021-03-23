@@ -1,15 +1,10 @@
 @import '../../styles/tools';
 
 .solutionsSection {
-  background: white;
-
   .inner {
     display: flex;
     flex-direction: column;
-
-    @include mq-750 {
-      padding: space(4);
-    }
+    align-items: baseline;
 
     @include mq-900 {
       flex-direction: row;

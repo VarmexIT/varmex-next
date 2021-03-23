@@ -21,7 +21,7 @@ const HomePage = () => {
   return (
     <Layout>
       <Hero />
-      <Container noGutter>
+      <Container noGutter className="mainContainer">
         <TheCompanySection />
         <NewsSection />
         <ReferencesSection />
