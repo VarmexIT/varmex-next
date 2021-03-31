@@ -29,6 +29,7 @@
     }
 
     @include mq-900 {
+      padding: space(8) space(8) space(10) space(8);
       width: 50%;
     }
   }

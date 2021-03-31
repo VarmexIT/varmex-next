@@ -29,6 +29,16 @@
     .body {
       padding: space(4);
 
+      @include mq-900 {
+        padding: space(8);
+      }
+
+      @include mq-1000 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
       h3 {
         @include fontBarlowMedium;
 
@@ -51,8 +61,21 @@
 
           @include fontBarlowMedium;
 
+          transition: color 0.3s;
+
           svg {
             margin-left: space(1);
+            margin-bottom: -2px;
+            transition: transform 0.3s;
+            color: $cod-gray;
+          }
+
+          &:hover {
+            color: $green;
+
+            svg {
+              transform: translateX(space(1));
+            }
           }
         }
       }

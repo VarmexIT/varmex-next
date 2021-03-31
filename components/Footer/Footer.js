@@ -27,10 +27,10 @@ const Footer = () => {
   }
 
   return (
-    <header className={styles.footer}>
+    <footer className={styles.footer}>
       <Container className={styles.navAndOffices}>
         <nav>
-          {ROWS.map(({ id, items }) => (
+          {ROWS.map(({ id, items }, i) => (
             <ul key={id}>
               {items.map(({ slug, linkText, contentfulContentTypeId }) => (
                 <li key={contentfulContentTypeId}>
@@ -39,6 +39,13 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              {i === 1 && (
+                <li>
+                  <Link href="/miljopolicy">
+                    <a>Miljöpolicy</a>
+                  </Link>
+                </li>
+              )}
             </ul>
           ))}
         </nav>
@@ -65,7 +72,7 @@ const Footer = () => {
           <img src="/img/linked_in_white.png" alt="LinkedIn" />
         </a>
       </Container>
-    </header>
+    </footer>
   )
 }
 

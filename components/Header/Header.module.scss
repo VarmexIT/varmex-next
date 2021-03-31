@@ -1,14 +1,16 @@
 @import '../../styles/tools';
 
 .header {
-  background-color: $cod-gray;
+  background: $cod-gray url('/img/pattern_dark.svg') left top repeat;
+  background-size: cover;
   color: white;
   width: 100%;
   height: var(--header-height);
-  padding: space(3) 0;
+  padding: space(3);
   position: fixed;
   top: 0;
   z-index: 2;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.2);
 
   .inner {
     position: relative;
@@ -23,7 +25,12 @@
       justify-content: space-between;
     }
 
-    @include mq-1000 {
+    @include mq-max-container {
+      padding-left: space(3);
+      padding-right: space(3);
+    }
+
+    @include mq-1100 {
       flex-direction: row;
       align-items: flex-end;
     }

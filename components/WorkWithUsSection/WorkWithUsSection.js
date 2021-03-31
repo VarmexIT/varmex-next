@@ -2,7 +2,7 @@ import { memo } from 'react'
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import { IoIosArrowDroprightCircle } from 'react-icons/io'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import excerpts from 'excerpts'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
@@ -19,7 +19,7 @@ const WorkWithUsSection = () => {
   }
 
   const { linkedInUrl } = dataSiteSettings?.items?.[0].fields
-  const { heading, image, body, positionsHeading, positions } = workWithUsData?.items?.[0].fields
+  const { heading, image, body, positions } = workWithUsData?.items?.[0].fields
 
   return (
     <Section
@@ -39,7 +39,6 @@ const WorkWithUsSection = () => {
       </div>
 
       <div className={styles.jobs}>
-        <h3>{positionsHeading}</h3>
         <div className={styles.gridWrapper}>
           <ul>
             {positions.map(pos => {
@@ -50,7 +49,7 @@ const WorkWithUsSection = () => {
                   <p>{excerpts(bodyPlainText, { words: 30 })}</p>
                   <Link href={`/jobb/${pos.fields.slug}`}>
                     <a className={styles.readMoreLink}>
-                      <span>Läs mer</span> <IoIosArrowDroprightCircle />
+                      <span>Läs mer</span> <HiArrowCircleRight />
                     </a>
                   </Link>
                 </li>

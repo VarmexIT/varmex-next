@@ -11,7 +11,7 @@
 
   .metaWrapper {
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.45);
 
     &.noDimmed {
       background: transparent;
@@ -23,8 +23,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding-left: 50px;
-      padding-right: 50px;
+      padding-left: space(6);
+      padding-right: space(6);
+      height: 100%;
+
+      @include mq-750 {
+        padding-left: space(10);
+        padding-right: space(10);
+      }
 
       h2 {
         @include fontBarlowRegular;
@@ -32,6 +38,14 @@
         line-height: 1;
         font-size: 4rem;
         max-width: 650px;
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+        @include mq-900 {
+          @include fontBarlowMedium;
+
+          font-size: 5rem;
+          line-height: 1.2;
+        }
       }
 
       a,
@@ -40,13 +54,18 @@
 
         margin-top: space(2);
         font-size: 2.8rem;
-        color: $wild-willow;
+        color: $green;
         border-bottom: 2px solid transparent;
         transition: border-color 0.3s;
+        text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+        @include mq-900 {
+          font-size: 4rem;
+        }
       }
 
       a:hover {
-        border-color: $wild-willow;
+        border-color: $green;
       }
     }
   }

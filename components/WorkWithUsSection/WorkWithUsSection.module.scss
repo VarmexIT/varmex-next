@@ -37,6 +37,10 @@
       .body {
         padding: space(4);
 
+        @include mq-900 {
+          padding: space(8);
+        }
+
         img {
           width: 125px;
           float: right;
@@ -52,7 +56,6 @@
     .jobs {
       margin: 0;
       border-top: 1px solid $nobel;
-      padding-top: space(4);
       background: #fcfcfc;
 
       h3 {
@@ -74,22 +77,15 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         background: white url('/img/pattern_light.svg') left top repeat;
         background-size: cover;
-        background-attachment: fixed;
         margin: 0;
         list-style: none;
         font-size: 1.8rem;
         padding: 0;
-        // background: black;
-        // padding: space(2) space(3);
-
-        // @include mq-750 {
-        //   padding: space(2) space(9);
-        // }
 
         li {
           padding: space(4);
           box-shadow: 0 0 1px $nobel;
-          background: rgba(255, 255, 255, 0.4);
+          background: rgba(255, 255, 255, 0.6);
 
           h4 {
             @include fontBarlowMedium;
@@ -105,27 +101,29 @@
           }
 
           .readMoreLink {
+            @include fontBarlowMedium;
+
             float: right;
             text-transform: uppercase;
             color: $cod-gray;
             display: flex;
             align-items: center;
             margin-top: space(3);
-            font-size: 2.5rem;
+            font-size: 2.4rem;
+            transition: color 0.3s;
 
-            span {
-              border-bottom: 2px solid transparent;
-              transition: border-color 0.3s;
+            svg {
+              margin: 0 0 -2px space(1);
+              color: $cod-gray;
+              transition: transform 0.3s;
             }
 
             &:hover {
-              span {
-                border-color: $cod-gray;
-              }
-            }
+              color: $green;
 
-            svg {
-              margin-left: space(1);
+              svg {
+                transform: translateX(space(1));
+              }
             }
           }
         }

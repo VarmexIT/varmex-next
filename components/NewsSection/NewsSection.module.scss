@@ -19,7 +19,6 @@
       .readMoreNews {
         background: $cod-gray url('/img/pattern_dark.svg') left top repeat;
         background-size: cover;
-        // background-attachment: fixed;
         text-transform: uppercase;
         color: white;
         font-size: 2.5rem;
@@ -29,11 +28,24 @@
         justify-content: center;
         align-items: center;
 
-        @include fontBarlowMedium;
+        @include fontBarlowRegular;
+
+        transition: color 0.3s;
 
         svg {
           margin-left: space(1);
-          font-size: 2.8rem;
+          margin-bottom: -2px;
+          font-size: 2.4rem;
+          color: white;
+          transition: transform 0.3s;
+        }
+
+        &:hover {
+          color: $green;
+
+          svg {
+            transform: translateX(space(1));
+          }
         }
       }
     }

@@ -1,14 +1,9 @@
 @import '../../styles/tools';
 
 .arrow {
-  --arrowOffSet: 0;
-
-  @include mq-max-container {
-    --arrowOffSet: 40px;
-  }
-
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
   width: 40px;
   height: 40px;
   border: none;
@@ -21,10 +16,18 @@
   padding: 0;
 
   &.prev {
-    left: var(--arrowOffSet);
+    left: 0;
+
+    @include mq-750 {
+      left: space(2);
+    }
   }
 
   &.next {
-    right: var(--arrowOffSet);
+    right: 0;
+
+    @include mq-750 {
+      right: space(2);
+    }
   }
 }

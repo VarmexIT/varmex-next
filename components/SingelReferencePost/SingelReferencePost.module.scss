@@ -30,5 +30,10 @@
       font-size: 3rem;
       margin: space(3) 0 space(2);
     }
+
+    a {
+      color: $cod-gray;
+      text-decoration: underline;
+    }
   }
 }

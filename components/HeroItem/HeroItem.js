@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
-import Container from '../Container/Container'
 import { MENU_ITEMS, CONTENTFUL_CONTENT_TYPE_IDS } from '../../utils/constants'
+import { useSection } from '../../contexts/SectionContext'
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
@@ -26,7 +27,7 @@ const HeroItem = ({ item }) => {
           [styles.noDimmed]: noDimmed,
         })}
       >
-        <Container className={styles.container}>
+        <div className={styles.container}>
           <h2>{item.fields.heading}</h2>
           {item.fields.linkText && (
             <>
@@ -37,7 +38,7 @@ const HeroItem = ({ item }) => {
               )}
             </>
           )}
-        </Container>
+        </div>
       </div>
     </motion.div>
   )
@@ -45,18 +46,20 @@ const HeroItem = ({ item }) => {
 
 const LinkComponent = ({ item }) => {
   const sectionEntries = MENU_ITEMS.map(({ contentfulContentTypeId }) => contentfulContentTypeId)
+  const { scrollToSection } = useSection()
 
   let link
   const { id: contentTypeId } = item.fields.linkTarget.sys.contentType.sys
 
   // Link goes to a section
   if (sectionEntries.includes(contentTypeId)) {
+    const foundSlug = MENU_ITEMS.find(
+      menuItem => menuItem.contentfulContentTypeId === contentTypeId
+    )?.slug
+
     link = (
-      <Link
-        href="/"
-        as={MENU_ITEMS.find(menuItem => menuItem.contentfulContentTypeId === contentTypeId)?.slug}
-      >
-        <a>{item.fields.linkText}</a>
+      <Link href="/" as={foundSlug}>
+        <a onClick={() => scrollToSection(foundSlug)}>{item.fields.linkText}</a>
       </Link>
     )
     // Link goes to a news item

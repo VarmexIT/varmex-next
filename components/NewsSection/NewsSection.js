@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { IoIosArrowDropright } from 'react-icons/io'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
 import NewsItemFeatured from '../NewsItemFeatured/NewsItemFeatured'
@@ -29,7 +29,7 @@ const NewsSection = () => {
         <NewsItems newsItems={newsItems} />
         <Link href="/nyhetsarkiv">
           <a className={styles.readMoreNews}>
-            Läs mer nyheter här <IoIosArrowDropright />
+            Läs mer nyheter här <HiArrowCircleRight />
           </a>
         </Link>
       </div>

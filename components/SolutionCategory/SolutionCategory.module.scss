@@ -3,7 +3,7 @@
 .solutionCategory {
   flex: 1;
   background: white;
-  padding: 0 space(2);
+  padding: space(2) 0 space(4) 0;
 
   @include mq-900 {
     box-shadow: 0 0 0 1px $nobel;
@@ -27,6 +27,11 @@
 
     @include mq-900 {
       text-align: center;
+      font-size: 2rem;
+    }
+
+    @include mq-1100 {
+      font-size: 2.4rem;
     }
   }
 }

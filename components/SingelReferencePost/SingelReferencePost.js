@@ -1,8 +1,13 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Container from '../Container/Container'
+import ReferenceList from '../ReferenceList/ReferenceList'
 import styles from './SingelReferencePost.module.scss'
 
-const SingelReferencePost = ({ post }) => {
+const SingelReferencePost = ({ post, referenceItems }) => {
+  if (!post) {
+    return null
+  }
+
   return (
     <Container noGutter>
       <div className={styles.singelReferencePost}>
@@ -12,6 +17,9 @@ const SingelReferencePost = ({ post }) => {
           {documentToReactComponents(post.body)}
         </div>
       </div>
+
+      <hr />
+      <ReferenceList referenceItems={referenceItems} />
     </Container>
   )
 }

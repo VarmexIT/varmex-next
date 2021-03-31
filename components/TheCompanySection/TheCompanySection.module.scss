@@ -15,6 +15,14 @@
 
       li {
         padding: space(2);
+
+        &:first-child {
+          padding-left: space(3);
+        }
+
+        &:last-child {
+          padding-right: space(3);
+        }
       }
 
       button {
@@ -26,14 +34,18 @@
         padding: space(1) 0 space(0.5) 0;
         width: min-content;
         white-space: nowrap;
-        border-bottom: 2px solid transparent;
-
-        &.active {
-          border-bottom-color: white;
-        }
+        transition: color 0.3s;
 
         & + button {
           margin-left: space(2);
+        }
+
+        &:hover {
+          color: $green;
+        }
+
+        &.active {
+          color: $green;
         }
       }
     }

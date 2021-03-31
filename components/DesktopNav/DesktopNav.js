@@ -32,13 +32,17 @@ const LinkItem = ({ children, slug, className }) => {
   )
 }
 
-const DesktopNav = () => {
+const DesktopNav = ({ isSticky }) => {
   const { pathname } = useRouter()
   const { sections, setSectionUrl } = useSection()
   const items = [...sections.keys()]
 
   return (
-    <nav className={styles.desktopNav}>
+    <nav
+      className={cn(styles.desktopNav, {
+        [styles.isSticky]: isSticky,
+      })}
+    >
       <Scrollspy
         items={items}
         onUpdate={node => {

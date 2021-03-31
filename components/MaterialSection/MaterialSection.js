@@ -1,5 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { IoIosArrowDroprightCircle } from 'react-icons/io'
+import { HiArrowCircleRight } from 'react-icons/hi'
 import { INLINES } from '@contentful/rich-text-types'
 import useCMSContent from '../../utils/hooks/useCMSContent'
 import Section from '../Section/Section'
@@ -28,7 +28,7 @@ const MaterialSection = () => {
             [INLINES.ASSET_HYPERLINK]: (node, children) => (
               <span className={styles.manualLinkWrapper}>
                 <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
-                  {children} <IoIosArrowDroprightCircle />
+                  {children} <HiArrowCircleRight />
                 </a>
               </span>
             ),

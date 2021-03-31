@@ -4,13 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'airbnb',
-    'prettier',
-    'prettier/react',
-  ],
+  extends: ['plugin:react/recommended', 'plugin:react-hooks/recommended', 'airbnb', 'prettier'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -49,5 +43,7 @@ module.exports = {
     ],
     'consistent-return': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
+    'arrow-body-style': 'off',
+    'react/destructuring-assignment': 'off',
   },
 }

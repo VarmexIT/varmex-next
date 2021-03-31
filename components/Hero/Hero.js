@@ -11,7 +11,7 @@ import styles from './Hero.module.scss'
 const Hero = () => {
   const { registerSection } = useSection()
   const { dontRender, status, data } = useCMSContent('hero')
-  const [currentItem, setCurrentItem] = useState(1)
+  const [currentItem, setCurrentItem] = useState(0)
   const heroItems = data?.items?.[0]?.fields?.heroItems
 
   useInterval(() => {

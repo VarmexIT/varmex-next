@@ -1,8 +1,6 @@
-import Link from 'next/link'
 import { QueryClient } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import smoothscroll from 'smoothscroll-polyfill'
-import { motion } from 'framer-motion'
 import { getContentByContentTypeId } from '../services/cms'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
@@ -21,20 +19,18 @@ if (typeof window !== 'undefined') {
 
 const HomePage = () => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <Layout>
+    <Layout>
+      <Container noGutter className="mainContainer">
         <Hero />
-        <Container noGutter className="mainContainer">
-          <TheCompanySection />
-          <NewsSection />
-          <ReferencesSection />
-          <SolutionsSection />
-          <MaterialSection />
-          <WorkWithUsSection />
-          <ContactSection />
-        </Container>
-      </Layout>
-    </motion.div>
+        <TheCompanySection />
+        <NewsSection />
+        <ReferencesSection />
+        <SolutionsSection />
+        <MaterialSection />
+        <WorkWithUsSection />
+        <ContactSection />
+      </Container>
+    </Layout>
   )
 }
 

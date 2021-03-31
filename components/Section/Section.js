@@ -1,6 +1,6 @@
 import cn from 'clsx'
 import { useSection } from '../../contexts/SectionContext'
-import SectionHeading from '../SectionHeading/SectionHeading'
+// import SectionHeading from '../SectionHeading/SectionHeading'
 
 const Section = ({
   as: As = 'section',
@@ -24,7 +24,8 @@ const Section = ({
       })}
       {...restProps}
     >
-      <SectionHeading>{heading}</SectionHeading>
+      {/* <SectionHeading>{heading}</SectionHeading> */}
+      <hr />
       <InnerAs
         className={cn({
           [innerClassName]: !!innerClassName,

@@ -6,6 +6,7 @@ import { motion, useViewportScroll } from 'framer-motion'
 import useMeasure from 'react-use-measure'
 import Link from 'next/link'
 import { useSection } from '../../contexts/SectionContext'
+import { useMobileNav } from '../../contexts/MobileNavContext'
 import useMediaQueryWidth from '../../utils/hooks/useMediaQueryWidth'
 import HamburgerButton from '../HamburgerButton/HamburgerButton'
 import HeaderContactDetails from '../HeaderContactDetails/HeaderContactDetails'
@@ -18,6 +19,7 @@ const Header = () => {
   const [isSticky, setIsSticky] = useState(false)
   const { scrollToSection } = useSection()
   const { scrollY } = useViewportScroll()
+  const { close } = useMobileNav()
   const [ref, { height: headerHeight }] = useMeasure()
   const is750 = useMediaQueryWidth(750)
   const is1000 = useMediaQueryWidth(1000)
@@ -41,10 +43,15 @@ const Header = () => {
         },
       }}
     >
-      <Container>
+      <Container noGutter>
         <div className={styles.inner}>
           <Link href="/" scroll={false}>
-            <a onClick={() => scrollToSection('/')}>
+            <a
+              onClick={() => {
+                close()
+                scrollToSection('/')
+              }}
+            >
               <motion.img
                 className={cn(styles.logo, { [styles.isSticky]: isSticky })}
                 src="/img/varmex_logo_white.png"
@@ -60,7 +67,7 @@ const Header = () => {
           <HeaderContactDetails />
           <HamburgerButton />
 
-          <DesktopNav />
+          <DesktopNav isSticky={isSticky} />
           <MobileNav />
         </div>
       </Container>

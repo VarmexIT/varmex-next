@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import Container from '../Container/Container'
-import SectionHeading from '../SectionHeading/SectionHeading'
+// import SectionHeading from '../SectionHeading/SectionHeading'
 import NewsList from '../NewsList/NewsList'
 import styles from './SingelNewsPost.module.scss'
 
@@ -23,7 +23,8 @@ const SingelNewsPost = ({ post, newsItems }) => {
         </div>
       </article>
 
-      <SectionHeading>Fler nyheter</SectionHeading>
+      {/* <SectionHeading>Fler nyheter</SectionHeading> */}
+      <hr />
       <NewsList newsItems={newsItems} />
     </Container>
   )

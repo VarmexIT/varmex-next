@@ -12,12 +12,17 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    transition: margin-bottom 0.3s;
 
     @include fontBarlowRegular;
 
     li {
       text-transform: uppercase;
       font-size: 2rem;
+
+      @include mq-900 {
+        font-size: 2.4rem;
+      }
 
       + li {
         margin-left: space(2);
@@ -29,9 +34,15 @@
 
         &:hover,
         &.active {
-          color: $wild-willow;
+          color: $green;
         }
       }
+    }
+  }
+
+  &.isSticky {
+    ul {
+      margin-bottom: -5px;
     }
   }
 }

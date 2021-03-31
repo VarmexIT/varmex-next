@@ -1,6 +1,9 @@
 @import '../../styles/tools';
 
 .solutionsSection {
+  background: white url('/img/pattern_light.svg') left top repeat;
+  background-size: cover;
+
   .inner {
     display: flex;
     flex-direction: column;

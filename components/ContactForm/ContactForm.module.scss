@@ -47,7 +47,7 @@
     }
 
     textarea {
-      height: 100px;
+      height: space(30);
     }
 
     margin-top: space(1);
@@ -60,7 +60,7 @@
   button {
     @include fontBarlowMedium;
 
-    background: $wild-willow;
+    background: $green;
     color: white;
     width: 100%;
     border: none;

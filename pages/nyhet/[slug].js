@@ -1,16 +1,12 @@
-import Link from 'next/link'
-import { motion } from 'framer-motion'
 import { getContentByContentTypeId, getNewsItemBySlug } from '../../services/cms'
 import Layout from '../../components/Layout/Layout'
 import SingelNewsPost from '../../components/SingelNewsPost/SingelNewsPost'
 
 const NewsItemPage = ({ post, newsItems }) => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <Layout>
-        <SingelNewsPost post={post} newsItems={newsItems} />
-      </Layout>
-    </motion.div>
+    <Layout>
+      <SingelNewsPost post={post} newsItems={newsItems} />
+    </Layout>
   )
 }
 

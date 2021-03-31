@@ -47,8 +47,9 @@ h3 {
 }
 
 p {
+  -webkit-font-smoothing: antialiased;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 
   & + p {
     margin-top: space(3);
@@ -61,4 +62,10 @@ button {
 
 .mainContainer {
   box-shadow: 0 0 space(6) space(4) rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  border: 0;
+  border-top: space(3) solid rgba($green, 0.9);
+  margin: 0;
 }

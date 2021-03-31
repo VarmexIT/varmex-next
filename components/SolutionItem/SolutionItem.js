@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { IoIosArrowDropdown } from 'react-icons/io'
+import { RiArrowDropDownFill } from 'react-icons/ri'
 import styles from './SolutionItem.module.scss'
 
 const EASE = [0.6, -0.05, 0.01, 0.99]
@@ -26,7 +26,7 @@ const SolutionItem = ({ categoryIndex, itemIndex, solution, activeItem, handleSe
               ease: EASE,
             }}
           >
-            <IoIosArrowDropdown />
+            <RiArrowDropDownFill />
           </motion.span>
         </button>
       </dt>

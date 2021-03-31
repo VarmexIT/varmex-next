@@ -39,6 +39,8 @@
     }
 
     h3 {
+      @include fontBarlowMedium;
+
       text-transform: uppercase;
       padding: 0;
       margin: 0;
