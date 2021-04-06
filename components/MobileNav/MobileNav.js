@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cn from 'clsx'
@@ -66,6 +65,7 @@ const navVariants = {
 
 const MobileNav = () => {
   const { isOpen } = useMobileNav()
+
   return (
     <AnimatePresence>
       {isOpen ? (

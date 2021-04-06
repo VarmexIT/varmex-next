@@ -1,24 +1,39 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
-import { memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import useMediaQueryWidth from '../../utils/hooks/useMediaQueryWidth'
 import { MENU_ITEMS } from '../../utils/constants'
 import useCMSContent from '../../utils/hooks/useCMSContent'
+import chunkArray from '../../utils/chunkArray'
 import { useSection } from '../../contexts/SectionContext'
 import Container from '../Container/Container'
 import styles from './Footer.module.scss'
 
-const partition = n => [Math.ceil(n / 2), Math.floor(n / 2)]
-const [rowOneIndexEnd, rowTwoIndexStart] = partition(MENU_ITEMS.length)
+const getChuckedRows = (inputArray, divider) =>
+  chunkArray(inputArray, divider).map((row, i) => ({ id: i, row }))
 
-const ROWS = [
-  { id: 0, items: MENU_ITEMS.slice(0, rowOneIndexEnd) },
-  { id: 1, items: MENU_ITEMS.slice(rowTwoIndexStart + 1) },
-]
+const extraItem = {
+  slug: '/miljopolicy',
+  linkText: 'Miljöpolicy',
+  contentfulContentTypeId: 'miljopolicy',
+}
+
+const ALL_FOOTER_ITEMS = [...MENU_ITEMS, extraItem].map((item, i) => ({ id: i, ...item }))
 
 const Footer = () => {
   const { dontRender, data } = useCMSContent('siteSettings')
   const siteSettings = data?.items?.[0]?.fields
+  const isWide = useMediaQueryWidth(750)
+  const [rows, setRows] = useState(getChuckedRows(ALL_FOOTER_ITEMS, 2))
+
+  useEffect(() => {
+    if (isWide) {
+      setRows(getChuckedRows(ALL_FOOTER_ITEMS, 2))
+    } else {
+      setRows(getChuckedRows(ALL_FOOTER_ITEMS, 4))
+    }
+  }, [isWide])
 
   const { scrollToSection } = useSection()
 
@@ -28,31 +43,46 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <Container className={styles.navAndOffices}>
+      <Container className={styles.navAndOffices} noGutter>
         <nav>
-          {ROWS.map(({ id, items }, i) => (
+          {rows.map(({ id, row }) => (
             <ul key={id}>
-              {items.map(({ slug, linkText, contentfulContentTypeId }) => (
-                <li key={contentfulContentTypeId}>
-                  <Link href="/" as={slug} scroll={false}>
-                    <a onClick={() => scrollToSection(slug)}>{linkText}</a>
-                  </Link>
+              {row.map(item => (
+                <li key={item.contentfulContentTypeId}>
+                  {item.contentfulContentTypeId === 'miljopolicy' ? (
+                    <Link href={item.slug}>
+                      <a>{item.linkText}</a>
+                    </Link>
+                  ) : (
+                    <Link href="/" as={item.slug} scroll={false}>
+                      <a onClick={() => scrollToSection(item.slug)}>{item.linkText}</a>
+                    </Link>
+                  )}
                 </li>
               ))}
-              {i === 1 && (
-                <li>
-                  <Link href="/miljopolicy">
-                    <a>Miljöpolicy</a>
-                  </Link>
-                </li>
-              )}
             </ul>
           ))}
         </nav>
 
         <div className={styles.offices}>
-          <div>{documentToReactComponents(siteSettings.office1)}</div>
-          <div>{documentToReactComponents(siteSettings.office2)}</div>
+          <div className={styles.office}>
+            <a href={siteSettings.office1Url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={siteSettings.office1Image.fields.file.url}
+                alt={siteSettings.office1Image.fields.title}
+              />
+            </a>
+            <div className={styles.address}>{documentToReactComponents(siteSettings.office1)}</div>
+          </div>
+          <div className={styles.office}>
+            <a href={siteSettings.office2Url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={siteSettings.office2Image.fields.file.url}
+                alt={siteSettings.office2Image.fields.title}
+              />
+            </a>
+            <div className={styles.address}>{documentToReactComponents(siteSettings.office2)}</div>
+          </div>
         </div>
       </Container>
 
