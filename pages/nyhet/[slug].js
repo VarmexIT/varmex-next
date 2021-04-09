@@ -20,7 +20,6 @@ export const getStaticProps = async ({ params }) => {
       post: post.fields,
       newsItems: moreNewsItems,
     },
-    revalidate: 60 * 5, // 5 minutes
   }
 }
 

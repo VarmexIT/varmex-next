@@ -19,7 +19,6 @@ export const getStaticProps = async () => {
     props: {
       environmentalPolicy,
     },
-    revalidate: 60 * 10, // 10 minutes
   }
 }
 
