@@ -1,4 +1,3 @@
-//
 // import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 // import { motion } from 'framer-motion'
 // import { IoIosArrowDropdown } from 'react-icons/io'
