@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
+import useNavigation from '../../hooks/useNavigation'
 import { MENU_ITEMS, CONTENTFUL_CONTENT_TYPE_IDS } from '../../utils/constants'
 import styles from './HeroItem.module.scss'
 
@@ -44,6 +45,7 @@ const HeroItem = ({ item }) => {
 }
 
 const LinkComponent = ({ item }) => {
+  const { navigate } = useNavigation()
   const sectionEntries = MENU_ITEMS.map(({ contentfulContentTypeId }) => contentfulContentTypeId)
 
   let link
@@ -56,8 +58,8 @@ const LinkComponent = ({ item }) => {
     )?.slug
 
     link = (
-      <Link href="/" as={foundSlug}>
-        <a>{item.fields.linkText}</a>
+      <Link href="/" as={foundSlug} shallow>
+        <a onClick={navigate}>{item.fields.linkText}</a>
       </Link>
     )
     // Link goes to a news item
