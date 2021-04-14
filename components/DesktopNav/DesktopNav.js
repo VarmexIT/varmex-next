@@ -41,10 +41,12 @@ const DesktopNav = () => {
       ? {
           items: sections,
           onUpdate: node => {
-            if (node.id === 'hero') {
-              replace(`/`, undefined, { shallow: true })
-            } else {
-              replace(`/${node.id}`, undefined, { shallow: true })
+            if (node) {
+              if (node.id === 'hero') {
+                replace(`/`, undefined, { shallow: true })
+              } else {
+                replace(`/${node.id}`, undefined, { shallow: true })
+              }
             }
           },
           offset: !is750 ? -48 : -55,
