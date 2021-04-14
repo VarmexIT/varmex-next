@@ -1,13 +1,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
-
-import { useState, useEffect } from 'react'
-import cn from 'clsx'
-import { motion, useViewportScroll } from 'framer-motion'
-import useMeasure from 'react-use-measure'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { useSection } from '../../contexts/SectionContext'
-import { useMobileNav } from '../../contexts/MobileNavContext'
-import useMediaQueryWidth from '../../utils/hooks/useMediaQueryWidth'
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import useMediaQueryWidth from '../../hooks/useMediaQueryWidth'
+import useNavigation from '../../hooks/useNavigation'
 import HamburgerButton from '../HamburgerButton/HamburgerButton'
 import HeaderContactDetails from '../HeaderContactDetails/HeaderContactDetails'
 import MobileNav from '../MobileNav/MobileNav'
@@ -16,58 +12,49 @@ import Container from '../Container/Container'
 import styles from './Header.module.scss'
 
 const Header = () => {
-  const [isSticky, setIsSticky] = useState(false)
-  const { scrollToSection } = useSection()
+  const { route } = useRouter()
+  const { navigate } = useNavigation()
   const { scrollY } = useViewportScroll()
-  const { close } = useMobileNav()
-  const [ref, { height: headerHeight }] = useMeasure()
+  const is1100 = useMediaQueryWidth(1100)
   const is750 = useMediaQueryWidth(750)
-  const is1000 = useMediaQueryWidth(1000)
+  const yPos = useTransform(scrollY, [0, 100], [0, -72])
 
-  useEffect(() => {
-    return scrollY.onChange(y => {
-      setIsSticky(y > headerHeight)
-    })
-  }, [scrollY, headerHeight])
+  const logoScaleMap = is1100 ? [1, 0.8] : [1, 1]
+  const logoScale = useTransform(scrollY, [0, 100], logoScaleMap)
+
+  const logoYMap = is1100 ? [1, 13] : [0, 0]
+  const logoY = useTransform(scrollY, [0, 100], logoYMap)
+
+  const logoOpacityMap = is1100 ? [1, 1] : [1, 0]
+  const logoOpacity = useTransform(scrollY, [0, 100], logoOpacityMap)
 
   return (
     <motion.header
       className={styles.header}
-      ref={ref}
-      animate={{
-        y: is750 && isSticky ? -80 : 0,
-      }}
-      transition={{
-        y: {
-          duration: 0.2,
-        },
+      style={{
+        y: is750 ? yPos : 0,
       }}
     >
       <Container noGutter>
         <div className={styles.inner}>
-          <Link href="/" scroll={false}>
-            <a
-              onClick={() => {
-                close()
-                scrollToSection('/')
+          <Link href="/" scroll={false} shallow={route === '/'}>
+            <motion.a
+              className={styles.logoLink}
+              onClick={navigate}
+              style={{
+                scale: is750 ? logoScale : 1,
+                y: is750 ? logoY : 0,
+                opacity: is750 ? logoOpacity : 1,
               }}
             >
-              <motion.img
-                className={cn(styles.logo, { [styles.isSticky]: isSticky })}
-                src="/img/varmex_logo_white.png"
-                alt="Värmex logo"
-                animate={{
-                  y: is1000 && isSticky ? 18 : 0,
-                  scale: is1000 && isSticky ? 0.7 : 1,
-                }}
-              />
-            </a>
+              <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
+            </motion.a>
           </Link>
 
           <HeaderContactDetails />
           <HamburgerButton />
 
-          <DesktopNav isSticky={isSticky} />
+          <DesktopNav />
           <MobileNav />
         </div>
       </Container>

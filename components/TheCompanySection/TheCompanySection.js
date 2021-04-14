@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import { motion, AnimateSharedLayout } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 import cn from 'clsx'
-import useCMSContent from '../../utils/hooks/useCMSContent'
+import useCMSContent from '../../hooks/useCMSContent'
 import Section from '../Section/Section'
 import TheCompanyItem from '../TheCompanyItem/TheCompanyItem'
 import styles from './TheCompanySection.module.scss'
@@ -15,7 +15,7 @@ const TheCompanySection = () => {
     return null
   }
 
-  const { theCompanyItems, heading } = data?.items?.[0].fields
+  const { theCompanyItems } = data?.items?.[0].fields
 
   const getIndex = at => wrap(0, theCompanyItems.length, at)
 
@@ -25,7 +25,7 @@ const TheCompanySection = () => {
   }
 
   return (
-    <Section outerClassName={styles.theCompany} heading={heading} slug="/foretaget">
+    <Section outerClassName={styles.theCompany} slug="foretaget">
       <nav>
         <ul>
           {theCompanyItems.map((item, i) => (

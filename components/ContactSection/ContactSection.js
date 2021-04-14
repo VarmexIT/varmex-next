@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import cn from 'clsx'
-import useCMSContent from '../../utils/hooks/useCMSContent'
+import useCMSContent from '../../hooks/useCMSContent'
 import Section from '../Section/Section'
 import ContactForm from '../ContactForm/ContactForm'
 import styles from './ContactSection.module.scss'
@@ -20,15 +20,10 @@ const ContactSection = () => {
   }
 
   const siteSettings = dataSiteSettings?.items?.[0].fields
-  const { heading, contactUsText, ...formLabels } = dataContact?.items?.[0].fields
+  const { contactUsText, ...formLabels } = dataContact?.items?.[0].fields
 
   return (
-    <Section
-      outerClassName={styles.contactSection}
-      innerClassName={styles.inner}
-      heading={heading}
-      slug="/kontakt"
-    >
+    <Section outerClassName={styles.contactSection} innerClassName={styles.inner} slug="kontakt">
       <div className={styles.contactInfo}>
         <div className={styles.section}>
           <h3>{siteSettings.companyName}</h3>

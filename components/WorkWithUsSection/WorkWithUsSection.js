@@ -1,10 +1,9 @@
-import { memo } from 'react'
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import { HiArrowCircleRight } from 'react-icons/hi'
 import excerpts from 'excerpts'
-import useCMSContent from '../../utils/hooks/useCMSContent'
+import useCMSContent from '../../hooks/useCMSContent'
 import Section from '../Section/Section'
 import styles from './WorkWithUsSection.module.scss'
 
@@ -19,14 +18,13 @@ const WorkWithUsSection = () => {
   }
 
   const { linkedInUrl } = dataSiteSettings?.items?.[0].fields
-  const { heading, image, body, positions } = workWithUsData?.items?.[0].fields
+  const { image, body, positions } = workWithUsData?.items?.[0].fields
 
   return (
     <Section
       outerClassName={styles.workWithUsSection}
       innerClassName={styles.inner}
-      heading={heading}
-      slug="/jobba-med-oss"
+      slug="jobba-med-oss"
     >
       <div className={styles.content}>
         <img src={image.fields.file.url} alt={image.fields.title} />
@@ -62,4 +60,4 @@ const WorkWithUsSection = () => {
   )
 }
 
-export default memo(WorkWithUsSection)
+export default WorkWithUsSection

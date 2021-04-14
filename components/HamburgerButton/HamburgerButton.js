@@ -1,11 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
-import { useMobileNav } from '../../contexts/MobileNavContext'
+import useHamburgerMenu from '../../hooks/useHamburgerMenu'
 import styles from './HamburgerButton.module.scss'
 
 const HamburgerButton = () => {
-  const { isOpen, open, close } = useMobileNav()
+  const { isOpen, open, close } = useHamburgerMenu()
+
   return (
     <AnimatePresence initial={false}>
       {isOpen ? (

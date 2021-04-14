@@ -2,6 +2,8 @@
 
 .desktopNav {
   display: none;
+  position: relative;
+  z-index: 1;
 
   @include mq-750 {
     display: block;
@@ -37,12 +39,6 @@
           color: $green;
         }
       }
-    }
-  }
-
-  &.isSticky {
-    ul {
-      margin-bottom: -5px;
     }
   }
 }

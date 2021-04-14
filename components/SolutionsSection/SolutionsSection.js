@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import useCMSContent from '../../utils/hooks/useCMSContent'
+import useCMSContent from '../../hooks/useCMSContent'
 import Section from '../Section/Section'
 import SolutionCategory from '../SolutionCategory/SolutionCategory'
 import styles from './SolutionsSection.module.scss'
@@ -7,7 +7,6 @@ import styles from './SolutionsSection.module.scss'
 const SolutionsSection = () => {
   const { dontRender, data } = useCMSContent('solutions')
   const [activeItem, setActiveItem] = useState([null, null])
-  const heading = data?.items?.[0].fields?.heading
   const solutionCategories = data?.items?.[0].fields?.solutionCategories
 
   if (dontRender) {
@@ -26,8 +25,7 @@ const SolutionsSection = () => {
     <Section
       outerClassName={styles.solutionsSection}
       innerClassName={styles.inner}
-      heading={heading}
-      slug="/vara-losningar"
+      slug="vara-losningar"
     >
       {solutionCategories.map(({ sys: { id }, fields: category }, i) => (
         <SolutionCategory

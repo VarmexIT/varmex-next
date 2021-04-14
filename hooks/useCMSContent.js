@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { getContentByContentTypeId } from '../../services/cms'
+import { getContentByContentTypeId } from '../services/cms'
 
 const useCMSContent = contentTypeId => {
   const query = useQuery(contentTypeId, () => getContentByContentTypeId(contentTypeId), {

@@ -1,7 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { HiArrowCircleRight } from 'react-icons/hi'
 import { INLINES } from '@contentful/rich-text-types'
-import useCMSContent from '../../utils/hooks/useCMSContent'
+import useCMSContent from '../../hooks/useCMSContent'
 import Section from '../Section/Section'
 import styles from './MaterialSection.module.scss'
 
@@ -12,15 +12,10 @@ const MaterialSection = () => {
     return null
   }
 
-  const { heading, image, body } = data?.items?.[0].fields
+  const { image, body } = data?.items?.[0].fields
 
   return (
-    <Section
-      outerClassName={styles.materialSection}
-      innerClassName={styles.inner}
-      heading={heading}
-      slug="/material"
-    >
+    <Section outerClassName={styles.materialSection} innerClassName={styles.inner} slug="material">
       <img src={image.fields.file.url} alt={image.fields.title} />
       <div className={styles.body}>
         {documentToReactComponents(body, {

@@ -35,8 +35,12 @@
       align-items: flex-end;
     }
 
-    .logo {
-      width: clamp(120px, 17vw, 200px);
+    .logoLink {
+      cursor: pointer;
+
+      .logo {
+        width: clamp(120px, 17vw, 200px);
+      }
     }
   }
 }

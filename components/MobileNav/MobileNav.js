@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import cn from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useSection } from '../../contexts/SectionContext'
-import { useMobileNav } from '../../contexts/MobileNavContext'
+import useNavigation from '../../hooks/useNavigation'
+import useHamburgerMenu from '../../hooks/useHamburgerMenu'
 import styles from './MobileNav.module.scss'
 
 const liVariants = {
@@ -19,20 +19,17 @@ const liVariants = {
 }
 
 const LinkItem = ({ children, slug }) => {
-  const { asPath } = useRouter()
-  const { close } = useMobileNav()
-  const { scrollToSection } = useSection()
+  const { navigate } = useNavigation()
+  const { route, asPath } = useRouter()
+  const isActive = asPath.split('/')[1] === slug
 
   return (
     <motion.li variants={liVariants}>
-      <Link href="/" as={slug} scroll={false}>
+      <Link href="/" as={`/${slug}`} shallow={route === '/'}>
         <a
-          onClick={() => {
-            scrollToSection(slug)
-            close()
-          }}
+          onClick={navigate}
           className={cn({
-            [styles.active]: asPath === slug,
+            [styles.active]: isActive,
           })}
         >
           {children}
@@ -64,7 +61,7 @@ const navVariants = {
 }
 
 const MobileNav = () => {
-  const { isOpen } = useMobileNav()
+  const { isOpen } = useHamburgerMenu()
 
   return (
     <AnimatePresence>
@@ -77,13 +74,13 @@ const MobileNav = () => {
           className={styles.mobileNav}
         >
           <ul>
-            <LinkItem slug="/foretaget">Företaget</LinkItem>
-            <LinkItem slug="/nyheter">Nyheter</LinkItem>
-            <LinkItem slug="/referenser">Referenser</LinkItem>
-            <LinkItem slug="/vara-losningar">Våra lösningar</LinkItem>
-            <LinkItem slug="/material">Material</LinkItem>
-            <LinkItem slug="/jobba-med-oss">Jobba med oss</LinkItem>
-            <LinkItem slug="/kontakt">Kontakt</LinkItem>
+            <LinkItem slug="foretaget">Företaget</LinkItem>
+            <LinkItem slug="nyheter">Nyheter</LinkItem>
+            <LinkItem slug="referenser">Referenser</LinkItem>
+            <LinkItem slug="vara-losningar">Våra lösningar</LinkItem>
+            <LinkItem slug="material">Material</LinkItem>
+            <LinkItem slug="jobba-med-oss">Jobba med oss</LinkItem>
+            <LinkItem slug="kontakt">Kontakt</LinkItem>
           </ul>
         </motion.nav>
       ) : null}

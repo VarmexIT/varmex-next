@@ -3,7 +3,6 @@ import Link from 'next/link'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { MENU_ITEMS, CONTENTFUL_CONTENT_TYPE_IDS } from '../../utils/constants'
-import { useSection } from '../../contexts/SectionContext'
 import styles from './HeroItem.module.scss'
 
 const HeroItem = ({ item }) => {
@@ -46,7 +45,6 @@ const HeroItem = ({ item }) => {
 
 const LinkComponent = ({ item }) => {
   const sectionEntries = MENU_ITEMS.map(({ contentfulContentTypeId }) => contentfulContentTypeId)
-  const { scrollToSection } = useSection()
 
   let link
   const { id: contentTypeId } = item.fields.linkTarget.sys.contentType.sys
@@ -59,7 +57,7 @@ const LinkComponent = ({ item }) => {
 
     link = (
       <Link href="/" as={foundSlug}>
-        <a onClick={() => scrollToSection(foundSlug)}>{item.fields.linkText}</a>
+        <a>{item.fields.linkText}</a>
       </Link>
     )
     // Link goes to a news item

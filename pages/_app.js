@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
-import SectionContext from '../contexts/SectionContext'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
@@ -19,9 +18,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
-          <SectionContext>
-            <Component {...pageProps} />
-          </SectionContext>
+          <Component {...pageProps} />
         </Hydrate>
       </QueryClientProvider>
     </>

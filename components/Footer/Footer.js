@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import { useState, useEffect, memo } from 'react'
+import { useRouter } from 'next/router'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import useMediaQueryWidth from '../../utils/hooks/useMediaQueryWidth'
+import useNavigation from '../../hooks/useNavigation'
+import useMediaQueryWidth from '../../hooks/useMediaQueryWidth'
+import useCMSContent from '../../hooks/useCMSContent'
 import { MENU_ITEMS } from '../../utils/constants'
-import useCMSContent from '../../utils/hooks/useCMSContent'
 import chunkArray from '../../utils/chunkArray'
-import { useSection } from '../../contexts/SectionContext'
 import Container from '../Container/Container'
 import styles from './Footer.module.scss'
 
@@ -19,13 +20,15 @@ const extraItem = {
   contentfulContentTypeId: 'miljopolicy',
 }
 
-const ALL_FOOTER_ITEMS = [...MENU_ITEMS, extraItem].map((item, i) => ({ id: i, ...item }))
+const ALL_FOOTER_ITEMS = [...MENU_ITEMS, extraItem]
 
 const Footer = () => {
   const { dontRender, data } = useCMSContent('siteSettings')
   const siteSettings = data?.items?.[0]?.fields
   const isWide = useMediaQueryWidth(750)
   const [rows, setRows] = useState(getChuckedRows(ALL_FOOTER_ITEMS, 2))
+  const { route } = useRouter()
+  const { navigate } = useNavigation()
 
   useEffect(() => {
     if (isWide) {
@@ -34,8 +37,6 @@ const Footer = () => {
       setRows(getChuckedRows(ALL_FOOTER_ITEMS, 4))
     }
   }, [isWide])
-
-  const { scrollToSection } = useSection()
 
   if (dontRender) {
     return null
@@ -54,8 +55,8 @@ const Footer = () => {
                       <a>{item.linkText}</a>
                     </Link>
                   ) : (
-                    <Link href="/" as={item.slug} scroll={false}>
-                      <a onClick={() => scrollToSection(item.slug)}>{item.linkText}</a>
+                    <Link href="/" as={`/${item.slug}`} shallow={route === '/'}>
+                      <a onClick={navigate}>{item.linkText}</a>
                     </Link>
                   )}
                 </li>
