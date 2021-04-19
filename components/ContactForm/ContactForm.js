@@ -3,7 +3,7 @@ import cn from 'clsx'
 import * as Yup from 'yup'
 import { postEmail } from '../../services/email'
 import Spinner from '../Spinner/Spinner'
-import styles from './ContactForm.module.scss'
+import styles from './ContactForm.styles'
 
 const ContactForm = ({ labels, setSendStatus }) => {
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -45,7 +45,7 @@ const ContactForm = ({ labels, setSendStatus }) => {
       validationSchema={validationSchema}
     >
       {({ errors, touched, isSubmitting, isValid }) => (
-        <Form className={styles.contactForm}>
+        <styles.contactForm as={Form}>
           <label htmlFor="name">
             <InnerLabel label={labels.contactFormLabelName} name="name" />
             <FormField touched={touched} errors={errors} type="text" name="name" id="name" />
@@ -62,7 +62,7 @@ const ContactForm = ({ labels, setSendStatus }) => {
             <InnerLabel label={labels.contactFormLabelSubject} name="subject" />
             <FormField touched={touched} errors={errors} type="text" name="subject" id="subject" />
           </label>
-          <label htmlFor="message" className={styles.messageLabel}>
+          <label htmlFor="message" className="messageLabel">
             <InnerLabel label={labels.contactFormLabelMessage} name="message" />
             <FormField
               touched={touched}
@@ -72,24 +72,20 @@ const ContactForm = ({ labels, setSendStatus }) => {
               id="message"
             />
           </label>
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className={cn({ [styles.loading]: isSubmitting })}
-          >
-            {isValid && <Spinner className={styles.spinner} show={isSubmitting} />}
+          <button type="submit" disabled={isSubmitting} className={cn({ loading: isSubmitting })}>
+            {isValid && <Spinner className="spinner" show={isSubmitting} />}
             {labels.contactFormLabelSend}
           </button>
-        </Form>
+        </styles.contactForm>
       )}
     </Formik>
   )
 }
 
 const InnerLabel = ({ label, name }) => (
-  <span className={styles.innerLabel}>
+  <span className="innerLabel">
     <span>{label}</span>
-    <ErrorMessage name={name}>{err => <span className={styles.error}>({err})</span>}</ErrorMessage>
+    <ErrorMessage name={name}>{err => <span className="error">({err})</span>}</ErrorMessage>
   </span>
 )
 
@@ -97,7 +93,7 @@ const FormField = ({ errors, touched, name, ...restProps }) => {
   return (
     <Field
       className={cn({
-        [styles.error]: touched?.[name] && errors?.[name],
+        error: touched?.[name] && errors?.[name],
       })}
       name={name}
       {...restProps}

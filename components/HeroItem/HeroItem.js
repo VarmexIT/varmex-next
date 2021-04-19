@@ -4,14 +4,14 @@ import cn from 'clsx'
 import { motion } from 'framer-motion'
 import useNavigation from '../../hooks/useNavigation'
 import { MENU_ITEMS, CONTENTFUL_CONTENT_TYPE_IDS } from '../../utils/constants'
-import styles from './HeroItem.module.scss'
+import styles from './HeroItem.styles'
 
 const HeroItem = ({ item }) => {
   const noDimmed = !item.fields.linkText && !item.fields.linkTarget && !item.fields.linkText
 
   return (
-    <motion.div
-      className={styles.heroItem}
+    <styles.heroItem
+      as={motion.div}
       style={{
         backgroundImage: `url(${item.fields.image.fields.file.url})`,
       }}
@@ -23,11 +23,11 @@ const HeroItem = ({ item }) => {
       }}
     >
       <div
-        className={cn(styles.metaWrapper, {
+        className={cn('metaWrapper', {
           [styles.noDimmed]: noDimmed,
         })}
       >
-        <div className={styles.container}>
+        <div className="container">
           <h2>{item.fields.heading}</h2>
           {item.fields.linkText && (
             <>
@@ -40,7 +40,7 @@ const HeroItem = ({ item }) => {
           )}
         </div>
       </div>
-    </motion.div>
+    </styles.heroItem>
   )
 }
 

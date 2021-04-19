@@ -9,7 +9,7 @@ import HeaderContactDetails from '../HeaderContactDetails/HeaderContactDetails'
 import MobileNav from '../MobileNav/MobileNav'
 import DesktopNav from '../DesktopNav/DesktopNav'
 import Container from '../Container/Container'
-import styles from './Header.module.scss'
+import styles from './Header.styles'
 
 const Header = () => {
   const { route } = useRouter()
@@ -29,17 +29,17 @@ const Header = () => {
   const logoOpacity = useTransform(scrollY, [0, 100], logoOpacityMap)
 
   return (
-    <motion.header
-      className={styles.header}
+    <styles.header
+      as={motion.header}
       style={{
         y: is750 ? yPos : 0,
       }}
     >
       <Container noGutter>
-        <div className={styles.inner}>
+        <div className="inner">
           <Link href="/" scroll={false} shallow={route === '/'}>
             <motion.a
-              className={styles.logoLink}
+              className="logoLink"
               onClick={navigate}
               style={{
                 scale: is750 ? logoScale : 1,
@@ -47,7 +47,7 @@ const Header = () => {
                 opacity: is750 ? logoOpacity : 1,
               }}
             >
-              <img className={styles.logo} src="/img/varmex_logo_white.png" alt="Värmex logo" />
+              <img src="/img/varmex_logo_white.png" alt="Värmex logo" />
             </motion.a>
           </Link>
 
@@ -58,7 +58,7 @@ const Header = () => {
           <MobileNav />
         </div>
       </Container>
-    </motion.header>
+    </styles.header>
   )
 }
 

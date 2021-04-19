@@ -1,12 +1,13 @@
 import cn from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import styles from './Spinner.module.scss'
+import styles from './Spinner.styles'
 
-const Spinner = ({ className, as: As = motion.span, show = false }) => (
+const Spinner = ({ className, show = false }) => (
   <AnimatePresence>
     {show ? (
-      <As
-        className={cn(styles.spinner, {
+      <styles.spinner
+        as={motion.span}
+        className={cn({
           [className]: !!className,
         })}
         initial={{ opacity: 0 }}

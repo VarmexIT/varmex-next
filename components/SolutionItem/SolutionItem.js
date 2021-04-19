@@ -2,7 +2,7 @@ import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { RiArrowDropDownFill } from 'react-icons/ri'
-import styles from './SolutionItem.module.scss'
+import styles from './SolutionItem.styles'
 
 const EASE = [0.6, -0.05, 0.01, 0.99]
 
@@ -11,9 +11,9 @@ const SolutionItem = ({ categoryIndex, itemIndex, solution, activeItem, handleSe
 
   return (
     <>
-      <dt
-        className={cn(styles.title, {
-          [styles.active]: !!isActive,
+      <styles.title
+        className={cn({
+          active: !!isActive,
         })}
       >
         <button type="button" onClick={() => handleSetActiveItem([categoryIndex, itemIndex])}>
@@ -29,9 +29,9 @@ const SolutionItem = ({ categoryIndex, itemIndex, solution, activeItem, handleSe
             <RiArrowDropDownFill />
           </motion.span>
         </button>
-      </dt>
-      <motion.dd
-        className={styles.body}
+      </styles.title>
+      <styles.body
+        as={motion.dd}
         initial={{
           height: 0,
           opacity: 0,
@@ -48,11 +48,11 @@ const SolutionItem = ({ categoryIndex, itemIndex, solution, activeItem, handleSe
           transition={{
             ease: EASE,
           }}
-          className={styles.inner}
+          className="inner2"
         >
           {documentToReactComponents(solution.body)}
         </motion.div>
-      </motion.dd>
+      </styles.body>
     </>
   )
 }

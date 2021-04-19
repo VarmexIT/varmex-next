@@ -1,9 +1,9 @@
 import SolutionItem from '../SolutionItem/SolutionItem'
-import styles from './SolutionCategory.module.scss'
+import styles from './SolutionCategory.styles'
 
 const SolutionCategory = ({ activeItem, handleSetActiveItem, categoryIndex, category }) => {
   return (
-    <div className={styles.solutionCategory}>
+    <styles.solutionCategory>
       <h3>{category.title}</h3>
       {category.solutions.map(({ sys: { id }, fields: solution }, i) => (
         <SolutionItem
@@ -15,7 +15,7 @@ const SolutionCategory = ({ activeItem, handleSetActiveItem, categoryIndex, cate
           solution={solution}
         />
       ))}
-    </div>
+    </styles.solutionCategory>
   )
 }
 

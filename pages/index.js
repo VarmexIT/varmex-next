@@ -25,7 +25,7 @@ const HomePage = () => {
   /*   const { asPath } = useRouter()
   const is750 = useMediaQueryWidth(750)
 
-  useEffect(() => {
+    useEffect(() => {
     if (asPath !== '/') {
       scrollPageToElement(`#${asPath.split('/')[1]}`, is750)
     }

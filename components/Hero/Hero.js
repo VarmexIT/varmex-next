@@ -5,19 +5,19 @@ import useInterval from '../../hooks/useInterval'
 import HeroItem from '../HeroItem/HeroItem'
 import HeroDotNav from '../HeroDotNav/HeroDotNav'
 import HeroArrowNav from '../HeroArrowNav/HeroArrowNav'
-import styles from './Hero.module.scss'
+import styles from './Hero.styles'
 
 const Hero = () => {
   const { dontRender, status, data } = useCMSContent('hero')
   const [currentItem, setCurrentItem] = useState(0)
   const heroItems = data?.items?.[0]?.fields?.heroItems
 
-  useInterval(() => {
-    if (status === 'success') {
-      const nextItem = currentItem === heroItems.length - 1 ? 0 : currentItem + 1
-      setCurrentItem(nextItem)
-    }
-  }, 5000)
+  // useInterval(() => {
+  //   if (status === 'success') {
+  //     const nextItem = currentItem === heroItems.length - 1 ? 0 : currentItem + 1
+  //     setCurrentItem(nextItem)
+  //   }
+  // }, 5000)
 
   if (dontRender) {
     return null
@@ -34,7 +34,7 @@ const Hero = () => {
   }
 
   return (
-    <section className={styles.sectionHero} id="hero">
+    <styles.hero id="hero">
       <AnimatePresence initial={false}>
         <HeroItem key={heroItems[currentItem].sys.id} item={heroItems[currentItem]} />
       </AnimatePresence>
@@ -44,7 +44,7 @@ const Hero = () => {
         setCurrentItem={setCurrentItem}
       />
       <HeroArrowNav prev={prev} next={next} />
-    </section>
+    </styles.hero>
   )
 }
 

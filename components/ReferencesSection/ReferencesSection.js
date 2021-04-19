@@ -1,8 +1,7 @@
 import React from 'react'
 import useCMSContent from '../../hooks/useCMSContent'
 import ReferenceItem from '../ReferenceItem/ReferenceItem'
-import Section from '../Section/Section'
-import styles from './ReferencesSection.module.scss'
+import styles from './ReferencesSection.styles'
 
 const ReferencesSection = () => {
   const { dontRender, data } = useCMSContent('references')
@@ -13,15 +12,11 @@ const ReferencesSection = () => {
   }
 
   return (
-    <Section
-      outerClassName={styles.referencesSection}
-      innerClassName={styles.inner}
-      slug="referenser"
-    >
+    <styles.referencesSection innerClassName="inner" slug="referenser">
       {references.map(({ sys: { id }, fields: reference }) => (
         <ReferenceItem key={id} reference={reference} />
       ))}
-    </Section>
+    </styles.referencesSection>
   )
 }
 

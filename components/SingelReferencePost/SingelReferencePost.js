@@ -1,7 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Container from '../Container/Container'
 import ReferenceList from '../ReferenceList/ReferenceList'
-import styles from './SingelReferencePost.module.scss'
+import styles from './SingelReferencePost.styles'
 
 const SingelReferencePost = ({ post, referenceItems }) => {
   if (!post) {
@@ -9,18 +8,18 @@ const SingelReferencePost = ({ post, referenceItems }) => {
   }
 
   return (
-    <Container noGutter>
-      <div className={styles.singelReferencePost}>
+    <styles.singleReferencePost noGutter>
+      <div className="singelReferencePost">
         <img src={post.image.fields.file.url} alt={post.image.fields.title} />
-        <div className={styles.content}>
+        <styles.content>
           <h1>{post.title}</h1>
           {documentToReactComponents(post.body)}
-        </div>
+        </styles.content>
       </div>
 
       <hr />
       <ReferenceList referenceItems={referenceItems} />
-    </Container>
+    </styles.singleReferencePost>
   )
 }
 

@@ -3,9 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import cn from 'clsx'
 import useCMSContent from '../../hooks/useCMSContent'
-import Section from '../Section/Section'
 import ContactForm from '../ContactForm/ContactForm'
-import styles from './ContactSection.module.scss'
+import styles from './ContactSection.styles'
 
 const ContactSection = () => {
   const { dontRender: dontRenderSiteSettings, data: dataSiteSettings } = useCMSContent(
@@ -23,9 +22,9 @@ const ContactSection = () => {
   const { contactUsText, ...formLabels } = dataContact?.items?.[0].fields
 
   return (
-    <Section outerClassName={styles.contactSection} innerClassName={styles.inner} slug="kontakt">
-      <div className={styles.contactInfo}>
-        <div className={styles.section}>
+    <styles.contactSection innerClassName="inner" slug="kontakt">
+      <div className="contactInfo">
+        <div className="section">
           <h3>{siteSettings.companyName}</h3>
           <p>
             {siteSettings.phoneNumber}
@@ -34,11 +33,11 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className={styles.section}>{documentToReactComponents(siteSettings.office1)}</div>
-        <div className={styles.section}>{documentToReactComponents(siteSettings.office2)}</div>
+        <div className="section">{documentToReactComponents(siteSettings.office1)}</div>
+        <div className="section">{documentToReactComponents(siteSettings.office2)}</div>
       </div>
 
-      <div className={styles.formDetails}>
+      <div className="formDetails">
         <AnimatePresence>
           {sendStatus && (
             <motion.div
@@ -50,9 +49,9 @@ const ContactSection = () => {
                   duration: 0.7,
                 },
               }}
-              className={cn(styles.notification, {
-                [styles.success]: sendStatus === 'success',
-                [styles.error]: sendStatus === 'error',
+              className={cn('notification', {
+                success: sendStatus === 'success',
+                error: sendStatus === 'error',
               })}
             >
               {sendStatus === 'success' ? (
@@ -70,12 +69,12 @@ const ContactSection = () => {
           )}
         </AnimatePresence>
 
-        <p className={styles.contactUsText}>
+        <p className="contactUsText">
           {contactUsText.replace('{telefon}', siteSettings.phoneNumber)}
         </p>
         <ContactForm labels={formLabels} setSendStatus={setSendStatus} />
       </div>
-    </Section>
+    </styles.contactSection>
   )
 }
 

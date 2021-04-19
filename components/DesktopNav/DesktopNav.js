@@ -6,7 +6,7 @@ import Scrollspy from 'react-scrollspy'
 import useMediaQueryWidth from '../../hooks/useMediaQueryWidth'
 import useNavigation from '../../hooks/useNavigation'
 import { MENU_ITEMS } from '../../utils/constants'
-import styles from './DesktopNav.module.scss'
+import styles from './DesktopNav.styles'
 
 const LinkItem = ({ children, slug, className }) => {
   const { navigate } = useNavigation()
@@ -20,7 +20,7 @@ const LinkItem = ({ children, slug, className }) => {
           onClick={navigate}
           className={cn({
             [className]: !!className,
-            [styles.active]: isActive,
+            active: isActive,
           })}
         >
           {children}
@@ -53,9 +53,8 @@ const DesktopNav = () => {
         }
       : {}),
   }
-
   return (
-    <nav className={styles.desktopNav}>
+    <styles.desktopNav>
       <Wrapper {...wrapperProps}>
         {MENU_ITEMS.map(({ slug, linkText }) => (
           <LinkItem key={slug} slug={slug}>
@@ -63,7 +62,7 @@ const DesktopNav = () => {
           </LinkItem>
         ))}
       </Wrapper>
-    </nav>
+    </styles.desktopNav>
   )
 }
 

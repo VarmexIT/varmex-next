@@ -1,18 +1,18 @@
 import React from 'react'
 import cn from 'clsx'
-import styles from './Container.module.scss'
+import styles from './Container.styles'
 
-const Container = ({ className, as: As = 'div', noGutter, children, ...restProps }) => {
+const Container = ({ className, noGutter, children, ...restProps }) => {
   return (
-    <As
-      className={cn(styles.container, {
+    <styles.container
+      className={cn({
         [className]: !!className,
-        [styles.noGutter]: !!noGutter,
+        noGutter: !!noGutter,
       })}
       {...restProps}
     >
       {children}
-    </As>
+    </styles.container>
   )
 }
 

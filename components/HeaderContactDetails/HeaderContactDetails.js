@@ -2,7 +2,7 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { FaPhone } from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
 import useCMSContent from '../../hooks/useCMSContent'
-import styles from './HeaerContactDetails.module.scss'
+import styles from './HeaderContactDetails.styles'
 
 const HeaderContactDetails = () => {
   const { scrollY } = useViewportScroll()
@@ -20,19 +20,19 @@ const HeaderContactDetails = () => {
   const { linkedInUrl } = dataSiteSettings?.items?.[0].fields
 
   return (
-    <motion.div
-      className={styles.contactDetails}
+    <styles.headerContactDetails
+      as={motion.div}
       style={{
         opacity: detailsOpacity,
         y: yPos,
       }}
     >
       <a href="tel:0840012500">
-        <FaPhone className={styles.icon} />
+        <FaPhone className="icon" />
         08 - 400 125 00
       </a>
       <a href="mailto:info@varmex.se">
-        <MdEmail className={styles.icon} />
+        <MdEmail className="icon" />
         info@varmex.se
       </a>
       <a
@@ -41,9 +41,9 @@ const HeaderContactDetails = () => {
         className="HeaderContactInfo_linkedIn__1ik7q"
         href={linkedInUrl}
       >
-        <img className={styles.icon} src="/img/linked_in_icon.png" alt="LinkedIn" />
+        <img className="icon" src="/img/linked_in_icon.png" alt="LinkedIn" />
       </a>
-    </motion.div>
+    </styles.headerContactDetails>
   )
 }
 

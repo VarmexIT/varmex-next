@@ -1,6 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Container from '../Container/Container'
-import styles from './SingelJobPost.module.scss'
+import styles from './SingelJobPost.styles'
 
 const SingelJobPost = ({ post }) => {
   if (!post) {
@@ -8,14 +7,14 @@ const SingelJobPost = ({ post }) => {
   }
 
   return (
-    <Container noGutter>
-      <div className={styles.singelJobPost}>
-        <div className={styles.content}>
+    <styles.singelJobPost noGutter>
+      <div className="singelJobPost">
+        <styles.content>
           <h1>{post.position}</h1>
           {documentToReactComponents(post.body)}
-        </div>
+        </styles.content>
       </div>
-    </Container>
+    </styles.singelJobPost>
   )
 }
 

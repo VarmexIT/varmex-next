@@ -1,13 +1,12 @@
-import Container from '../Container/Container'
 import NewsList from '../NewsList/NewsList'
-import styles from './NewsArchive.module.scss'
+import styles from './NewsArchive.styles'
 
 const NewsArchive = ({ newsItems }) => {
   return (
-    <Container noGutter className={styles.newsArchive}>
+    <styles.newsArchive noGutter>
       <h1>Nyhetsarkiv</h1>
       <NewsList newsItems={newsItems} />
-    </Container>
+    </styles.newsArchive>
   )
 }
 

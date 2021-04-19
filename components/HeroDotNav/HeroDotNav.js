@@ -1,14 +1,16 @@
 import cn from 'clsx'
-import styles from './HeroDotNav.module.scss'
+import styles from './HeroDotNav.styles'
 
 const HeroDotNav = ({ items, currentItem, setCurrentItem }) => {
   return (
-    <nav className={styles.heroDotNav}>
+    <styles.heroDotNav>
       <ul>
         {items.map((id, i) => (
           <li key={id}>
             <button
-              className={cn({ [styles.current]: i === currentItem })}
+              className={cn({
+                current: i === currentItem,
+              })}
               type="button"
               onClick={() => setCurrentItem(i)}
               aria-label={`Sida ${i + 1}`}
@@ -16,7 +18,7 @@ const HeroDotNav = ({ items, currentItem, setCurrentItem }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </styles.heroDotNav>
   )
 }
 

@@ -1,33 +1,19 @@
 import cn from 'clsx'
+import styles from './Section.styles'
 
-const Section = ({
-  as: As = 'section',
-  innerAs: InnerAs = 'div',
-  innerProps = {},
-  outerClassName,
-  innerClassName,
-  slug,
-  children,
-  ...restProps
-}) => {
+const Section = ({ innerProps = {}, innerClassName, slug, children, ...restProps }) => {
   return (
-    <As
-      id={slug}
-      className={cn({
-        [outerClassName]: !!outerClassName,
-      })}
-      {...restProps}
-    >
+    <styles.section id={slug} {...restProps}>
       <hr />
-      <InnerAs
+      <div
         className={cn({
           [innerClassName]: !!innerClassName,
         })}
         {...innerProps}
       >
         {children}
-      </InnerAs>
-    </As>
+      </div>
+    </styles.section>
   )
 }
 

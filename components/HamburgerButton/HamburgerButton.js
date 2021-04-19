@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { GrClose } from 'react-icons/gr'
 import useHamburgerMenu from '../../hooks/useHamburgerMenu'
-import styles from './HamburgerButton.module.scss'
+import styles from './HamburgerButton.styles'
 
 const HamburgerButton = () => {
   const { isOpen, open, close } = useHamburgerMenu()
@@ -10,7 +10,8 @@ const HamburgerButton = () => {
   return (
     <AnimatePresence initial={false}>
       {isOpen ? (
-        <motion.button
+        <styles.hamburgerButton
+          as={motion.button}
           key="1"
           initial={{
             rotate: '-30deg',
@@ -25,13 +26,13 @@ const HamburgerButton = () => {
             scale: 0,
             rotate: '30deg',
           }}
-          className={styles.hamburgerButton}
           onClick={close}
         >
           <GrClose />
-        </motion.button>
+        </styles.hamburgerButton>
       ) : (
-        <motion.button
+        <styles.hamburgerButton
+          as={motion.button}
           key="2"
           initial={{
             rotate: '30deg',
@@ -46,11 +47,10 @@ const HamburgerButton = () => {
             scale: 0,
             rotate: '-30deg',
           }}
-          className={styles.hamburgerButton}
           onClick={open}
         >
           <GiHamburgerMenu />
-        </motion.button>
+        </styles.hamburgerButton>
       )}
     </AnimatePresence>
   )

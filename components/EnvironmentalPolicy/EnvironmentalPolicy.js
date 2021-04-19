@@ -1,18 +1,17 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import Container from '../Container/Container'
-import styles from './EnvironmentalPolicy.module.scss'
+import styles from './EnvironmentalPolicy.styles'
 
 const EnvironmentalPolicy = ({ environmentalPolicy: { image, title, body } }) => {
   return (
-    <Container noGutter>
-      <div className={styles.environmentalPolicy}>
+    <styles.environmentalPolicy noGutter>
+      <div className="environmentalPolicy">
         <img src={image.fields.file.url} alt={image.fields.file} />
-        <div className={styles.content}>
+        <styles.content>
           <h1>{title}</h1>
           {documentToReactComponents(body)}
-        </div>
+        </styles.content>
       </div>
-    </Container>
+    </styles.environmentalPolicy>
   )
 }
 

@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import useCMSContent from '../../hooks/useCMSContent'
-import Section from '../Section/Section'
 import SolutionCategory from '../SolutionCategory/SolutionCategory'
-import styles from './SolutionsSection.module.scss'
+import styles from './SolutionsSection.styles'
 
 const SolutionsSection = () => {
   const { dontRender, data } = useCMSContent('solutions')
@@ -22,11 +21,7 @@ const SolutionsSection = () => {
   }
 
   return (
-    <Section
-      outerClassName={styles.solutionsSection}
-      innerClassName={styles.inner}
-      slug="vara-losningar"
-    >
+    <styles.solutionsSection innerClassName="inner" slug="vara-losningar">
       {solutionCategories.map(({ sys: { id }, fields: category }, i) => (
         <SolutionCategory
           activeItem={activeItem}
@@ -36,7 +31,7 @@ const SolutionsSection = () => {
           category={category}
         />
       ))}
-    </Section>
+    </styles.solutionsSection>
   )
 }
 

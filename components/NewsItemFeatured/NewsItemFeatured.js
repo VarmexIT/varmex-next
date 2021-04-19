@@ -1,23 +1,23 @@
 import Link from 'next/link'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
 import excerpts from 'excerpts'
-import styles from './NewsItemFeatured.module.scss'
+import styles from './NewsItemFeatured.styles'
 
 const NewsItemFeatured = ({ newsItem }) => {
   const bodyPlainText = documentToPlainTextString(newsItem.fields.body)
 
   return (
-    <article className={styles.newsItemFeatured}>
+    <styles.newsItemFeatured>
       <img src={newsItem.fields.image.fields.file.url} alt={newsItem.fields.image.fields.title} />
-      <div className={styles.content}>
+      <styles.content>
         <h3>
           <Link href={`/nyhet/${newsItem.fields.slug}`}>{newsItem.fields.title}</Link>
         </h3>
-        <div className={styles.preamble}>
+        <div className="preamble">
           <p>{excerpts(bodyPlainText, { words: 50 })}</p>
         </div>
-      </div>
-    </article>
+      </styles.content>
+    </styles.newsItemFeatured>
   )
 }
 

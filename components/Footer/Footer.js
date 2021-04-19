@@ -9,7 +9,7 @@ import useCMSContent from '../../hooks/useCMSContent'
 import { MENU_ITEMS } from '../../utils/constants'
 import chunkArray from '../../utils/chunkArray'
 import Container from '../Container/Container'
-import styles from './Footer.module.scss'
+import styles from './Footer.styles'
 
 const getChuckedRows = (inputArray, divider) =>
   chunkArray(inputArray, divider).map((row, i) => ({ id: i, row }))
@@ -43,8 +43,8 @@ const Footer = () => {
   }
 
   return (
-    <footer className={styles.footer}>
-      <Container className={styles.navAndOffices} noGutter>
+    <styles.footer>
+      <Container noGutter>
         <nav>
           {rows.map(({ id, row }) => (
             <ul key={id}>
@@ -65,37 +65,37 @@ const Footer = () => {
           ))}
         </nav>
 
-        <div className={styles.offices}>
-          <div className={styles.office}>
+        <div className="offices">
+          <div className="office">
             <a href={siteSettings.office1Url} target="_blank" rel="noopener noreferrer">
               <img
                 src={siteSettings.office1Image.fields.file.url}
                 alt={siteSettings.office1Image.fields.title}
               />
             </a>
-            <div className={styles.address}>{documentToReactComponents(siteSettings.office1)}</div>
+            <div className="address">{documentToReactComponents(siteSettings.office1)}</div>
           </div>
-          <div className={styles.office}>
+          <div className="office">
             <a href={siteSettings.office2Url} target="_blank" rel="noopener noreferrer">
               <img
                 src={siteSettings.office2Image.fields.file.url}
                 alt={siteSettings.office2Image.fields.title}
               />
             </a>
-            <div className={styles.address}>{documentToReactComponents(siteSettings.office2)}</div>
+            <div className="address">{documentToReactComponents(siteSettings.office2)}</div>
           </div>
         </div>
       </Container>
 
-      <Container noGutter className={styles.companyInfo}>
+      <Container noGutter className="companyInfo">
         <h2>{siteSettings.companyName}</h2>
-        <div className={styles.phoneAndEmail}>
+        <div className="phoneAndEmail">
           <a href="tel:0840012500">{siteSettings.phoneNumber}</a>
           <a href={`mailto:${siteSettings.emailAddress}`}>{siteSettings.emailAddress}</a>
         </div>
 
         <a
-          className={styles.linkedIn}
+          className="linkedIn"
           href={siteSettings.linkedInUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -103,7 +103,7 @@ const Footer = () => {
           <img src="/img/linked_in_white.png" alt="LinkedIn" />
         </a>
       </Container>
-    </footer>
+    </styles.footer>
   )
 }
 

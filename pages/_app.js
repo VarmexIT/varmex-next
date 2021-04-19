@@ -1,8 +1,16 @@
 import { useRef } from 'react'
 import Head from 'next/head'
+// import { createGlobalStyle } from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
-import '../styles/globals.scss'
+import GlobalStyles from '../styles/GlobalStyles'
+// import '../styles/globals.scss'
+
+// const GlobalStyle = createGlobalStyle`
+//   body {
+//     background: red !important;
+//   }
+// `
 
 function MyApp({ Component, pageProps }) {
   const queryClientRef = useRef()
@@ -12,6 +20,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <GlobalStyles />
       <Head>
         <title>Värmex.se</title>
         <link rel="icon" href="/favicon.ico" />

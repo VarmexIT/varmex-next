@@ -1,11 +1,10 @@
 import Link from 'next/link'
-import styles from './ReferenceItem.module.scss'
+import styles from './ReferenceItem.styles'
 
 const ReferenceItem = ({ reference }) => {
   return (
     <Link href={`/referens/${reference.slug}`}>
-      <a
-        className={styles.referenceItem}
+      <styles.referenceItem
         style={{
           backgroundImage: `url(${reference.image.fields.file.url})`,
         }}
@@ -13,7 +12,7 @@ const ReferenceItem = ({ reference }) => {
         <span>
           <h3>{reference.title}</h3>
         </span>
-      </a>
+      </styles.referenceItem>
     </Link>
   )
 }

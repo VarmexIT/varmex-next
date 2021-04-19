@@ -5,7 +5,7 @@ import cn from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import useNavigation from '../../hooks/useNavigation'
 import useHamburgerMenu from '../../hooks/useHamburgerMenu'
-import styles from './MobileNav.module.scss'
+import styles from './MobileNav.styles'
 
 const liVariants = {
   show: {
@@ -29,7 +29,7 @@ const LinkItem = ({ children, slug }) => {
         <a
           onClick={navigate}
           className={cn({
-            [styles.active]: isActive,
+            active: isActive,
           })}
         >
           {children}
@@ -66,12 +66,12 @@ const MobileNav = () => {
   return (
     <AnimatePresence>
       {isOpen ? (
-        <motion.nav
+        <styles.mobileNav
+          as={motion.nav}
           variants={navVariants}
           initial="hide"
           animate="show"
           exit="hide"
-          className={styles.mobileNav}
         >
           <ul>
             <LinkItem slug="foretaget">Företaget</LinkItem>
@@ -82,7 +82,7 @@ const MobileNav = () => {
             <LinkItem slug="jobba-med-oss">Jobba med oss</LinkItem>
             <LinkItem slug="kontakt">Kontakt</LinkItem>
           </ul>
-        </motion.nav>
+        </styles.mobileNav>
       ) : null}
     </AnimatePresence>
   )

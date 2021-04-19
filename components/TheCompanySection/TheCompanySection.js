@@ -1,11 +1,9 @@
 import { useState } from 'react'
-// import { motion, AnimateSharedLayout } from 'framer-motion'
 import { wrap } from '@popmotion/popcorn'
 import cn from 'clsx'
 import useCMSContent from '../../hooks/useCMSContent'
-import Section from '../Section/Section'
 import TheCompanyItem from '../TheCompanyItem/TheCompanyItem'
-import styles from './TheCompanySection.module.scss'
+import styles from './TheCompanySection.styles'
 
 const TheCompanySection = () => {
   const { dontRender, data } = useCMSContent('theCompany')
@@ -25,13 +23,13 @@ const TheCompanySection = () => {
   }
 
   return (
-    <Section outerClassName={styles.theCompany} slug="foretaget">
+    <styles.theCompanySection slug="foretaget">
       <nav>
         <ul>
           {theCompanyItems.map((item, i) => (
             <li key={item.sys.id}>
               <button
-                className={cn({ [styles.active]: i === page })}
+                className={cn({ active: i === page })}
                 type="button"
                 onClick={() => paginate(i)}
               >
@@ -42,7 +40,7 @@ const TheCompanySection = () => {
         </ul>
       </nav>
       <TheCompanyItem direction={direction} item={theCompanyItems[getIndex(page)]} />
-    </Section>
+    </styles.theCompanySection>
   )
 }
 

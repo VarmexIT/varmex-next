@@ -3,7 +3,7 @@
 // import { IoIosArrowDropdown } from 'react-icons/io'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { AnimatePresence, motion } from 'framer-motion'
-import styles from './TheCompanyItem.module.scss'
+import styles from './TheCompanyItem.styles'
 
 // const EASE = [0.6, -0.05, 0.01, 0.99]
 
@@ -18,8 +18,8 @@ const TheCompanyItem = ({
 
   return (
     <AnimatePresence initial={false} exitBeforeEnter>
-      <motion.div
-        className={styles.theCompanyItem}
+      <styles.theCompanyItem
+        as={motion.div}
         key={id}
         initial={{
           opacity: 0,
@@ -43,16 +43,12 @@ const TheCompanyItem = ({
           // skewX: { duration: 0.3 },
         }}
       >
-        <img
-          className={styles.image}
-          src={item.image.fields.file.url}
-          alt={item.image.fields.title}
-        />
-        <div className={styles.body}>
+        <img className="image" src={item.image.fields.file.url} alt={item.image.fields.title} />
+        <div className="body">
           <h3>{item.title}</h3>
           {documentToReactComponents(item.body)}
         </div>
-      </motion.div>
+      </styles.theCompanyItem>
     </AnimatePresence>
   )
 }

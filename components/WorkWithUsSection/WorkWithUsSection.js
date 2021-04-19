@@ -4,8 +4,7 @@ import { documentToPlainTextString } from '@contentful/rich-text-plain-text-rend
 import { HiArrowCircleRight } from 'react-icons/hi'
 import excerpts from 'excerpts'
 import useCMSContent from '../../hooks/useCMSContent'
-import Section from '../Section/Section'
-import styles from './WorkWithUsSection.module.scss'
+import styles from './WorkWithUsSection.styles'
 
 const WorkWithUsSection = () => {
   const { dontRender: workWithUsDontRender, data: workWithUsData } = useCMSContent('workWithUs')
@@ -21,23 +20,19 @@ const WorkWithUsSection = () => {
   const { image, body, positions } = workWithUsData?.items?.[0].fields
 
   return (
-    <Section
-      outerClassName={styles.workWithUsSection}
-      innerClassName={styles.inner}
-      slug="jobba-med-oss"
-    >
-      <div className={styles.content}>
+    <styles.workWithUsSection innerClassName="inner" slug="jobba-med-oss">
+      <styles.content>
         <img src={image.fields.file.url} alt={image.fields.title} />
-        <div className={styles.body}>
+        <div className="body">
           {documentToReactComponents(body)}
           <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">
             <img src="/img/linked_in.png" alt="LinkedIn" />
           </a>
         </div>
-      </div>
+      </styles.content>
 
-      <div className={styles.jobs}>
-        <div className={styles.gridWrapper}>
+      <styles.jobs>
+        <div className="gridWrapper">
           <ul>
             {positions.map(pos => {
               const bodyPlainText = documentToPlainTextString(pos.fields.body)
@@ -46,7 +41,7 @@ const WorkWithUsSection = () => {
                   <h4>{pos.fields.position}</h4>
                   <p>{excerpts(bodyPlainText, { words: 30 })}</p>
                   <Link href={`/jobb/${pos.fields.slug}`}>
-                    <a className={styles.readMoreLink}>
+                    <a className="readMoreLink">
                       <span>Läs mer</span> <HiArrowCircleRight />
                     </a>
                   </Link>
@@ -55,8 +50,8 @@ const WorkWithUsSection = () => {
             })}
           </ul>
         </div>
-      </div>
-    </Section>
+      </styles.jobs>
+    </styles.workWithUsSection>
   )
 }
 
