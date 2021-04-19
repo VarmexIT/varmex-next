@@ -24,6 +24,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Värmex.se</title>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,700;1,500&display=swap"
+        />
       </Head>
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
