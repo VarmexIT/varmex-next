@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 import { mqw, space, fonts } from './utils'
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,700;1,500&display=block');
 
 :root {
   --header-height: 72px;
