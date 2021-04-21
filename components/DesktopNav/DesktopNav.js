@@ -57,7 +57,7 @@ const DesktopNav = () => {
     <styles.desktopNav>
       <Wrapper {...wrapperProps}>
         {MENU_ITEMS.map(({ slug, linkText }) => (
-          <LinkItem key={slug} slug={slug}>
+          <LinkItem key={slug} slug={slug} is750={is750}>
             {linkText}
           </LinkItem>
         ))}

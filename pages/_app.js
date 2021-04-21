@@ -3,15 +3,18 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import GlobalStyles from '../styles/GlobalStyles'
+import scrollPageToElement from '../utils/scrollPageToElement'
+import useMediaQueryWidth from '../hooks/useMediaQueryWidth'
 
 function MyApp({ Component, pageProps }) {
-  const { route } = useRouter()
+  const { route, asPath } = useRouter()
   const queryClientRef = useRef()
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient()
   }
+  const is750 = useMediaQueryWidth(750)
 
   return (
     <>
@@ -26,9 +29,14 @@ function MyApp({ Component, pageProps }) {
             initial={false}
             exitBeforeEnter
             onExitComplete={() => {
-              window.scrollTo({
-                top: 0,
-              })
+              if (route === '/' && asPath !== '/') {
+                const selector = `#${asPath.split('/')[1]}`
+                scrollPageToElement(selector, is750, { smooth: false })
+              } else {
+                window.scrollTo({
+                  top: 0,
+                })
+              }
             }}
           >
             <Component {...pageProps} key={route} />

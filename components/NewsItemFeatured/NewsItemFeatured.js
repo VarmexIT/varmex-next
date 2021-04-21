@@ -11,7 +11,9 @@ const NewsItemFeatured = ({ newsItem }) => {
       <img src={newsItem.fields.image.fields.file.url} alt={newsItem.fields.image.fields.title} />
       <styles.content>
         <h3>
-          <Link href={`/nyhet/${newsItem.fields.slug}`}>{newsItem.fields.title}</Link>
+          <Link scroll={false} href={`/nyhet/${newsItem.fields.slug}`}>
+            {newsItem.fields.title}
+          </Link>
         </h3>
         <div className="preamble">
           <p>{excerpts(bodyPlainText, { words: 50 })}</p>

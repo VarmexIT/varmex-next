@@ -11,30 +11,23 @@ const useNavigation = () => {
   const getHandler = (target, cb) => {
     let selector = `#${target}`
 
-    if (route === '/') {
-      return (nextRoute, { shallow }) => {
-        if (nextRoute === '/') {
-          selector = 'body'
-        }
-
-        if (shallow) {
-          scrollPageToElement(selector, is750)
-        }
-        cb()
-      }
-    }
-
-    return nextRoute => {
+    return (nextRoute, { shallow }) => {
       if (nextRoute === '/') {
         selector = 'body'
       }
 
-      scrollPageToElement(selector, is750)
+      if (shallow) {
+        scrollPageToElement(selector, is750)
+      }
       cb()
     }
   }
 
   const navigate = e => {
+    if (route !== '/') {
+      return
+    }
+
     const target = e.currentTarget.pathname.split('/')[1]
     const handler = getHandler(target, () => {
       events.off('routeChangeComplete', handler)
@@ -46,7 +39,7 @@ const useNavigation = () => {
   }
 
   return {
-    navigate: () => console.log('nav!'),
+    navigate,
   }
 }
 

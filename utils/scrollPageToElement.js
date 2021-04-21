@@ -1,17 +1,19 @@
-function scrollTo(element, yOffset = 0) {
+function scrollTo(element, yOffset = 0, smooth) {
   const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+  const options = smooth ? { behavior: 'smooth' } : {}
 
   window.scrollTo({
     top: y,
-    behavior: 'smooth',
+    ...options,
   })
 }
 
-const scrollPageToElement = (id, is750) => {
+const scrollPageToElement = (id, is750, { smooth = true } = {}) => {
   const sectionElement = document.querySelector(id)
   const offsetY = !is750 ? -48 : -53
 
-  scrollTo(sectionElement, offsetY)
+  scrollTo(sectionElement, offsetY, smooth)
 }
 
 export default scrollPageToElement

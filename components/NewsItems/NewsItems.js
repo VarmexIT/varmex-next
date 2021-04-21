@@ -1,9 +1,7 @@
-import Link, { useRouter } from 'next/link'
+import Link from 'next/link'
 import excerpts from 'excerpts'
 import cn from 'clsx'
-import { motion } from 'framer-motion'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
-import useDoAfterRouteChange from '../../hooks/useDoAfterRouteChange'
 import styles from './NewsItems.styles'
 
 const NewsItems = ({ className, newsItems }) => {

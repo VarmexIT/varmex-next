@@ -1,5 +1,3 @@
-import { useRouter } from 'next/router'
-import { motion } from 'framer-motion'
 import { getContentByContentTypeId, getNewsItemBySlug } from '../../services/cms'
 import { EnterAnimation, ExitAnimation } from '../../components/PageTransition/PageTransition'
 import Layout from '../../components/Layout/Layout'

@@ -17,8 +17,8 @@ const enterPillarVariants = {
   animate: delay => ({
     scaleX: 0,
     transition: {
-      duration: 1,
-      ease: [0.16, 0.01, 0.14, 0.91],
+      duration: 0.5,
+      ease: [0.41, 0.42, 0.4, 1.01],
       delay,
     },
   }),
@@ -28,7 +28,7 @@ const enterPillarVariants = {
 export const EnterAnimation = () => {
   return (
     <styles.container variants={enterContainerVariants} animate="animate" exit="exit">
-      {[0.2, 0.05, 0.4, 0.1].map(delay => (
+      {[0, 0.2, 0.4, 0.6, 0.8].map(delay => (
         <motion.div className="right" key={delay} variants={enterPillarVariants} custom={delay} />
       ))}
     </styles.container>

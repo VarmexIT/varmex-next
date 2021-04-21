@@ -11,7 +11,7 @@ const container = styled(motion.div)`
   display: flex;
 
   > div {
-    background: var(--clr-green);
+    background: black;
     flex: 1;
 
     &.right {

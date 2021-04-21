@@ -19,7 +19,7 @@ const NewsSection = () => {
 
       <div className="newsItemsWrapper">
         <NewsItems newsItems={newsItems} />
-        <Link href="/nyhetsarkiv">
+        <Link scroll={false} href="/nyhetsarkiv">
           <a className="readMoreNews">
             Läs mer nyheter här <HiArrowCircleRight />
           </a>

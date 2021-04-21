@@ -51,7 +51,7 @@ const Footer = () => {
               {row.map(item => (
                 <li key={item.contentfulContentTypeId}>
                   {item.contentfulContentTypeId === 'miljopolicy' ? (
-                    <Link href={item.slug}>
+                    <Link scroll={false} href={item.slug}>
                       <a>{item.linkText}</a>
                     </Link>
                   ) : (

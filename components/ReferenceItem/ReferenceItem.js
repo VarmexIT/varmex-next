@@ -3,7 +3,7 @@ import styles from './ReferenceItem.styles'
 
 const ReferenceItem = ({ reference }) => {
   return (
-    <Link href={`/referens/${reference.slug}`}>
+    <Link scroll={false} href={`/referens/${reference.slug}`}>
       <styles.referenceItem
         style={{
           backgroundImage: `url(${reference.image.fields.file.url})`,
