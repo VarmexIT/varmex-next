@@ -23,6 +23,7 @@ function MyApp({ Component, pageProps }) {
       <QueryClientProvider client={queryClientRef.current}>
         <Hydrate state={pageProps.dehydratedState}>
           <AnimatePresence
+            initial={false}
             exitBeforeEnter
             onExitComplete={() => {
               window.scrollTo({
