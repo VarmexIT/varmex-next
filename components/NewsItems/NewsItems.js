@@ -1,7 +1,9 @@
-import Link from 'next/link'
+import Link, { useRouter } from 'next/link'
 import excerpts from 'excerpts'
 import cn from 'clsx'
+import { motion } from 'framer-motion'
 import { documentToPlainTextString } from '@contentful/rich-text-plain-text-renderer'
+import useDoAfterRouteChange from '../../hooks/useDoAfterRouteChange'
 import styles from './NewsItems.styles'
 
 const NewsItems = ({ className, newsItems }) => {
@@ -19,7 +21,9 @@ const NewsItems = ({ className, newsItems }) => {
             <img src={newsItem.image.fields.file.url} alt={newsItem.image.fields.title} />
             <styles.content>
               <h3>
-                <Link href={`/nyhet/${newsItem.slug}`}>{newsItem.title}</Link>
+                <Link scroll={false} href={`/nyhet/${newsItem.slug}`}>
+                  {newsItem.title}
+                </Link>
               </h3>
               <p className="excerpts">{excerpts(bodyPlainText, { characters: 70 })}</p>
             </styles.content>

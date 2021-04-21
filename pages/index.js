@@ -1,11 +1,9 @@
-import { useEffect, memo, useMemo } from 'react'
-import { useRouter } from 'next/router'
+import { memo } from 'react'
 import { QueryClient } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
 import smoothscroll from 'smoothscroll-polyfill'
 import { getContentByContentTypeId } from '../services/cms'
-import scrollPageToElement from '../utils/scrollPageToElement'
-import useMediaQueryWidth from '../hooks/useMediaQueryWidth'
+import { EnterAnimation, ExitAnimation } from '../components/PageTransition/PageTransition'
 import Hero from '../components/Hero/Hero'
 import Layout from '../components/Layout/Layout'
 import Container from '../components/Container/Container'
@@ -22,28 +20,23 @@ if (typeof window !== 'undefined') {
 }
 
 const HomePage = () => {
-  /*   const { asPath } = useRouter()
-  const is750 = useMediaQueryWidth(750)
-
-    useEffect(() => {
-    if (asPath !== '/') {
-      scrollPageToElement(`#${asPath.split('/')[1]}`, is750)
-    }
-  }, []) */
-
   return (
-    <Layout>
-      <Container noGutter className="mainContainer">
-        <Hero />
-        <TheCompanySection />
-        <NewsSection />
-        <ReferencesSection />
-        <SolutionsSection />
-        <MaterialSection />
-        <WorkWithUsSection />
-        <ContactSection />
-      </Container>
-    </Layout>
+    <>
+      <EnterAnimation />
+      <ExitAnimation />
+      <Layout>
+        <Container noGutter className="mainContainer">
+          <Hero />
+          <TheCompanySection />
+          <NewsSection />
+          <ReferencesSection />
+          <SolutionsSection />
+          <MaterialSection />
+          <WorkWithUsSection />
+          <ContactSection />
+        </Container>
+      </Layout>
+    </>
   )
 }
 

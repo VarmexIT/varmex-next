@@ -45,7 +45,9 @@ const useNavigation = () => {
     events.on('routeChangeComplete', handler)
   }
 
-  return { navigate }
+  return {
+    navigate: () => console.log('nav!'),
+  }
 }
 
 export default useNavigation
