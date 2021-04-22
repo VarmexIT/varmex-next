@@ -30,10 +30,11 @@ const heroDotNav = styled.div`
         width: 14px;
         height: 14px;
         padding: 0;
-        transition: background 0.6s;
+        transition: background 0.6s, transform 0.3s;
 
         &.current {
           background: white;
+          transform: scale(1.2);
         }
       }
     }

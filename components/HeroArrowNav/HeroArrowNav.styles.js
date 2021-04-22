@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { mqw, space } from '../../styles/utils'
 
-const arrow = styled.nav`
+const arrow = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -15,6 +15,11 @@ const arrow = styled.nav`
   font-size: 5rem;
   color: rgba(255, 255, 255, 0.8);
   padding: 0;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-50%) scale(1.2);
+  }
 
   &.prev {
     left: 0;

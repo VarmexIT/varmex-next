@@ -32,9 +32,8 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            rel="preload"
-            as="style"
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,700;1,500&display=block"
+            rel="stylesheet"
           />
         </Head>
         <body>

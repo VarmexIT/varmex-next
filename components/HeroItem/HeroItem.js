@@ -15,9 +15,9 @@ const HeroItem = ({ item }) => {
       style={{
         backgroundImage: `url(${item.fields.image.fields.file.url})`,
       }}
-      initial={{ filter: 'blur(5px)', opacity: 0 }}
-      animate={{ filter: 'blur(0px)', opacity: 1 }}
-      exit={{ filter: 'blur(5px)', opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{
         duration: 1,
       }}
