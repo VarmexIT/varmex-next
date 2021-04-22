@@ -6,6 +6,39 @@ import useNavigation from '../../hooks/useNavigation'
 import { MENU_ITEMS, CONTENTFUL_CONTENT_TYPE_IDS } from '../../utils/constants'
 import styles from './HeroItem.styles'
 
+const containerVariants = {
+  initial: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+  animate: {
+    transition: {
+      staggerChildren: 0.25,
+      delayChildren: 1.5,
+    },
+  },
+}
+
+const itemVariants = {
+  initial: {
+    y: -100,
+    opacity: 0,
+    transition: {
+      duration: 1,
+      ease: [0.31, 0.07, 0.36, 0.93],
+    },
+  },
+  animate: {
+    y: -0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: [0.31, 0.07, 0.36, 0.93],
+    },
+  },
+}
+
 const HeroItem = ({ item }) => {
   const noDimmed = !item.fields.linkText && !item.fields.linkTarget && !item.fields.linkText
 
@@ -19,7 +52,7 @@ const HeroItem = ({ item }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{
-        duration: 1,
+        duration: 2,
       }}
     >
       <div
@@ -27,28 +60,30 @@ const HeroItem = ({ item }) => {
           [styles.noDimmed]: noDimmed,
         })}
       >
-        <div className="container">
-          <h2>{item.fields.heading}</h2>
-          {item.fields.linkText && (
-            <>
-              {item.fields.linkTarget ? (
-                <LinkComponent item={item} />
-              ) : (
-                <h3>{item.fields.linkText}</h3>
-              )}
-            </>
+        <motion.div
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          className="container"
+        >
+          <motion.h2 variants={itemVariants}>{item.fields.heading}</motion.h2>
+          {item.fields.linkText && item.fields.linkTarget && (
+            <LinkComponent item={item} variants={itemVariants} />
           )}
-        </div>
+          {item.fields.linkText && !item.fields.linkTarget && (
+            <motion.h3 variants={itemVariants}>{item.fields.linkText}</motion.h3>
+          )}
+        </motion.div>
       </div>
     </styles.heroItem>
   )
 }
 
-const LinkComponent = ({ item }) => {
+const LinkComponent = ({ item, variants }) => {
   const { navigate } = useNavigation()
   const sectionEntries = MENU_ITEMS.map(({ contentfulContentTypeId }) => contentfulContentTypeId)
 
-  let link
   const { id: contentTypeId } = item.fields.linkTarget.sys.contentType.sys
 
   // Link goes to a section
@@ -57,21 +92,25 @@ const LinkComponent = ({ item }) => {
       menuItem => menuItem.contentfulContentTypeId === contentTypeId
     )?.slug
 
-    link = (
+    return (
       <Link href="/" as={foundSlug} shallow>
-        <a onClick={navigate}>{item.fields.linkText}</a>
-      </Link>
-    )
-    // Link goes to a news item
-  } else if (contentTypeId === CONTENTFUL_CONTENT_TYPE_IDS.newsItem) {
-    link = (
-      <Link href={`/nyhet/${item.fields.linkTarget.fields.slug}`}>
-        <a>{item.fields.linkText}</a>
+        <motion.a variants={variants} onClick={navigate}>
+          {item.fields.linkText}
+        </motion.a>
       </Link>
     )
   }
 
-  return link
+  // Link goes to a news item
+  if (contentTypeId === CONTENTFUL_CONTENT_TYPE_IDS.newsItem) {
+    return (
+      <Link scroll={false} href={`/nyhet/${item.fields.linkTarget.fields.slug}`}>
+        <motion.a variants={variants}>{item.fields.linkText}</motion.a>
+      </Link>
+    )
+  }
+
+  return null
 }
 
 export default HeroItem

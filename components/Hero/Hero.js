@@ -12,12 +12,12 @@ const Hero = () => {
   const [currentItem, setCurrentItem] = useState(0)
   const heroItems = data?.items?.[0]?.fields?.heroItems
 
-  // useInterval(() => {
-  //   if (status === 'success') {
-  //     const nextItem = currentItem === heroItems.length - 1 ? 0 : currentItem + 1
-  //     setCurrentItem(nextItem)
-  //   }
-  // }, 5000)
+  useInterval(() => {
+    if (status === 'success') {
+      const nextItem = currentItem === heroItems.length - 1 ? 0 : currentItem + 1
+      setCurrentItem(nextItem)
+    }
+  }, 7000)
 
   if (dontRender) {
     return null
