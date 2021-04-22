@@ -93,7 +93,7 @@ const LinkComponent = ({ item, variants }) => {
     )?.slug
 
     return (
-      <Link href="/" as={foundSlug} shallow>
+      <Link href="/" as={`/${foundSlug}`} shallow passHref>
         <motion.a variants={variants} onClick={navigate}>
           {item.fields.linkText}
         </motion.a>
@@ -104,7 +104,7 @@ const LinkComponent = ({ item, variants }) => {
   // Link goes to a news item
   if (contentTypeId === CONTENTFUL_CONTENT_TYPE_IDS.newsItem) {
     return (
-      <Link scroll={false} href={`/nyhet/${item.fields.linkTarget.fields.slug}`}>
+      <Link scroll={false} href={`/nyhet/${item.fields.linkTarget.fields.slug}`} passHref>
         <motion.a variants={variants}>{item.fields.linkText}</motion.a>
       </Link>
     )

@@ -37,7 +37,7 @@ const Header = () => {
     >
       <Container noGutter>
         <div className="inner">
-          <Link href="/" scroll={false} shallow={route === '/'}>
+          <Link href="/" scroll={false} shallow={route === '/'} passHref>
             <motion.a
               className="logoLink"
               onClick={navigate}

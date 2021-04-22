@@ -24,6 +24,7 @@ const useNavigation = () => {
   }
 
   const navigate = e => {
+    close()
     if (route !== '/') {
       return
     }
@@ -32,8 +33,6 @@ const useNavigation = () => {
     const handler = getHandler(target, () => {
       events.off('routeChangeComplete', handler)
     })
-
-    close()
 
     events.on('routeChangeComplete', handler)
   }

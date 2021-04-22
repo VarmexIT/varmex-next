@@ -62,8 +62,12 @@ const heroItem = styled.div`
         `}
       }
 
-      a:hover {
-        border-color: var(--clr-green);
+      a {
+        cursor: pointer;
+
+        &:hover {
+          border-color: var(--clr-green);
+        }
       }
     }
   }
