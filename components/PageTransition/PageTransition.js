@@ -17,7 +17,8 @@ const enterPillarVariants = {
   animate: delay => ({
     scaleX: 0,
     transition: {
-      duration: 0.5,
+      // duration: 0.5,
+      duration: 0,
       ease: [0.41, 0.42, 0.4, 1.01],
       delay,
     },
@@ -53,7 +54,8 @@ const exitPillarVariants = {
   exit: delay => ({
     scaleY: 1,
     transition: {
-      duration: 0.5,
+      // duration: 0.5,
+      duration: 0,
       ease: [0.41, 0.42, 0.4, 1.01],
       delay,
     },
