@@ -36,6 +36,7 @@ const footer = styled.footer`
 
         a {
           color: white;
+          white-space: nowrap;
         }
       }
     }

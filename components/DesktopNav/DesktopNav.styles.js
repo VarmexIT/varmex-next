@@ -33,6 +33,7 @@ const desktopNav = styled.nav`
       a {
         color: white;
         transition: color 0.3s;
+        white-space: nowrap;
 
         &:hover,
         &.active {
