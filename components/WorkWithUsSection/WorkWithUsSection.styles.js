@@ -22,7 +22,7 @@ const content = styled.div`
     max-height: 340px;
     width: 100%;
     object-fit: cover;
-    height: intrinsic;
+    /* height: intrinsic; */
   }
 
   ${mqw[750]`

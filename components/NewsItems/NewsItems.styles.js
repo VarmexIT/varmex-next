@@ -36,7 +36,7 @@ const newsItems = styled.div`
 
     img {
       width: 30%;
-      height: intrinsic;
+      /* height: intrinsic; */
       object-fit: cover;
       margin-right: ${space(2)};
       border: 1px solid var(--clr-nobel);
