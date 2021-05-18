@@ -1,45 +1,24 @@
-import { useState } from 'react'
-import { wrap } from '@popmotion/popcorn'
-import cn from 'clsx'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import useCMSContent from '../../hooks/useCMSContent'
-import TheCompanyItem from '../TheCompanyItem/TheCompanyItem'
+import Boilerplate from '../Boilerplate/Boilerplate'
 import styles from './TheCompanySection.styles'
 
 const TheCompanySection = () => {
   const { dontRender, data } = useCMSContent('theCompany')
-  const [[page, direction], setPage] = useState([0, 0])
 
   if (dontRender) {
     return null
   }
 
-  const { theCompanyItems } = data?.items?.[0].fields
-
-  const getIndex = at => wrap(0, theCompanyItems.length, at)
-
-  const paginate = newIndex => {
-    const dir = newIndex > page ? 1 : -1
-    setPage([newIndex, dir])
-  }
+  const { fields } = data?.items?.[0]
 
   return (
-    <styles.theCompanySection slug="foretaget">
-      <nav>
-        <ul>
-          {theCompanyItems.map((item, i) => (
-            <li key={item.sys.id}>
-              <button
-                className={cn({ active: i === page })}
-                type="button"
-                onClick={() => paginate(i)}
-              >
-                {item.fields.title}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <TheCompanyItem direction={direction} item={theCompanyItems[getIndex(page)]} />
+    <styles.theCompanySection slug="foretaget" innerClassName="inner">
+      <Boilerplate />
+      <div className="content">
+        <img className="image" src={fields.image.fields.file.url} alt={fields.image.fields.title} />
+        <div className="body">{documentToReactComponents(fields.body)}</div>
+      </div>
     </styles.theCompanySection>
   )
 }

@@ -1,54 +1,41 @@
 import styled from 'styled-components'
-import { space } from '../../styles/utils'
+import { space, mqw, fonts } from '../../styles/utils'
 import Section from '../Section/Section'
 
 const theCompanySection = styled(Section)`
-  background: white;
-
-  nav {
-    background: #313131;
-
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
+  .inner {
+    .content {
+      background: white;
       display: flex;
-      overflow-x: scroll;
+      flex-direction: column;
 
-      li {
-        padding: ${space(2)};
+      ${mqw[900]`
+        flex-direction: row-reverse;
+      `}
 
-        &:first-child {
-          padding-left: ${space(3)};
-        }
+      .image {
+        max-height: 340px;
+        object-fit: cover;
 
-        &:last-child {
-          padding-right: ${space(3)};
-        }
+        ${mqw[900]`
+          max-height: none;
+          width: 50%;
+        `}
       }
 
-      button {
-        color: white;
-        background: none;
-        margin: 0;
-        border: none;
-        text-transform: uppercase;
-        padding: ${space(1)} 0 ${space(0.5)} 0;
-        width: min-content;
-        white-space: nowrap;
-        transition: color 0.3s;
+      .body {
+        padding: ${space(4)};
 
-        & + button {
-          margin-left: ${space(2)};
+        h3 {
+          ${fonts.fontBarlowMedium()}
+          font-size: 3rem;
+          margin-bottom: ${space(2)};
         }
 
-        &:hover {
-          color: var(--clr-green);
-        }
-
-        &.active {
-          color: var(--clr-green);
-        }
+        ${mqw[900]`
+          padding: ${space(8)} ${space(8)} ${space(10)} ${space(8)};
+          width: 50%;
+        `}
       }
     }
   }
