@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { HiArrowCircleRight } from 'react-icons/hi'
 import { INLINES } from '@contentful/rich-text-types'
@@ -19,11 +20,13 @@ const MaterialSection = () => {
       <div className="body">
         {documentToReactComponents(body, {
           renderNode: {
-            [INLINES.ASSET_HYPERLINK]: (node, children) => (
+            [INLINES.HYPERLINK]: (node, children) => (
               <span className="manualLinkWrapper">
-                <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
-                  {children} <HiArrowCircleRight />
-                </a>
+                <Link href={node.data.uri}>
+                  <a>
+                    {children} <HiArrowCircleRight />
+                  </a>
+                </Link>
               </span>
             ),
           },
