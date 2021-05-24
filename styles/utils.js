@@ -9,6 +9,7 @@ const sizes = {
   1000: 1000,
   1100: 1100,
   max: maxContainerWidth + 50,
+  varmehandbokMenu: maxContainerWidth + 500,
 }
 
 export const fonts = {

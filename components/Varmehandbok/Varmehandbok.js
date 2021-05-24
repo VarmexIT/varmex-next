@@ -8,8 +8,8 @@ const Varmehandbok = () => {
         src="/img/varmehandbok.png"
         alt="Kvinna som sitter bekvämt i en fåtölj och dricker kaffe"
       />
+      <VarmehandbokNav />
       <styles.content>
-        <VarmehandbokNav />
         <h1>Värmehandbok</h1>
         <h2>Vägen till ett lyckat projekt</h2>
         <p>
@@ -35,6 +35,33 @@ const Varmehandbok = () => {
         </p>
         Vi hoppas den här lilla handboken ska kunna fungera som en länk mellan
         bostadsrättsföreningen och våra medarbetare som utför arbete med värme.
+        <h2 id="varfor-uppdatering">Varför uppdatering och injustering?</h2>
+        <p>
+          Med en injustering kan man förbättra inomhusklimatet och öka komforten i en fastighet –
+          samtidigt som man minskar fastighetens energiförbrukning.
+        </p>
+        <h3>Varför injustera?</h3>
+        <p>
+          Alla värmeanläggningar behöver emellanåt injusteras för att säker-ställa att de fungerar
+          som det var tänkt när de installerades. Under åren förändras nämligen förutsättningar för
+          systemet. Slitage, smuts, korrosion och olika ingrepp (som om- och utbyggnader) kan på
+          oli-ka sätt påverka systemets inställda dynamik och leda till att exem-pelvis ventiler
+          börjar kärva eller läcka.
+        </p>
+        <h3>Hur veta om injustering behövs?</h3>
+        <p>
+          Det finns flera sätt att upptäcka att ett system behöver injusteras. Vanligast är att
+          temperatu-ren i huset är ojämn, vilket beror på obalans i systemet. Obalans kan uppstå
+          mellan plan, lä-genheter eller rum. Det kan också innebära att vissa delar av huset tar
+          längre tid på sig att bli varma, jämfört med andra delar. Vid obalans är det oftast
+          kallast längst bort från pumpen, ofta högst upp i systemet.
+        </p>
+        <h3>För varmt</h3>
+        <p>
+          Med tiden kan man även få för höga temperaturer inomhus, över-temperaturer som det kallas.
+          Att temperaturen blir för hög beror ofta på gamla och uttjänta termostater, men kan även
+          bero på att man centralt höjt värmen för att kompensera för att vissa har det kallt.
+        </p>
       </styles.content>
     </styles.varmehandbok>
   )
