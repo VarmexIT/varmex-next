@@ -7,21 +7,6 @@ import useOnClickOutside from '../../hooks/useOnClickOutside'
 import styles from './Varmehandbok.styles'
 import scrollPageToElement from '../../utils/scrollPageToElement'
 
-const ListItem = ({ children, setIsOpen, target = '#varfor-uppdatering' }) => {
-  const handleClick = e => {
-    e.preventDefault()
-    scrollPageToElement(target)
-    setIsOpen(false)
-  }
-  return (
-    <li>
-      <Link href={target} shallow scroll={false}>
-        <a onClick={handleClick}>{children}</a>
-      </Link>
-    </li>
-  )
-}
-
 const VarmehandbokNav = () => {
   const [isOpen, setIsOpen] = useState(false)
   const { scrollY } = useViewportScroll()
@@ -31,6 +16,13 @@ const VarmehandbokNav = () => {
       setIsOpen(false)
     }
   })
+
+  const handleClick = e => {
+    e.preventDefault()
+    console.log(e.target.hash)
+    // scrollPageToElement(target)
+    // setIsOpen(false)
+  }
 
   return (
     <styles.nav
@@ -54,26 +46,71 @@ const VarmehandbokNav = () => {
         </button>
         <div className="content">
           <ul>
-            <ListItem setIsOpen={setIsOpen} target="#varfor-uppdatering">
-              Varför uppdatering och injustering
-            </ListItem>
-            <ListItem setIsOpen={setIsOpen}>Teknisk guide</ListItem>
-            <ListItem setIsOpen={setIsOpen}>
-              Så fungerar ett värmesystem
-              <ul>
-                <ListItem setIsOpen={setIsOpen}>Radiatorer, konvektorer och golvvärme</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Möblering</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Termostater och handratter</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Inomhusklimat</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Radiatorventiler</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Stamventiler</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Olika kopplingsprinciper</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Vattenkvalitet</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Värmecentralen</ListItem>
-                <ListItem setIsOpen={setIsOpen}>Reglering och övervakning</ListItem>
-              </ul>
-            </ListItem>
-            <ListItem setIsOpen={setIsOpen}>Projektets gång</ListItem>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Varför uppdatering och injustering</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Så fungerar ett värmesystem</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Radiatorer, konvektorer och golvvärme</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Möblering</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Termostater och handrattar</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Inomhusklimat</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Radiatorventiler</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Stamventiler</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Olika kopplingsprinciper</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Vattenkvalitet</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Värmecentralen</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Reglering och övervakning</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="#varfor-uppdatering" shallow scroll={false}>
+                <a onClick={handleClick}>Projektets gång</a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
