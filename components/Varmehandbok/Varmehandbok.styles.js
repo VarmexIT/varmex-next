@@ -26,29 +26,74 @@ const content = styled.div`
     padding: ${space(8)};
   `}
 
-  h1,
-  h2 {
-    ${fonts.fontBarlowMedium()}
-    font-size: 4rem;
-    line-height: 1;
-    margin-bottom: ${space(4)};
-  }
+  > div {
+    &:first-of-type {
+      h2 {
+        margin-top: 0;
+      }
+    }
 
-  h2 {
-    font-size: 3rem;
+    h2,
+    h3 {
+      ${fonts.fontBarlowMedium()};
+      font-size: 3rem;
+      line-height: 1;
+      margin: ${space(4)} 0;
+    }
+
+    h3 {
+      font-size: 2.5rem;
+      margin: ${space(2)} 0 ${space(1)} 0;
+    }
+
+    ol {
+      list-style: none;
+      counter-reset: count;
+      position: relative;
+      padding: 0;
+
+      li {
+        counter-increment: count;
+        position: relative;
+        padding-left: ${space(10)};
+
+        + li {
+          margin-top: ${space(8)};
+        }
+
+        &::before {
+          content: counter(count);
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 16rem;
+          ${fonts.fontBarlowMedium()};
+          color: var(--clr-nobel);
+          line-height: 0.6;
+          opacity: 0.5;
+          text-align: right;
+        }
+      }
+    }
   }
 `
 
 const nav = styled.nav`
-  position: absolute;
-  left: 2.5%;
-  top: ${space(4)};
-  width: 95%;
+  position: fixed;
+  top: calc(var(--header-height) + ${space(1)});
+  left: ${space(1)};
+  width: calc(100% - ${space(2)});
   z-index: 1;
 
   ${mqw[750]`
     left: unset;
-    right: 20px;
+    right: ${space(1)};
+    width: fit-content;
+  `}
+
+  ${mqw[2000]`
+    left: unset;
+    right: ${space(1)};
     width: fit-content;
   `}
 
@@ -58,6 +103,9 @@ const nav = styled.nav`
     background-size: cover;
     padding: ${space(2)};
     border-radius: ${space(2)};
+    overflow: hidden;
+    max-height: 85vh;
+    overflow-y: scroll;
 
     .title {
       position: absolute;

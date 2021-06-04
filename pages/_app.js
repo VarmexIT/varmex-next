@@ -1,12 +1,17 @@
 import { useRef } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import smoothscroll from 'smoothscroll-polyfill'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
 import { AnimatePresence } from 'framer-motion'
 import GlobalStyles from '../styles/GlobalStyles'
 import scrollPageToElement from '../utils/scrollPageToElement'
 import useMediaQueryWidth from '../hooks/useMediaQueryWidth'
+
+if (typeof window !== 'undefined') {
+  smoothscroll.polyfill()
+}
 
 function MyApp({ Component, pageProps }) {
   const { route, asPath } = useRouter()

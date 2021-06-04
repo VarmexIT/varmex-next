@@ -9,9 +9,11 @@ function scrollTo(element, yOffset = 0, smooth) {
   })
 }
 
-const scrollPageToElement = (id, is750, { smooth = true } = {}) => {
+const scrollPageToElement = (id, is750, { smooth = true, offset } = {}) => {
   const sectionElement = document.querySelector(id)
-  const offsetY = !is750 ? -48 : -53
+  const offsetY = offset || (!is750 ? -48 : -53)
+
+  console.log('offsetY:', offsetY)
 
   scrollTo(sectionElement, offsetY, smooth)
 }
