@@ -91,12 +91,6 @@ const nav = styled.nav`
     width: fit-content;
   `}
 
-  ${mqw[2000]`
-    left: unset;
-    right: ${space(1)};
-    width: fit-content;
-  `}
-
   .inner {
     position: relative;
     background: var(--clr-cod-gray) url('/img/pattern_dark.svg') left top no-repeat;

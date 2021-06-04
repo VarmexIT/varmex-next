@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import Link from 'next/link'
 import { useState, useRef } from 'react'
-import { motion, useViewportScroll } from 'framer-motion'
+import { motion } from 'framer-motion'
 import useMediaQueryWidth from '../../hooks/useMediaQueryWidth'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 import styles from './Varmehandbok.styles'
@@ -10,7 +10,6 @@ import scrollPageToElement from '../../utils/scrollPageToElement'
 
 const VarmehandbokNav = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { scrollY } = useViewportScroll()
   const is2000 = useMediaQueryWidth(2000)
 
   const navRef = useRef()
@@ -35,16 +34,11 @@ const VarmehandbokNav = () => {
       animate={{
         ...(is2000 ? {} : { x: isOpen ? '0%' : 'calc(100% - 40px)' }),
         ...(is2000 ? {} : { opacity: isOpen ? 0.95 : 0.6 }),
-        // x: isOpen ? '0%' : 'calc(100% - 40px)',
-        // opacity: isOpen ? 0.95 : 0.6,
       }}
       transition={{
         duration: 0.7,
         ease: 'easeInOut',
       }}
-      // style={{
-      //   y: scrollY,
-      // }}
     >
       <div className="inner">
         <button className="title" type="button" onClick={() => setIsOpen(p => !p)}>
