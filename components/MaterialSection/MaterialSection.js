@@ -29,6 +29,13 @@ const MaterialSection = () => {
                 </Link>
               </span>
             ),
+            [INLINES.ASSET_HYPERLINK]: (node, children) => (
+              <span className="manualLinkWrapper">
+                <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
+                  {children} <HiArrowCircleRight />
+                </a>
+              </span>
+            ),
           },
         })}
       </div>
