@@ -66,6 +66,17 @@ p {
   }
 }
 
+figure {
+  margin: 0;
+}
+
+figcaption {
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  font-style: italic;
+  padding: 0 ${space(1)};
+}
+
 button {
   cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import styles from './Varmehandbok.styles'
 import VarmehandbokNav from './VarmehandbokNav'
+import WithImage from '../WithImage/WithImage'
 
 const Varmehandbok = () => {
   return (
@@ -33,8 +34,10 @@ const Varmehandbok = () => {
             och vad det kommer att innebära. När det handlar om ett så komplext område som
             inomhusklimat behöver man också vara förberedd på att det kan hända saker längs vägen.
           </p>
-          Vi hoppas den här lilla handboken ska kunna fungera som en länk mellan
-          bostadsrättsföreningen och våra medarbetare som utför arbete med värme.
+          <p>
+            Vi hoppas den här lilla handboken ska kunna fungera som en länk mellan
+            bostadsrättsföreningen och våra medarbetare som utför arbete med värme.
+          </p>
         </div>
 
         <div id="varfor-uppdatering-och-injustering">
@@ -59,21 +62,28 @@ const Varmehandbok = () => {
             längre tid på sig att bli varma, jämfört med andra delar. Vid obalans är det oftast
             kallast längst bort från pumpen, ofta högst upp i systemet.
           </p>
-          <h3>För varmt</h3>
-          <p>
-            Med tiden kan man även få för höga temperaturer inomhus, över-temperaturer som det
-            kallas. Att temperaturen blir för hög beror ofta på gamla och uttjänta termostater, men
-            kan även bero på att man centralt höjt värmen för att kompensera för att vissa har det
-            kallt.
-          </p>
-          [BILD]
-          <h3>Låter för mycket</h3>
-          <p>
-            Onormalt höga strömningsljud (sus) från radiatorerna är ytterligare en vanlig effekt av
-            att system inte är ordentligt injusterade. Det be- ror ofta på att någon, till exempel
-            en fastighetsskötare, höjt varvta- let på cirkulationspumpen för att vissa delar av
-            fastigheten inte får tillräckligt med värme.
-          </p>
+          <WithImage
+            hAlign="right"
+            src="1"
+            alt=""
+            caption="Det är inte alls konstigt att gå in och kompensera för att vissa delar är kallare än
+                andra, men det kan ge konsekvenser på andra ställen i systemet."
+          >
+            <h3>För varmt</h3>
+            <p>
+              Med tiden kan man även få för höga temperaturer inomhus, över-temperaturer som det
+              kallas. Att temperaturen blir för hög beror ofta på gamla och uttjänta termostater,
+              men kan även bero på att man centralt höjt värmen för att kompensera för att vissa har
+              det kallt.
+            </p>
+            <h3>Låter för mycket</h3>
+            <p>
+              Onormalt höga strömningsljud (sus) från radiatorerna är ytterligare en vanlig effekt
+              av att system inte är ordentligt injusterade. Det be- ror ofta på att någon, till
+              exempel en fastighetsskötare, höjt varvta- let på cirkulationspumpen för att vissa
+              delar av fastigheten inte får tillräckligt med värme.
+            </p>
+          </WithImage>
           <h3>Hur veta när det är dags?</h3>
           <p>
             Den här typen av problem kommer ofta smygande och det är därför svårt att veta exakt när
@@ -96,15 +106,21 @@ const Varmehandbok = () => {
             värmeförbrukningen i vissa fall i stället öka av en injustering. Vinsten av
             injusteringen är då i stället att man uppnår en fullgod funktion i värmesystemet.
           </p>
-          <h3>Rätt målsättning och förväntningar</h3>
-          <p>
-            I slutänden handlar en injustering om att skapa bästa möjliga värme- system utifrån
-            förutsättningarna. Men vägen dit är inte alltid spikrak. Vissa saker är svåra eller
-            omöjliga att se utan att plocka isär syste- met, de måste testas fram. Därför måste man
-            gå in i injusteringspro- jekt med ”öppna ögon” och vara medveten om att man alltid kan
-            upptäcka tidigare okända brister i systemet under arbetets gång.
-          </p>
-          [BILD, _hus_]
+          <WithImage
+            src="2"
+            alt=""
+            caption="Det är inte alls konstigt att gå in och kompensera för att vissa delar är kallare än
+                andra, men det kan ge konsekvenser på andra ställen i systemet."
+          >
+            <h3>Rätt målsättning och förväntningar</h3>
+            <p>
+              I slutänden handlar en injustering om att skapa bästa möjliga värme- system utifrån
+              förutsättningarna. Men vägen dit är inte alltid spikrak. Vissa saker är svåra eller
+              omöjliga att se utan att plocka isär syste- met, de måste testas fram. Därför måste
+              man gå in i injusteringspro- jekt med ”öppna ögon” och vara medveten om att man alltid
+              kan upptäcka tidigare okända brister i systemet under arbetets gång.
+            </p>
+          </WithImage>
         </div>
 
         <div id="sa-fungerar-ett-varmesystem">
@@ -130,55 +146,64 @@ const Varmehandbok = () => {
             varje stam finns ett par ventiler, för tillopp och retur. Ventilerna gör det möjligt att
             både kontrollmäta flöden till respektive stam och att stänga av flöden.
           </p>
-          <p>
-            I lägenheter finns sedan radiatorer (eller andra värmare) kopplade till systemet. När
-            radiatorerna värms av vattnet avger de värme till rum- met, vilket innebär att vattnet
-            kyls av när det passerar genom radiatorn.
-          </p>
-          [BILD, _element_]
+          <WithImage hAlign="right" placement="top" src="3" alt="">
+            <p>
+              I lägenheter finns sedan radiatorer (eller andra värmare) kopplade till systemet. När
+              radiatorerna värms av vattnet avger de värme till rum- met, vilket innebär att vattnet
+              kyls av när det passerar genom radiatorn.
+            </p>
+          </WithImage>
         </div>
 
         <div id="radiatorer-konvektorer-och-golvvarme">
           <h2>Radiatorer, konvektorer och golvvärme</h2>
-          <p>
-            Det finns olika typer av värmare – några exempel är radiatorer, konvektorer och
-            golvvärme. Vanligast är radiatorer, eller element som de oftare brukar kallas. Radiatorn
-            har fått sitt namn från engelskans radiation, eftersom värmeavgivningen till en viss del
-            bygger på en strålningseffekt (cirka 20%). En konvektor använder sig nästan uteslutande
-            av luftströmmar för att sprida värme. När konvektorn värmer upp luft stiger den och
-            ersätts av kyligare luft under elementet, vilket skapar en cirkulation av luften som
-            värmer upp rummet. Det är det här cirkulationsfenomenet som kallas konvektion.
-          </p>
-          [BILD, Radiator]
-          <p>
-            Varken radiatorer eller konvektorer är helt renod- lade, utan båda använder sig (i olika
-            grad) av såväl strålning som konvektion för att överföra värme. Moderna radiatorer har
-            ofta veckade plåtar på panelerna i syfte att öka konvek- tionsövergången till rummet.
-            Äldre radiatorer jobbar dock i högre grad med strålning. De kräver oftast mycket högre
-            temperatur på vattnet än vad moderna radiatorer behöver. Äldre radiato- rer var ofta
-            designade för en vattentemperatur på 80 °C, medan moderna radiatorer kan klara sig med
-            så låga temperaturer som 45 °C.
-          </p>
-          [BILD, Konvektor]
-          <p>
-            Det tredje exemplet, golvvärme, läggs som vätske- fyllda slingor i golvet. Golvvärmen
-            bygger nästan uteslutande på strålning. Den arbetar med lägre temperaturer, ofta runt
-            max 35–40 °C, för att inte riskera att skada golvet. Det är inte heller skönt att gå på
-            alltför varma golv. De låga temperaturerna kräver att man har relativt stora ytor täckta
-            av värmesslingor. Det finns även elek- trisk golvvärme, vilket är vanligt i badrum.
-            Badrum kan även innehålla handdukstorkar som är kopplade till olika varmvat- tensystem.
-            Idag är det dock inte tillåtet att installera handduk- storkar direkt på varmvattensys-
-            temet och det är därför vanligare att man installerar elektriska han- dukstorkar.
-          </p>
-          [BILD, Goldvärme]
-          <h3>Om en radiator är kall?</h3>
-          <p>
-            Om enskilda radiatorer blir kalla kan de behöva luftas. Det är extra vanligt om man bor
-            högt upp i huset. Boende bör vid behov ta kontakt med bostadsrättsföreningens styrelse
-            eller hyresvärden, som ofta har riktlinjer för hur man ska lufta radiatorer i
-            fastigheten. Vid återkommande behov av luftning är det viktigt att säkerställa att
-            systemets tryck- hållning (expansionskärl) fungerar som det ska.
-          </p>
+          <WithImage hAlign="right" src="4" caption="Radiator" captionAlign="center">
+            <p>
+              Det finns olika typer av värmare – några exempel är radiatorer, konvektorer och
+              golvvärme. Vanligast är radiatorer, eller element som de oftare brukar kallas.
+              Radiatorn har fått sitt namn från engelskans radiation, eftersom värmeavgivningen till
+              en viss del bygger på en strålningseffekt (cirka 20%). En konvektor använder sig
+              nästan uteslutande av luftströmmar för att sprida värme. När konvektorn värmer upp
+              luft stiger den och ersätts av kyligare luft under elementet, vilket skapar en
+              cirkulation av luften som värmer upp rummet. Det är det här cirkulationsfenomenet som
+              kallas konvektion.
+            </p>
+          </WithImage>
+          <WithImage hAlign="right" src="5" caption="Konvektor" captionAlign="center">
+            <p>
+              Varken radiatorer eller konvektorer är helt renod- lade, utan båda använder sig (i
+              olika grad) av såväl strålning som konvektion för att överföra värme. Moderna
+              radiatorer har ofta veckade plåtar på panelerna i syfte att öka konvek-
+              tionsövergången till rummet. Äldre radiatorer jobbar dock i högre grad med strålning.
+              De kräver oftast mycket högre temperatur på vattnet än vad moderna radiatorer behöver.
+              Äldre radiato- rer var ofta designade för en vattentemperatur på 80 °C, medan moderna
+              radiatorer kan klara sig med så låga temperaturer som 45 °C.
+            </p>
+          </WithImage>
+          <WithImage hAlign="right" src="6" caption="Äldre radiator" captionAlign="center">
+            <p>
+              Det tredje exemplet, golvvärme, läggs som vätske- fyllda slingor i golvet. Golvvärmen
+              bygger nästan uteslutande på strålning. Den arbetar med lägre temperaturer, ofta runt
+              max 35–40 °C, för att inte riskera att skada golvet. Det är inte heller skönt att gå
+              på alltför varma golv. De låga temperaturerna kräver att man har relativt stora ytor
+              täckta av värmesslingor. Det finns även elek- trisk golvvärme, vilket är vanligt i
+              badrum. Badrum kan även innehålla handdukstorkar som är kopplade till olika varmvat-
+              tensystem. Idag är det dock inte tillåtet att installera handduk- storkar direkt på
+              varmvattensys- temet och det är därför vanligare att man installerar elektriska han-
+              dukstorkar.
+            </p>
+          </WithImage>
+          <WithImage hAlign="right" src="7" caption="Golvvärme" captionAlign="center">
+            <h3>Om en radiator är kall?</h3>
+            <p>
+              Om enskilda radiatorer blir kalla kan de behöva luftas. Det är extra vanligt om man
+              bor högt upp i huset. Boende bör vid behov ta kontakt med bostadsrättsföreningens
+              styrelse eller hyresvärden, som ofta har riktlinjer för hur man ska lufta radiatorer i
+              fastigheten. Vid återkommande behov av luftning är det viktigt att säkerställa att
+              systemets tryck- hållning (expansionskärl) fungerar som det ska.
+            </p>
+          </WithImage>
+
           <h3>Hur varmt kan man få?</h3>
           <p>
             Vid en injustering fördelar man flödet i systemet, så att varje vär- mare får det flöde
@@ -198,22 +223,20 @@ const Varmehandbok = () => {
             någonting. Verkligheten ser dock ofta annorlunda ut, men det är viktigt att förstå vad
             det är som påverkar radiatorns funktion för att kunna ge den de bästa förutsättningarna.
           </p>
-          <p>
-            Det viktigaste är att aldrig stänga in en radiator bakom ett elementskydd – eftersom
-            radiatorn då värmer luften bakom skyddet men spridningen till rummet blir mycket dålig.
-            Samma typ av effektbe- gränsning kan man få genom att hänga gardiner framför radiatorn.
-            Även fönsterbrädor hämmar luftströmmarna runt radiatorn, vilket påverkar
-            värmespridningen till rummet. Ju närmre fönster- brädan radiatorn sitter, desto mer
-            påverkas värme- spridningen. En spalt mellan fönsterbräda och vägg kan reducera
-            problemet med att fönsterbrädan hämmar värmespridningen.
-          </p>
-          [BILD] [BILD] [BILD]
-          <p>
-            <em>
-              Ibland är radiatorer inbyggda i djupa nischer, vilket kan göra det svårt att få till
-              bra värmespridning. Då kan man kan i vissa fall behöva komplettera med fläktar.
-            </em>
-          </p>
+          <WithImage
+            src="8"
+            caption="Ibland är radiatorer inbyggda i djupa nischer, vilket kan göra det svårt att få till bra värmespridning. Då kan man kan i vissa fall behöva komplettera med fläktar."
+          >
+            <p>
+              Det viktigaste är att aldrig stänga in en radiator bakom ett elementskydd – eftersom
+              radiatorn då värmer luften bakom skyddet men spridningen till rummet blir mycket
+              dålig. Samma typ av effektbe- gränsning kan man få genom att hänga gardiner framför
+              radiatorn. Även fönsterbrädor hämmar luftströmmarna runt radiatorn, vilket påverkar
+              värmespridningen till rummet. Ju närmre fönster- brädan radiatorn sitter, desto mer
+              påverkas värme- spridningen. En spalt mellan fönsterbräda och vägg kan reducera
+              problemet med att fönsterbrädan hämmar värmespridningen.
+            </p>
+          </WithImage>
           <p>
             Det är också viktigt att inte möblera tätt intill en radiator. Att till exempel ställa
             en soffa alldeles framför radiatorn begränsar värmeeffekten på samma sätt som ett
@@ -244,45 +267,48 @@ const Varmehandbok = () => {
             stängningstemperatur på 23 °C. Om radiatorerna är inbygg- da eller har tjocka
             fönsterbrädor över sig kan man behöva ännu större temperaturskillnad.
           </p>
-          <h3>Tänk på!</h3>
-          <p>
-            Justera alltid en termostat i små steg. Det tar lång tid (flera timmar) innan man märker
-            effekten av en ändrad inställning. Därför gäller det att ha tålamod och bara göra små
-            justeringar i taget. Om man exempelvis tycker att det är för varmt bör man börja med att
-            sänka ett halvt steg enligt termostatens skala och därefter vänta några timmar innan man
-            gör någon ytterligare förändring.
-          </p>
-          [BILD, Termostat]
-          <h3>Termostat med extern givare</h3>
-          <p>
-            För att ta sig runt problemet med att en termostat ”luras” av att stillastående luft
-            kring radiatorn blir varm, trots att rumstemperaturen inte är tillräckligt hög, kan man
-            i extrema fall använda sig av en ter- mostat med extern temperaturgivare. Det innebär
-            att själva känselkroppen flyttats ur termostaten, för att i stället kunna monteras på en
-            vägg en bit från radiatorn, där lufttemperaturen inte är direkt påverkad av radiatorn.
-            Den externa givaren kom- municerar med termostaten (via ett mycket tunt kapillärrör
-            eller på elektronisk väg) om den ska öppna eller stänga.
-          </p>
-          [BILD, Extern givare]
-          <h3>Handratt i stället för termostat</h3>
-          <p>
-            Ett annat alternativ är att montera handrattar på radiatorernas ventiler. En handratt är
-            ett vred utan termostatfunktion – vilket ger helt manuell reglering. Man vri- der själv
-            upp eller ner för att påverka värmeflödet i radiatorn, beroende på hur varmt man tycker
-            att det är och vill ha det. Även handrattar kan vara en lösning då termostater blir
-            ”lura- de”. De leder dock ofta till ökad energianvändning, eftersom värmen inte
-            automatiskt stängs av när man uppnått önskad temperatur i rummet. På grund av den
-            inbyggda fördröjnings- effekten, att det tar tid för all luft i rummet att hinna reagera
-            på en ändring, är det också vanligt att man justerar handrat- ten onödigt mycket och
-            ofta.{' '}
-          </p>
-          <p>
-            <em>
-              Att gå från handrattar till termostater är en vanlig energispar- åtgärd, som kan
-              betala sig på några månader.
-            </em>
-          </p>
-          [BILD, Handratt]
+          <WithImage hAlign="right" src="9" caption="Termostat" captionAlign="center">
+            <h3>Tänk på!</h3>
+            <p>
+              Justera alltid en termostat i små steg. Det tar lång tid (flera timmar) innan man
+              märker effekten av en ändrad inställning. Därför gäller det att ha tålamod och bara
+              göra små justeringar i taget. Om man exempelvis tycker att det är för varmt bör man
+              börja med att sänka ett halvt steg enligt termostatens skala och därefter vänta några
+              timmar innan man gör någon ytterligare förändring.
+            </p>
+          </WithImage>
+          <WithImage hAlign="left" src="10">
+            <h3>Termostat med extern givare</h3>
+            <p>
+              För att ta sig runt problemet med att en termostat ”luras” av att stillastående luft
+              kring radiatorn blir varm, trots att rumstemperaturen inte är tillräckligt hög, kan
+              man i extrema fall använda sig av en ter- mostat med extern temperaturgivare. Det
+              innebär att själva känselkroppen flyttats ur termostaten, för att i stället kunna
+              monteras på en vägg en bit från radiatorn, där lufttemperaturen inte är direkt
+              påverkad av radiatorn. Den externa givaren kom- municerar med termostaten (via ett
+              mycket tunt kapillärrör eller på elektronisk väg) om den ska öppna eller stänga.
+            </p>
+          </WithImage>
+          <WithImage hAlign="right" src="11" caption="Handratt" captionAlign="center">
+            <h3>Handratt i stället för termostat</h3>
+            <p>
+              Ett annat alternativ är att montera handrattar på radiatorernas ventiler. En handratt
+              är ett vred utan termostatfunktion – vilket ger helt manuell reglering. Man vri- der
+              själv upp eller ner för att påverka värmeflödet i radiatorn, beroende på hur varmt man
+              tycker att det är och vill ha det. Även handrattar kan vara en lösning då termostater
+              blir ”lura- de”. De leder dock ofta till ökad energianvändning, eftersom värmen inte
+              automatiskt stängs av när man uppnått önskad temperatur i rummet. På grund av den
+              inbyggda fördröjnings- effekten, att det tar tid för all luft i rummet att hinna
+              reagera på en ändring, är det också vanligt att man justerar handrat- ten onödigt
+              mycket och ofta.
+            </p>
+            <p>
+              <em>
+                Att gå från handrattar till termostater är en vanlig energispar- åtgärd, som kan
+                betala sig på några månader.
+              </em>
+            </p>
+          </WithImage>
         </div>
 
         <div id="inomhusklimat">
@@ -309,26 +335,36 @@ const Varmehandbok = () => {
             varmt eller för kallt. Det är en viktig insikt att ha med sig i arbeten med
             inomhusklimat. Även då man nått så långt det går kommer vissa att vara missnöjda.
           </p>
-          <p>
-            Det går inte att ställa samma krav på inomhusklimat i alla delar av ett rum eller en
-            lägenhet. Ytterväggar och fönster är till exempel ofta svalare än övriga ytor och den
-            som ställer sig in- till dessa kommer att uppleva att det är kallt. Den del av ett rum
-            där man kan ställa krav på inomhusklimatet kallas för vistelsezonen.
-          </p>
-          [BILD, Möblera om etc etc] [BILD, Vistelzon, osv osv]
-          <h3>Myndighetskrav på inomhusklimat i bostäder</h3>
-          <p>
-            Vistelsezonen i hemmiljö definieras i Folkhälsomyndighetens allmän- na råd om temperatur
-            inomhus (FoHMFS 2014:17): ”zon i ett rum avgränsad horisontellt 0,1 och 2,0 meter över
-            golv samt vertikalt 0,6 meter från innervägg och 1,0 meter från yttervägg”.
-            Folkhälsomyndighetens krav på inomhusklimat i bostäder säger att den operativa
-            temperaturen i vistelsezonen bör ligga mellan 20 och 23 °C, men aldrig under 18° C eller
-            långvarigt över 24 °C (kortvarigt accepteras upp till 26 °C). Eftersom kraven gäller
-            operativ tempera- tur och inte lufttemperatur, som man kan mäta med en vanlig termo-
-            meter, kan det vara svårt att veta om man ligger ”rätt”. Ett riktvärde att utgå ifrån är
-            om lufttemperaturen understiger 20 °C, då finns skäl att utreda om man uppfyller kraven
-            på operativ temperatur.
-          </p>
+          <WithImage
+            hAlign="right"
+            src="12"
+            caption="Möblera om möjligt i vistelsezonen. Ytterväggar och fönster är ofta svalare än övriga ytor."
+          >
+            <p>
+              Det går inte att ställa samma krav på inomhusklimat i alla delar av ett rum eller en
+              lägenhet. Ytterväggar och fönster är till exempel ofta svalare än övriga ytor och den
+              som ställer sig in- till dessa kommer att uppleva att det är kallt. Den del av ett rum
+              där man kan ställa krav på inomhusklimatet kallas för vistelsezonen.
+            </p>
+          </WithImage>
+          <WithImage
+            src="13"
+            caption="Vistelsezonen i hemmiljö definieras i Folkhälsomyndighetens allmänna råd om temperatur inomhus (FoHMFS 2014:17)"
+          >
+            <h3>Myndighetskrav på inomhusklimat i bostäder</h3>
+            <p>
+              Vistelsezonen i hemmiljö definieras i Folkhälsomyndighetens allmän- na råd om
+              temperatur inomhus (FoHMFS 2014:17): ”zon i ett rum avgränsad horisontellt 0,1 och 2,0
+              meter över golv samt vertikalt 0,6 meter från innervägg och 1,0 meter från yttervägg”.
+              Folkhälsomyndighetens krav på inomhusklimat i bostäder säger att den operativa
+              temperaturen i vistelsezonen bör ligga mellan 20 och 23 °C, men aldrig under 18° C
+              eller långvarigt över 24 °C (kortvarigt accepteras upp till 26 °C). Eftersom kraven
+              gäller operativ tempera- tur och inte lufttemperatur, som man kan mäta med en vanlig
+              termo- meter, kan det vara svårt att veta om man ligger ”rätt”. Ett riktvärde att utgå
+              ifrån är om lufttemperaturen understiger 20 °C, då finns skäl att utreda om man
+              uppfyller kraven på operativ temperatur.
+            </p>
+          </WithImage>
         </div>
 
         <div id="radiatorventiler">
@@ -343,7 +379,30 @@ const Varmehandbok = () => {
             skilja stort i såväl arbets- insats som kostnad, beroende på vilken typ av ventiler man
             har.
           </p>
-          [BILD, Byte av ventil] [BILD, Byte av ventilsats] [BILD, Byte av ventilkopper]
+          <div className="flexedContent">
+            <WithImage placement="top" src="14">
+              <h4>Byte av ventil</h4>
+              <p>
+                Vanligast är att man byter själva ventilen, alltså hela ventilhuset inklusive den
+                inre mekaniken.
+              </p>
+            </WithImage>
+            <WithImage placement="top" src="15">
+              <h4>Byte av ventilinsats</h4>
+              <p>
+                Ibland är det möjligt att bara byta den inre mekaniken, som kallas för ventilinsats.
+              </p>
+            </WithImage>
+            <WithImage placement="top" src="16">
+              <h4>Byte av ventilkoppel</h4>
+              <p>
+                I vissa fall räcker det inte att byta bara ventilen eller ven- tilinsatsen – utan
+                man behö- ver byta hela ventilkopplet. I ventilkopplet ingår, utöver själva
+                ventilen, även kringlig- gande rör och kopplingar.
+              </p>
+            </WithImage>
+          </div>
+
           <h3>Förstudie säkerställer</h3>
           <p>
             För att redan innan arbetet påbörjas kunna presentera vad som krävs inleder vi med en
@@ -382,7 +441,14 @@ const Varmehandbok = () => {
             avstängningsventiler. Det kan till exempel handla om stam- mar som har få radiatorer
             kopplade till sig och/eller där man inte ser behov av att kunna mäta flödet i stammarna.
           </p>
-          [BILD] [BILD]
+          <div className="flexedContent">
+            <WithImage
+              src="17"
+              caption="Insjusteringsventil & Avstängningsventil"
+              captionAlign="center"
+            />
+            <WithImage src="18" caption="Differenstrycksventil" captionAlign="center" />
+          </div>
           <h3>Självreglerande ventiler</h3>
           <p>
             Det finns även ventiler som har en viss självreglerande funktion, man brukar då tala om
@@ -409,11 +475,9 @@ const Varmehandbok = () => {
             Viktigt att veta är att värmesystem alltid behöver injusteras – även om man har
             självreglerande differenstrycksventiler.
           </p>
-          [BILD]
-          <br />
-          [BILD]
-          <br />
-          [BILD]
+          <WithImage src="19" caption="Avstängningsventiler" captionAlign="center" />
+          <WithImage src="20" caption="Tvårörssystem" captionAlign="center" />
+          <WithImage src="21" caption="Ettrörssystem" captionAlign="center" />
         </div>
 
         <div id="olika-kopplingsprinciper">
@@ -481,26 +545,25 @@ const Varmehandbok = () => {
             avgasare för per- manent installation, eftersom gaser kommer att leta sig in i systemet
             igen när den mobila avgasaren demonterats.
           </p>
-          <h3>Filter</h3>
-          <p>
-            För att ta bort föroreningar finns effektiva finmaskiga filter som man kan installera
-            permanent i systemet. Välj helst filter med magnetsta- var, eftersom de effektivt
-            filtrerar bort magnetit.
-          </p>
-          <h3>Rengöring</h3>
-          <p>
-            Om man genomför byte av ventiler eller liknande ingrepp i ett system som tidigare inte
-            haft filter och avgasnings- utrustning – då kan man med fördel passa på att göra en mer
-            omfattande rengöring av systemet. För att göra rent ett värmesystem ansluter man ett
-            särskilt tvättaggregat med filter och magnetfällor, ibland använder man även en mild
-            kemikalie för att lösa eventuella beläggningar.
-          </p>
-          [BILD]
-          <br />
-          [BILD, Fjärrvärme]
-          <br />
-          [BILD, Bergvärme]
-          <br />
+          <WithImage hAlign="right" src="22">
+            <h3>Filter</h3>
+            <p>
+              För att ta bort föroreningar finns effektiva finmaskiga filter som man kan installera
+              permanent i systemet. Välj helst filter med magnetsta- var, eftersom de effektivt
+              filtrerar bort magnetit.
+            </p>
+            <h3>Rengöring</h3>
+            <p>
+              Om man genomför byte av ventiler eller liknande ingrepp i ett system som tidigare inte
+              haft filter och avgasnings- utrustning – då kan man med fördel passa på att göra en
+              mer omfattande rengöring av systemet. För att göra rent ett värmesystem ansluter man
+              ett särskilt tvättaggregat med filter och magnetfällor, ibland använder man även en
+              mild kemikalie för att lösa eventuella beläggningar.
+            </p>
+          </WithImage>
+
+          <WithImage src="23" caption="Fjärrvärme" captionAlign="center" />
+          <WithImage src="24" caption="Bergvärme" captionAlign="center" />
         </div>
 
         <div id="varmecentralen">
@@ -551,20 +614,21 @@ const Varmehandbok = () => {
             kompensera för lokala avvikelser. Det totala vattenflödet i systemet är därför relativt
             konstant, oavsett utomhus- temperatur.
           </p>
-          <h3>Värmekurvan</h3>
-          <p>
-            Den temperatur man värmer vattnet till cen- tralt kallas framledningstemperatur. Vilken
-            framledningstemperatur man bör ha vid olika utomhustemperaturer går att räkna ut
-            teoretiskt, baserat på hur värmesystemet är dimensionerat.
-          </p>
-          <p>
-            Relationen mellan framledningstemperatur och utomhustemperatur kallas ”kurva” el- ler
-            ”värmekurva” och är teoretiskt helt linjär. Det finns dock ofta möjligheter att lägga in
-            brytpunkter i kurvan och det är vanligt att inte göra styrsystemets värmekurva helt
-            linjär. Att förskjuta en kurva upp eller ner kallas parallellförskjutning. Ibland säger
-            man också att man ”sänker” eller ”höjer” kurvan.
-          </p>
-          [BILD]
+          <WithImage hAlign="right" vAlign="center" src="25">
+            <h3>Värmekurvan</h3>
+            <p>
+              Den temperatur man värmer vattnet till cen- tralt kallas framledningstemperatur.
+              Vilken framledningstemperatur man bör ha vid olika utomhustemperaturer går att räkna
+              ut teoretiskt, baserat på hur värmesystemet är dimensionerat.
+            </p>
+            <p>
+              Relationen mellan framledningstemperatur och utomhustemperatur kallas ”kurva” el- ler
+              ”värmekurva” och är teoretiskt helt linjär. Det finns dock ofta möjligheter att lägga
+              in brytpunkter i kurvan och det är vanligt att inte göra styrsystemets värmekurva helt
+              linjär. Att förskjuta en kurva upp eller ner kallas parallellförskjutning. Ibland
+              säger man också att man ”sänker” eller ”höjer” kurvan.
+            </p>
+          </WithImage>
           <h3>Olika faktorer påverkar temperaturupplevelsen</h3>
           <p>
             När utomhustemperaturen ligger runt 0°C brukar man till exempel vilja ha en högre

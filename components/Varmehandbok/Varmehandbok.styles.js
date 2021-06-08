@@ -7,7 +7,7 @@ const varmehandbok = styled(Container)`
   position: relative;
   overflow: hidden;
 
-  img {
+  > img {
     display: block;
     width: 100%;
     max-height: 450px;
@@ -34,7 +34,8 @@ const content = styled.div`
     }
 
     h2,
-    h3 {
+    h3,
+    h4 {
       ${fonts.fontBarlowMedium()};
       font-size: 3rem;
       line-height: 1;
@@ -43,7 +44,13 @@ const content = styled.div`
 
     h3 {
       font-size: 2.5rem;
-      margin: ${space(2)} 0 ${space(1)} 0;
+      margin: ${space(4)} 0 ${space(2)} 0;
+    }
+
+    h4 {
+      font-size: 2.3rem;
+      margin-top: 0;
+      margin-bottom: 0;
     }
 
     ol {
@@ -72,6 +79,36 @@ const content = styled.div`
           line-height: 0.6;
           opacity: 0.5;
           text-align: right;
+        }
+      }
+    }
+
+    .flexedContent {
+      display: flex;
+      flex-direction: column;
+
+      ${mqw[750]`
+        align-items: flex-start;
+        flex-direction: row;
+      `}
+
+      > div {
+        flex: 1;
+
+        + div {
+          margin: 0 ${space(1)};
+        }
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+
+        img {
+          max-height: 200px;
         }
       }
     }
