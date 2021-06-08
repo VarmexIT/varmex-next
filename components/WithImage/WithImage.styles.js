@@ -47,6 +47,8 @@ const withImage = styled.div`
     }
 
     figcaption {
+      text-align: left;
+
       &.center {
         text-align: center;
       }
