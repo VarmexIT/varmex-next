@@ -1,10 +1,6 @@
 import styles from './Varmehandbok.styles'
-<<<<<<< HEAD
-// import VarmehandbokNav from './VarmehandbokNav'
-=======
 import VarmehandbokNav from './VarmehandbokNav'
 import WithImage from '../WithImage/WithImage'
->>>>>>> varmehandboken
 
 const Varmehandbok = () => {
   return (
@@ -13,11 +9,8 @@ const Varmehandbok = () => {
         src="/img/varmehandbok.png"
         alt="Kvinna som sitter bekvämt i en fåtölj och dricker kaffe"
       />
-      {/* <VarmehandbokNav /> */}
+      <VarmehandbokNav />
       <styles.content>
-<<<<<<< HEAD
-        <p>Kommer inom kort</p>
-=======
         <div>
           <h2>Vägen till ett lyckat projekt</h2>
           <p>
@@ -796,7 +789,6 @@ const Varmehandbok = () => {
             </li>
           </ol>
         </div>
->>>>>>> varmehandboken
       </styles.content>
     </styles.varmehandbok>
   )
