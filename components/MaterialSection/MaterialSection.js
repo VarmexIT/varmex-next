@@ -20,28 +20,16 @@ const MaterialSection = () => {
       <div className="body">
         {documentToReactComponents(body, {
           renderNode: {
-            [INLINES.ASSET_HYPERLINK]: (node, children) => (
+            [INLINES.HYPERLINK]: (node, children) => (
               <span className="manualLinkWrapper">
-                <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
-                  {children} <HiArrowCircleRight />
-                </a>
-              </span>
-            ),
-            [INLINES.ASSET_HYPERLINK]: (node, children) => (
-              <span className="manualLinkWrapper">
-                <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
-                  {children} <HiArrowCircleRight />
-                </a>
+                <Link href={node.data.uri}>
+                  <a>
+                    {children} <HiArrowCircleRight />
+                  </a>
+                </Link>
               </span>
             ),
           },
-          [INLINES.ASSET_HYPERLINK]: (node, children) => (
-            <span className="manualLinkWrapper">
-              <a href={node.data.target.fields.file.url} title={node.data.target.fields.title}>
-                {children} <HiArrowCircleRight />
-              </a>
-            </span>
-          ),
         })}
       </div>
     </styles.materialSection>
