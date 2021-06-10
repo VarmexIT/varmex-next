@@ -1,7 +1,6 @@
 import { memo } from 'react'
 import { QueryClient } from 'react-query'
 import { dehydrate } from 'react-query/hydration'
-import smoothscroll from 'smoothscroll-polyfill'
 import { getContentByContentTypeId } from '../services/cms'
 import { EnterAnimation, ExitAnimation } from '../components/PageTransition/PageTransition'
 import Hero from '../components/Hero/Hero'
@@ -14,10 +13,6 @@ import SolutionsSection from '../components/SolutionsSection/SolutionsSection'
 import MaterialSection from '../components/MaterialSection/MaterialSection'
 import WorkWithUsSection from '../components/WorkWithUsSection/WorkWithUsSection'
 import ContactSection from '../components/ContactSection/ContactSection'
-
-if (typeof window !== 'undefined') {
-  smoothscroll.polyfill()
-}
 
 const HomePage = () => {
   return (

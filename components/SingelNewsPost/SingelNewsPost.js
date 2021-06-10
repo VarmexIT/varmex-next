@@ -16,7 +16,7 @@ const SingelNewsPost = ({ post, newsItems }) => {
           {documentToReactComponents(post.body)}
 
           <div className="meta">
-            <p>Mattias Eriksson</p>
+            <p>Mattias Ericsson</p>
           </div>
         </styles.content>
       </article>

@@ -17,7 +17,7 @@ const content = styled.div`
   padding: ${space(2)};
 
   ${mqw[900]`
-    padding: ${space(8)};
+    padding: ${space(8)} 15%;
   `}
 
   h1,
