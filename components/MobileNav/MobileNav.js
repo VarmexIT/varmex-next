@@ -78,7 +78,7 @@ const MobileNav = () => {
             <LinkItem slug="nyheter">Nyheter</LinkItem>
             <LinkItem slug="referenser">Referenser</LinkItem>
             <LinkItem slug="vara-losningar">Våra lösningar</LinkItem>
-            <LinkItem slug="material">Material</LinkItem>
+            <LinkItem slug="varmehandboken">Värmehandboken</LinkItem>
             <LinkItem slug="jobba-med-oss">Jobba med oss</LinkItem>
             <LinkItem slug="kontakt">Kontakt</LinkItem>
           </ul>

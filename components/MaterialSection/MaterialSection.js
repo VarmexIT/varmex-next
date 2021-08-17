@@ -15,7 +15,7 @@ const MaterialSection = () => {
   const { image, body } = data?.items?.[0].fields
 
   return (
-    <styles.materialSection innerClassName="inner" slug="material">
+    <styles.materialSection innerClassName="inner" slug="varmehandboken">
       <img src={image.fields.file.url} alt={image.fields.title} />
       <div className="body">
         {documentToReactComponents(body, {

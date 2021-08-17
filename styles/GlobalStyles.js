@@ -11,7 +11,8 @@ const GlobalStyles = createGlobalStyle`
   `}
 
   --clr-cod-gray: #1d1d1d;
-  --clr-green: #b3d078;
+  --clr-green: #466f33;
+  --clr-green-light: #b3d078;
   --clr-silver: rgb(200, 200, 200, 0.25);
   --clr-nobel: #b7b7b7;
   --clr-error-red-background: #c33434;

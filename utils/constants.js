@@ -31,8 +31,8 @@ export const MENU_ITEMS = [
     contentfulContentTypeId: CONTENTFUL_CONTENT_TYPE_IDS.solutions,
   },
   {
-    slug: 'material',
-    linkText: 'Material',
+    slug: 'varmehandboken',
+    linkText: 'Värmehandboken',
     contentfulContentTypeId: CONTENTFUL_CONTENT_TYPE_IDS.material,
   },
   {

@@ -52,9 +52,9 @@ const heroItem = styled.div`
         ${fonts.fontBarlowRegular()}
         margin-top: ${space(2)};
         font-size: 2.8rem;
-        color: var(--clr-green);
-        border-bottom: 2px solid transparent;
-        transition: border-color 0.3s;
+        color: var(--clr-green-light);
+        /* border-bottom: 2px solid transparent; */
+        /* transition: border-color 0.3s; */
         text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 
         ${mqw[900]`
@@ -66,7 +66,8 @@ const heroItem = styled.div`
         cursor: pointer;
 
         &:hover {
-          border-color: var(--clr-green);
+          /* border-color: var(--clr-green-light); */
+          text-decoration: underline;
         }
       }
     }
