@@ -16,18 +16,18 @@ const Varmehandbok = () => {
 
   return (
     <styles.varmehandbok noGutter>
-      <img
-        src={varmehandbok.image.fields.file.url}
-        alt="Kvinna som sitter bekvämt i en fåtölj och dricker kaffe"
-      />
-      <div
-        style={{
-          position: 'relative',
-          height: '700px',
-        }}
-      >
-        <ReactReader url={varmehandbok.epubFile.fields.file.url} showToc={false} />
-      </div>
+      {/* <img src={varmehandbok.image.fields.file.url} alt={varmehandbok.image.fields.title} /> */}
+      <styles.content>
+        <h1>{varmehandbok.title}</h1>
+        <div
+          style={{
+            position: 'relative',
+            height: '700px',
+          }}
+        >
+          <ReactReader url={varmehandbok.epubFile.fields.file.url} showToc={false} />
+        </div>
+      </styles.content>
     </styles.varmehandbok>
   )
 }
