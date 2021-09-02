@@ -39,6 +39,7 @@ export const getStaticProps = async () => {
   const queryClient = new QueryClient()
   const queries = [
     'siteSettings',
+    'boilerplate',
     'hero',
     'theCompany',
     'news',
