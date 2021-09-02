@@ -49,6 +49,7 @@ export const getStaticProps = async () => {
     'material',
     'workWithUs',
     'contact',
+    'varmehandbok',
   ]
 
   const promises = queries.map(query =>

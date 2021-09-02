@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<package version="3.0" xmlns="http://www.idpf.org/2007/opf" unique-identifier="bookid" prefix="rendition: http://www.idpf.org/vocab/rendition/# ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+		<meta name="generator" content="Adobe InDesign 15.0.1" />
+		<meta name="cover" content="x1.png" />
+		<meta property="ibooks:specified-fonts">true</meta>
+		<dc:title>Inomhusklimat Värme Hela2003</dc:title>
+		<dc:date>2020-03-13T10:45:39Z</dc:date>
+		<dc:language>sv-SE</dc:language>
+		<meta property="dcterms:modified">2020-03-13T10:45:39Z</meta>
+		<dc:identifier id="bookid">urn:uuid:29d919dd-24f5-4384-be78-b447c9dc299b</dc:identifier>
+		<!--fixed-layout options-->
+		<meta property="rendition:layout">pre-paginated</meta>
+		<meta property="rendition:orientation">landscape</meta>
+		<meta property="rendition:spread">both</meta>
+	</metadata>
+	<manifest>
+		<item id="Inomhusklimat_Va-rme_Hela2003-1" href="Inomhusklimat_Va%CC%88rme_Hela2003-1.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-2" href="Inomhusklimat_Va%CC%88rme_Hela2003-2.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-3" href="Inomhusklimat_Va%CC%88rme_Hela2003-3.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-4" href="Inomhusklimat_Va%CC%88rme_Hela2003-4.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-5" href="Inomhusklimat_Va%CC%88rme_Hela2003-5.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-6" href="Inomhusklimat_Va%CC%88rme_Hela2003-6.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-7" href="Inomhusklimat_Va%CC%88rme_Hela2003-7.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-8" href="Inomhusklimat_Va%CC%88rme_Hela2003-8.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-9" href="Inomhusklimat_Va%CC%88rme_Hela2003-9.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-10" href="Inomhusklimat_Va%CC%88rme_Hela2003-10.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-11" href="Inomhusklimat_Va%CC%88rme_Hela2003-11.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-12" href="Inomhusklimat_Va%CC%88rme_Hela2003-12.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-13" href="Inomhusklimat_Va%CC%88rme_Hela2003-13.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-14" href="Inomhusklimat_Va%CC%88rme_Hela2003-14.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-15" href="Inomhusklimat_Va%CC%88rme_Hela2003-15.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-16" href="Inomhusklimat_Va%CC%88rme_Hela2003-16.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-17" href="Inomhusklimat_Va%CC%88rme_Hela2003-17.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-18" href="Inomhusklimat_Va%CC%88rme_Hela2003-18.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-19" href="Inomhusklimat_Va%CC%88rme_Hela2003-19.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-20" href="Inomhusklimat_Va%CC%88rme_Hela2003-20.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-21" href="Inomhusklimat_Va%CC%88rme_Hela2003-21.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-22" href="Inomhusklimat_Va%CC%88rme_Hela2003-22.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-23" href="Inomhusklimat_Va%CC%88rme_Hela2003-23.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-24" href="Inomhusklimat_Va%CC%88rme_Hela2003-24.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-25" href="Inomhusklimat_Va%CC%88rme_Hela2003-25.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-26" href="Inomhusklimat_Va%CC%88rme_Hela2003-26.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-27" href="Inomhusklimat_Va%CC%88rme_Hela2003-27.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-28" href="Inomhusklimat_Va%CC%88rme_Hela2003-28.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-29" href="Inomhusklimat_Va%CC%88rme_Hela2003-29.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-30" href="Inomhusklimat_Va%CC%88rme_Hela2003-30.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-31" href="Inomhusklimat_Va%CC%88rme_Hela2003-31.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-32" href="Inomhusklimat_Va%CC%88rme_Hela2003-32.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-33" href="Inomhusklimat_Va%CC%88rme_Hela2003-33.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-34" href="Inomhusklimat_Va%CC%88rme_Hela2003-34.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-35" href="Inomhusklimat_Va%CC%88rme_Hela2003-35.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-36" href="Inomhusklimat_Va%CC%88rme_Hela2003-36.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-37" href="Inomhusklimat_Va%CC%88rme_Hela2003-37.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-38" href="Inomhusklimat_Va%CC%88rme_Hela2003-38.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-39" href="Inomhusklimat_Va%CC%88rme_Hela2003-39.xhtml" media-type="application/xhtml+xml" />
+		<item id="Inomhusklimat_Va-rme_Hela2003-40" href="Inomhusklimat_Va%CC%88rme_Hela2003-40.xhtml" media-type="application/xhtml+xml" />
+		<item id="toc" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav" />
+		<item id="idGeneratedStyles.css" href="css/idGeneratedStyles.css" media-type="text/css" />
+		<item id="Gotham-Bold.otf" href="font/Gotham-Bold.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-Book.otf" href="font/Gotham-Book.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-BookItalic.otf" href="font/Gotham-BookItalic.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-Light.otf" href="font/Gotham-Light.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-LightItalic.otf" href="font/Gotham-LightItalic.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-Medium.otf" href="font/Gotham-Medium.otf" media-type="application/vnd.ms-opentype" />
+		<item id="Gotham-Thin.otf" href="font/Gotham-Thin.otf" media-type="application/vnd.ms-opentype" />
+		<item id="_OLA6817.jpg" href="image/_OLA6817.jpg" media-type="image/jpeg" />
+		<item id="x1.png" href="image/1.png" media-type="image/png" properties="cover-image" />
+		<item id="x4.png" href="image/4.png" media-type="image/png" />
+		<item id="x8.png" href="image/8.png" media-type="image/png" />
+		<item id="x22.png" href="image/22.png" media-type="image/png" />
+		<item id="x25.png" href="image/25.png" media-type="image/png" />
+		<item id="x26.png" href="image/26.png" media-type="image/png" />
+		<item id="x27.png" href="image/27.png" media-type="image/png" />
+		<item id="x46.png" href="image/46.png" media-type="image/png" />
+		<item id="x47.png" href="image/47.png" media-type="image/png" />
+		<item id="x49.png" href="image/49.png" media-type="image/png" />
+		<item id="x52.png" href="image/52.png" media-type="image/png" />
+		<item id="x63.png" href="image/63.png" media-type="image/png" />
+		<item id="x74.png" href="image/74.png" media-type="image/png" />
+		<item id="x89.png" href="image/89.png" media-type="image/png" />
+		<item id="x113.png" href="image/113.png" media-type="image/png" />
+		<item id="x128.png" href="image/128.png" media-type="image/png" />
+		<item id="x133.png" href="image/133.png" media-type="image/png" />
+		<item id="x139.png" href="image/139.png" media-type="image/png" />
+		<item id="x148.png" href="image/148.png" media-type="image/png" />
+		<item id="x161.png" href="image/161.png" media-type="image/png" />
+		<item id="x162.png" href="image/162.png" media-type="image/png" />
+		<item id="x163.png" href="image/163.png" media-type="image/png" />
+		<item id="x170.png" href="image/170.png" media-type="image/png" />
+		<item id="x178.png" href="image/178.png" media-type="image/png" />
+		<item id="x180.png" href="image/180.png" media-type="image/png" />
+		<item id="x181.png" href="image/181.png" media-type="image/png" />
+		<item id="x185.png" href="image/185.png" media-type="image/png" />
+		<item id="x186.png" href="image/186.png" media-type="image/png" />
+		<item id="x187.png" href="image/187.png" media-type="image/png" />
+		<item id="x190.png" href="image/190.png" media-type="image/png" />
+		<item id="x191.png" href="image/191.png" media-type="image/png" />
+		<item id="x192.png" href="image/192.png" media-type="image/png" />
+		<item id="x194.png" href="image/194.png" media-type="image/png" />
+		<item id="x195.png" href="image/195.png" media-type="image/png" />
+		<item id="x200.png" href="image/200.png" media-type="image/png" />
+		<item id="x201.png" href="image/201.png" media-type="image/png" />
+		<item id="x202.png" href="image/202.png" media-type="image/png" />
+		<item id="x237.png" href="image/237.png" media-type="image/png" />
+		<item id="x279.png" href="image/279.png" media-type="image/png" />
+		<item id="shutterstock_527507128.jpg" href="image/shutterstock_527507128.jpg" media-type="image/jpeg" />
+		<item id="Varmex-1b-8.png" href="image/Varmex-1b-8.png" media-type="image/png" />
+		<item id="Varmex-2-2.png" href="image/Varmex-2-2.png" media-type="image/png" />
+		<item id="Varmex-2-21.png" href="image/Varmex-2-21.png" media-type="image/png" />
+		<item id="Varmex-3.png" href="image/Varmex-3.png" media-type="image/png" />
+		<item id="Varmex-4.png" href="image/Varmex-4.png" media-type="image/png" />
+		<item id="Varmex-5.png" href="image/Varmex-5.png" media-type="image/png" />
+		<item id="Varmex-6.png" href="image/Varmex-6.png" media-type="image/png" />
+		<item id="Varmex-7.png" href="image/Varmex-7.png" media-type="image/png" />
+		<item id="Varmex-8.png" href="image/Varmex-8.png" media-type="image/png" />
+		<item id="Varmex-9.png" href="image/Varmex-9.png" media-type="image/png" />
+		<item id="Varmex-10.png" href="image/Varmex-10.png" media-type="image/png" />
+		<item id="Varmex-11-g.png" href="image/Varmex-11-g.png" media-type="image/png" />
+		<item id="Varmex-12-4.png" href="image/Varmex-12-4.png" media-type="image/png" />
+		<item id="Varmex-13-3.png" href="image/Varmex-13-3.png" media-type="image/png" />
+		<item id="Varmex-17-a.png" href="image/Varmex-17-a.png" media-type="image/png" />
+		<item id="Varmex-17-a1.png" href="image/Varmex-17-a1.png" media-type="image/png" />
+		<item id="Varmex-17-a2.png" href="image/Varmex-17-a2.png" media-type="image/png" />
+		<item id="Varmex-17-b_JW.png" href="image/Varmex-17-b_JW.png" media-type="image/png" />
+		<item id="Varmex-17.png" href="image/Varmex-17.png" media-type="image/png" />
+		<item id="Varmex-18-4.png" href="image/Varmex-18-4.png" media-type="image/png" />
+		<item id="Varmex-19-9.png" href="image/Varmex-19-9.png" media-type="image/png" />
+		<item id="Varmex-20.png" href="image/Varmex-20.png" media-type="image/png" />
+		<item id="Varmex-21.png" href="image/Varmex-21.png" media-type="image/png" />
+		<item id="Varmex-22.png" href="image/Varmex-22.png" media-type="image/png" />
+		<item id="Varmex-23-8.png" href="image/Varmex-23-8.png" media-type="image/png" />
+		<item id="Varmex-24JW.png" href="image/Varmex-24JW.png" media-type="image/png" />
+		<item id="Varmex-26a.png" href="image/Varmex-26a.png" media-type="image/png" />
+		<item id="Varmex-26b.png" href="image/Varmex-26b.png" media-type="image/png" />
+		<item id="Varmex-26c.png" href="image/Varmex-26c.png" media-type="image/png" />
+		<item id="Varmex-26d.png" href="image/Varmex-26d.png" media-type="image/png" />
+		<item id="Varmex-26e.png" href="image/Varmex-26e.png" media-type="image/png" />
+		<item id="Varmex-26e1.png" href="image/Varmex-26e1.png" media-type="image/png" />
+		<item id="Varmex-26f.png" href="image/Varmex-26f.png" media-type="image/png" />
+		<item id="Varmex-26g.png" href="image/Varmex-26g.png" media-type="image/png" />
+		<item id="Varmex-26h.png" href="image/Varmex-26h.png" media-type="image/png" />
+		<item id="Varmex-26i-2.png" href="image/Varmex-26i-2.png" media-type="image/png" />
+		<item id="VMX-vit.png" href="image/VMX-vit.png" media-type="image/png" />
+		<item id="VMX2.CMYK.png" href="image/VMX2.CMYK.png" media-type="image/png" />
+	</manifest>
+	<spine>
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-1" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-2" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-3" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-4" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-5" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-6" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-7" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-8" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-9" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-10" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-11" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-12" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-13" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-14" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-15" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-16" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-17" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-18" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-19" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-20" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-21" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-22" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-23" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-24" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-25" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-26" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-27" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-28" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-29" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-30" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-31" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-32" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-33" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-34" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-35" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-36" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-37" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-38" properties="page-spread-left" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-39" properties="page-spread-right" />
+		<itemref idref="Inomhusklimat_Va-rme_Hela2003-40" properties="page-spread-left" />
+	</spine>
+</package>
