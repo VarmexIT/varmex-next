@@ -1,22 +1,29 @@
-import Mailgun from 'mailgun-js'
-// test
+import formData from 'form-data'
+import Mailgun from 'mailgun.js'
+
+// Email will be sent to this address if in development mode
+const DEV_EMAIL = 'mail@example.com'
 
 const handler = (req, res) => {
   if (req.method !== 'POST') {
     return res.status(404).send()
   }
 
+  const mailgun = new Mailgun(formData)
+
   const isDev = process.env.NODE_ENV === 'development'
 
   const { name, phone, email, subject, message } = JSON.parse(req.body)
-  const mailgun = Mailgun({
-    apiKey: process.env.MAILGUN_API_KEY,
-    domain: 'mg.varmex.se',
+
+  const mg = mailgun.client({
+    username: 'api',
+    key: process.env.MAILGUN_API_KEY,
+    url: 'https://api.eu.mailgun.net',
   })
 
   const data = {
     from: 'hemsidan@varmex.se',
-    to: isDev ? 'christian.alares@gmail.com' : 'info@varmex.se',
+    to: isDev ? [DEV_EMAIL] : ['info@varmex.se'],
     subject,
     text: `
   		Namn: ${name}\n
@@ -42,13 +49,14 @@ const handler = (req, res) => {
   	`,
   }
 
-  mailgun.messages().send(data, error => {
-    if (error) {
-      res.status(error.statusCode || 500).json({ success: false, error })
-    } else {
+  mg.messages
+    .create('mg.varmex.se', data)
+    .then((/* msg */) => {
       res.status(200).json({ success: true })
-    }
-  })
+    })
+    .catch(error => {
+      res.status(error.statusCode || 500).json({ success: false, error })
+    })
 }
 
 export default handler
