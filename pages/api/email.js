@@ -1,4 +1,5 @@
 import Mailgun from 'mailgun-js'
+// test
 
 const handler = (req, res) => {
   if (req.method !== 'POST') {
